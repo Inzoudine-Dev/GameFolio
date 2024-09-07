@@ -2,7 +2,7 @@
 
 namespace Config\dbConfig;
 
-class MySql
+class MySqlConnection
 {
 
 }
