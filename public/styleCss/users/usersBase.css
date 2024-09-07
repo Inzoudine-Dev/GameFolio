@@ -1,3 +1,56 @@
+body{
+
+}
+
+header{
+
+
+}
+
+
 .header_class{
     color:blue;
+}
+
+.lien_logo_class{
+    width: 10%;
+}
+
+.logo_class{
+    border: solid 2px;
+    width: 100%;
+}
+
+.lien_iconeConnexion_class{
+    width: 5%;
+}
+
+.icone_connexion{
+    border: solid 2px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+
+.nav_class{
+}
+
+.ul_class{
+ display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.li_class{
+    margin-right: 5%;
+}
+
+#six_id{
+    margin-right: 0;
+}
+
+ul{
+    list-style: none;
 }
