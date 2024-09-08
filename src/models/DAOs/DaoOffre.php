@@ -2,7 +2,7 @@
 
 namespace Maham\GameFolio\models\DAOs;
 
-class DaoOffre
+class DaoOffre extends Dao
 {
 
 }

@@ -16,5 +16,8 @@
             "email": "mahamoud-inzoudine@hotmail.fr"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-pdo": "*",
+        "ext-cassandra": "*"
+    }
 }
