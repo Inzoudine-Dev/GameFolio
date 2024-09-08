@@ -43,7 +43,7 @@ class MySqlConnection
 
             //$pdo=new PDO('mysql:host='.$this->getHost().';dbname='.$this->getBddName().';charset=utf8',$this->getUsername(), $this->getPasseword(), array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connexion réussie à la base de données!";
+            echo "Connexion réussie à la base de données! \n";
         }
 
         catch (\PDOException $e){

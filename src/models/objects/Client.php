@@ -150,7 +150,7 @@ class Client
 
     public function __toString(): string
     {
-        return 'id_personnes :'.$this->getId().', nom :'.$this->getNom().', prenom :'.$this->getPrenom().', date de naissance :'.$this->getDateNaissance().', email :'.$this->getEmail().', numero de telephone :'.$this->getTelephone().', mot de pass :'.$this->getMotDePasse();
+        return 'id_personnes :'.$this->getId().', nom :'.$this->getNom().', prenom :'.$this->getPrenom().', date de naissance :'.$this->getDateNaissance()->format('Y-m-d H:i:s').', email :'.$this->getEmail().', numero de telephone :'.$this->getTelephone().', mot de pass :'.$this->getMotDePasse();
 
     }
 
