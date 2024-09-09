@@ -32,7 +32,7 @@ class Router
     {
         $requestedUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $requestedMethod = $_SERVER['REQUEST_METHOD'];
-
+        //est ce que $requestUri est filtré!!!!
         foreach ($this->routes as $route) {
             if ($route['path'] === $requestedUri && $route['method'] === $requestedMethod) {
                 $controller = new $route['controller']();
