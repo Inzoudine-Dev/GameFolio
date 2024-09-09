@@ -13,7 +13,7 @@ header{
 }
 
 .lien_logo_class{
-    width: 10%;
+    width: 5%;
 }
 
 .logo_class{
@@ -34,6 +34,8 @@ header{
 
 
 .nav_class{
+    width: 99%;
+    margin: auto;
 }
 
 .ul_class{
@@ -44,7 +46,7 @@ header{
 }
 
 .li_class{
-    margin-right: 5%;
+
 }
 
 #six_id{
