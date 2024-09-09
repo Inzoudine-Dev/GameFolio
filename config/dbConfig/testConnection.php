@@ -1,6 +1,7 @@
 <?php
 
 use Config\dbConfig\MySqlConnection;
+use Maham\GameFolio\managers\ManagerClient;
 use Maham\GameFolio\models\DAOs\Dao;
 use Maham\GameFolio\models\DAOs\DaoClient;
 use Maham\GameFolio\models\objects\Client;
@@ -21,10 +22,12 @@ $client2=new Client(0,"aaaa","cccc",new DateTime('2024-09-08 14:30:00'),"mahamou
 $client4=new Client(0,"MAHAMOUD10","Inzoudine10",new DateTime('1994-04-25 05:00:00'),"mahamoud-inzoudine@hotmail10.fr","0612919361310","monMdp10");
 
 $daoClient=new DaoClient();
+$managerClient=new ManagerClient();
 
 //$daoClient->Insert($client4);
 
-var_dump($daoClient->SelectAll());
+//var_dump($daoClient->SelectAll());
+var_dump($managerClient->SelectAll());
 
 /*
 function factoriel(int $n){

@@ -5,7 +5,7 @@
 
     <div class="menue_principal">
 
-
+        <?php echo $titi;?>
     </div>
 
 
