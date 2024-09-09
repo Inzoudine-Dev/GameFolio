@@ -11,13 +11,13 @@
         <div class="offres_class">
 
 
-            <a href="/GameFolio/home" class="lien_offre1_class">
+            <a href="/GameFolio/home/offres" class="lien_offre1_class">
             <article class="offre1_class">
                 <?php echo $objet1;?>
             </article>
             </a>
 
-            <a href="/GameFolio/home" class="lien_offre2_class">
+            <a href="/GameFolio/home/offres" class="lien_offre2_class">
             <article class="offre2_class">
                 <?php echo $objet2;?>
             </article>
@@ -34,28 +34,28 @@
 
         <article class="game_class">
 
-            <a href="/GameFolio/home" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+            <a href="/GameFolio/home/games" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
 
         </article>
 
 
         <article class="game_class">
 
-            <a href="/GameFolio/home" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+            <a href="/GameFolio/home/games" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
 
         </article>
 
 
         <article class="game_class">
 
-            <a href="/GameFolio/home" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+            <a href="/GameFolio/home/games" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
 
         </article>
 
 
         <article class="game_class">
 
-            <a href="/GameFolio/home" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+            <a href="/GameFolio/home/games" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
 
         </article>
 
@@ -69,28 +69,28 @@
 
         <article class="game_class">
 
-            <a href="/GameFolio/home" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+            <a href="/GameFolio/home/games" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
 
         </article>
 
 
         <article class="game_class">
 
-            <a href="/GameFolio/home" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+            <a href="/GameFolio/home/games" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
 
         </article>
 
 
         <article class="game_class">
 
-            <a href="/GameFolio/home" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+            <a href="/GameFolio/home/games" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
 
         </article>
 
 
         <article class="game_class">
 
-            <a href="/GameFolio/home" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+            <a href="/GameFolio/home/games" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
 
         </article>
 
