@@ -2,6 +2,7 @@
 
 namespace Maham\GameFolio\models\DAOs;
 
+
 interface Dao
 {
 

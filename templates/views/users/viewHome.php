@@ -3,15 +3,23 @@
 <section>
 
 
-    <div class="menue_principal">
-
         <form class="form_recherche_class">
             <input type="text" placeholder="Recherche" class="input_recherche_class">
         </form>
-        <?php echo $objet1;?>
-        <?php echo $objet2;?>
 
-    </div>
+
+        <div class="offres_class">
+
+            <article class="offre1_class">
+                <?php echo $objet1;?>
+            </article>
+
+            <article class="offre2_class">
+                <?php echo $objet2;?>
+            </article>
+
+        </div>
+
 
 
 </section>
