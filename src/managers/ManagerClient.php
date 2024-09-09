@@ -8,7 +8,7 @@ use Maham\GameFolio\models\DAOs\DaoClient;
 class ManagerClient implements Manager
 {
 
-/*ici le tableau de client doi etre associative pour etr utiliser par le controller*/
+/*ici le tableau de client doi etre associative pour etre utiliser ensuite par le controller*/
     public function SelectAll(): array
     {
         $daoClient=new DaoClient();
