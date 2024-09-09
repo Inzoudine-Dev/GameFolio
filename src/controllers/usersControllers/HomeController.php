@@ -14,9 +14,8 @@ class HomeController extends Controller
     {
 
         $ManagerClient=new ManagerClient();
-
-        $test=['toto'=>10,'titi'=>'comment sa va !!'];
-        parent::render("Home", $test);
+        $ListeClient=$ManagerClient->SelectAll();
+        parent::render("Home", $ListeClient);
     }
 
 }

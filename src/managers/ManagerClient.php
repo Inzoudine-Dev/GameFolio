@@ -12,7 +12,12 @@ class ManagerClient implements Manager
     public function SelectAll(): array
     {
         $daoClient=new DaoClient();
-        return $daoClient->SelectAll();
+        $listeClient=$daoClient->SelectAll();
+        $listeClientAssociative=[];
+        for($i=0;$i<count($listeClient);$i++){
+            $listeClientAssociative=$listeClientAssociative+["objet".$i+1=>$listeClient[$i]];
+        }
+        return $listeClientAssociative;
     }
 
     public function insert(object $client): void

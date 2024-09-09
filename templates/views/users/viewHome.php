@@ -5,7 +5,8 @@
 
     <div class="menue_principal">
 
-        <?php echo $titi;?>
+        <?php echo $objet1;?>
+
     </div>
 
 
