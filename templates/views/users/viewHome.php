@@ -6,6 +6,7 @@
     <div class="menue_principal">
 
         <?php echo $objet1;?>
+        <?php echo $objet2;?>
 
     </div>
 
