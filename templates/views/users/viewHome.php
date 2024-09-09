@@ -10,15 +10,21 @@
 
         <div class="offres_class">
 
+
+            <a href="/GameFolio/home" class="lien_offre1_class">
             <article class="offre1_class">
                 <?php echo $objet1;?>
             </article>
+            </a>
 
+            <a href="/GameFolio/home" class="lien_offre2_class">
             <article class="offre2_class">
                 <?php echo $objet2;?>
             </article>
+            </a>
 
         </div>
+
 
         <hr>
 

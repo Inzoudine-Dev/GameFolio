@@ -24,10 +24,10 @@ $client4=new Client(0,"MAHAMOUD10","Inzoudine10",new DateTime('1994-04-25 05:00:
 $daoClient=new DaoClient();
 $managerClient=new ManagerClient();
 
-//$daoClient->Insert($client4);
+//$daoClient->Insert($client3);
 
-//var_dump($daoClient->SelectAll());
-var_dump($managerClient->SelectAll());
+var_dump($daoClient->SelectAll());
+//var_dump($managerClient->SelectAll());
 
 /*
 function factoriel(int $n){
