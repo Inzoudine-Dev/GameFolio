@@ -3,7 +3,7 @@
     justify-content: center;
     margin-top:5%;
     margin-bottom:3%;
-    margin-left: 38px;
+
 }
 
 main{
@@ -29,12 +29,22 @@ main{
     border:solid 1px;
     padding: 50px;
     margin: 5px;
+    border-radius: 20px;
 }
 
 .offre2_class{
     border:solid 1px;
     padding: 50px;
     margin: 5px;
+    border-radius: 20px;
+}
+
+.offre1_class:hover{
+    border-color:orangered;
+}
+
+.offre2_class:hover{
+    border-color:orangered;
 }
 
 hr{

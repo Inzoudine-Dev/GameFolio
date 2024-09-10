@@ -19,7 +19,7 @@
 
             <a href="/GameFolio/home/offres" class="lien_offre2_class">
             <article class="offre2_class">
-                <?php echo $objet2;?>
+                <?php echo $objet1;?>
             </article>
             </a>
 
