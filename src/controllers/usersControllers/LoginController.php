@@ -25,7 +25,7 @@ class LoginController extends Controller
             //echo"<h1 class='error_login_class'>erreur!!</h1>";
             parent::render("Login",  $donnees=['msg'=>'Email ou mot de passe incorrecte!!']);
         }else{
-            header('Location:/GameFolio/home');
+            header('Location:/GameFolio/home');/*a modifier*/
         }
     }
 
