@@ -3,10 +3,11 @@
     justify-content: center;
     margin-top:5%;
     margin-bottom:3%;
+    margin-left: 38px;
 }
 
 main{
-    /*border:solid 1px;*/
+
 }
 
 .input_recherche_class{
@@ -60,6 +61,15 @@ hr{
 
 .game_class{
     margin:1%;
+}
+
+.image_game_class:hover{
+    /*border: solid blue 5px;*/
+}
+
+.game_class:hover{
+    width: 40%;
+    transform: translateY(-15%);
 }
 
 .titre_jeuxCourses_class{

@@ -10,7 +10,8 @@
         <title><?php echo $titre_page ?></title>
         <link rel="shortcut icon" href="/GameFolio/public/images/logo_jeuxVideos.png" />
         <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/users/usersBase.css" media="all" />
-        <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/users/viewHome.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/users/style_viewHome.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/users/style_viewLogin.css" media="all" />
 
     </head>
 

@@ -2,6 +2,32 @@
 
 <section>
 
-    <h1>page de connection| authentification!!</h1>
+    <h1 class="titre_form_login">Connecter-vous !!</h1>
 
+    <form action="/GameFolio/home/login" method="post" class="form_login_class">
+
+
+            <input type="email" name ="email" placeholder="email" class="input_email_class" required>
+
+
+
+            <input type="password" name ="password" placeholder="Mot de passe" class="input_password_class" required>
+
+
+
+            <input type="submit" value="connexion" class="bt_connexion_class">
+
+
+    </form>
+
+    <div class="error_class">
+        <?php if (isset($donnees['msg'])): ?>
+            <p class="error_login_class"><?php echo htmlspecialchars($donnees['msg'], ENT_QUOTES, 'UTF-8'); ?></p>
+        <?php endif; ?>
+    </div>
+
+    <div class="text_inscription">
+        <h1 class="titre_form_login">Vous n'avez pas encore de conpte ??</h1>
+        <h1 class="titre_form_login"> <a href="/GameFolio/home">Inscrivez-vous avec ce lien!!</a> </h1>
+    </div>
 </section>

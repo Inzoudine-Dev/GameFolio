@@ -1,0 +1,48 @@
+.input_email_class{
+    width: 25%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    border-radius: 20px;
+
+}
+
+.titre_form_login{
+    text-align: center;
+}
+
+.text_inscription{
+    margin-top: 50px;
+}
+
+.input_password_class{
+    width: 25%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+
+.bt_connexion_class{
+    width: 26%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.form_login_class{
+    display: flex;
+    flex-direction: column;
+}
+
+.error_login_class{
+    text-align: center;
+    color: red;
+}
