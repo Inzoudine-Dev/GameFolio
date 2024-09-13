@@ -1,17 +1,24 @@
 <?php
 
 use Config\dbConfig\MySqlConnection;
-use Maham\GameFolio\managers\ManagerClient;
-use Maham\GameFolio\models\DAOs\Dao;
-use Maham\GameFolio\models\DAOs\DaoClient;
 use Maham\GameFolio\models\objects\Client;
 
-require '../../vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $MySql =new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
 
+//echo $MySql->__tostring()."\n";
 
-$MySql->isConnected($MySql->getConnection());
+// Fonction personnalisée pour gérer les exceptions
+/*function monGestionnaireException($exception) {
+    error_log("Exception capturée : " . $exception->getMessage());
+
+    echo "Une erreur est survenue. Veuillez réessayer plus tard.";
+}
+
+// Définir cette fonction comme gestionnaire des exceptions
+set_exception_handler('monGestionnaireException');*/
+
 
 $client=new Client(1,"MAHAMOUD","Inzoudine",new DateTime('2024-09-08 00:00:00'),"mahamoud-inzoudine@hotmail.fr","0612919361","monMdp");
 
@@ -21,25 +28,3 @@ $client3=new Client(16,"MAHAMOUD2","Inzoudine2",new DateTime('2024-09-08 00:00:0
 $client2=new Client(0,"aaaa","cccc",new DateTime('2024-09-08 14:30:00'),"mahamoud-inzoudine@hotmail3.fr","06129193613","monMdp3");
 $client4=new Client(0,"MAHAMOUD10","Inzoudine10",new DateTime('1994-04-25 05:00:00'),"mahamoud-inzoudine@hotmail10.fr","0612919361310","monMdp10");
 
-$daoClient=new DaoClient();
-$managerClient=new ManagerClient();
-
-//$daoClient->Insert($client3);
-
-var_dump($daoClient->SelectAll());
-//var_dump($managerClient->SelectAll());
-
-/*
-function factoriel(int $n){
-    if($n==0){
-        return 1;
-    }else{
-        return factoriel($n-1)*$n;
-    }
-};
-
-echo factoriel(2);
-echo "\n";
-var_dump(true || false|| false|| false|| false|| false);
-echo "\n";
-var_dump(true && false);*/

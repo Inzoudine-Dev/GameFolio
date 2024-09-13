@@ -3,8 +3,11 @@
 namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
+use DateTime;
 use Maham\GameFolio\controllers\Controller;
 use Maham\GameFolio\managers\ManagerClient;
+use Maham\GameFolio\models\objects\Client;
+
 
 class LoginController extends Controller
 {
@@ -20,11 +23,10 @@ class LoginController extends Controller
     {
 
         $ManagerClient=new ManagerClient();
-        $ListeClient=$ManagerClient->SelectAll();
         if($this->isValid($_POST["email"],$_POST["password"])==false){
-            //echo"<h1 class='error_login_class'>erreur!!</h1>";
             parent::render("Login",  $donnees=['msg'=>'Email ou mot de passe incorrecte!!']);
         }else{
+            $ManagerClient->insert(new Client('1','SAID2','MADI2',new DateTime('1994-04-25 02:00:00'),$_POST['email'],"07129596332",$_POST['password']));
             header('Location:/GameFolio/home');/*a modifier*/
         }
     }
@@ -35,6 +37,7 @@ class LoginController extends Controller
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return false;
+
         }
 
         // Protection contre XSS si l'email est affiché dans une page HTML
@@ -45,6 +48,7 @@ class LoginController extends Controller
 
         if (strlen($password) < 16) {
             return false;
+
         }
 
         if (!preg_match('/[A-Z]/', $password) ||
@@ -52,6 +56,7 @@ class LoginController extends Controller
             !preg_match('/[0-9]/', $password) ||
             !preg_match('/[\W]/', $password)) {
             return false;
+
         }
 
         return true;

@@ -22,32 +22,15 @@ class MySqlConnection
 
     }
 
-    public function getConnection():PDO{
+    public function getConnection():PDO
+    {
+
         try {
 
+            return new PDO('mysql:host=' . $this->getHost() . ';dbname=' . $this->getBddName() . ';charset=utf8', $this->getUsername(), $this->getPasseword(), array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-            return new PDO('mysql:host='.$this->getHost().';dbname='.$this->getBddName().';charset=utf8',$this->getUsername(), $this->getPasseword(), array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-
-
-        }
-
-        catch (\PDOException $e){
-            throw new \Exception("-ORIGINE:BddConnection , Message d'erreur: ".$e->getMessage());
-        }
-
-    }
-
-    public function isConnected(PDO $pdo){
-        try {
-
-
-            //$pdo=new PDO('mysql:host='.$this->getHost().';dbname='.$this->getBddName().';charset=utf8',$this->getUsername(), $this->getPasseword(), array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connexion réussie à la base de données! \n";
-        }
-
-        catch (\PDOException $e){
-            throw new \Exception($e->getMessage());
+        } catch (\PDOException $e) {
+            throw new \Exception("Attention la connexion a échouée !!!: " . $e->getMessage());
         }
 
     }
@@ -86,7 +69,7 @@ class MySqlConnection
 
     public function __toString(): string
     {
-        return 'connection a une base de données mysql';
+        return "connection a la une base de données mysql ".$this->getBddName();
     }
 
 

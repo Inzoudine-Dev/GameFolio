@@ -35,6 +35,7 @@ class Client
         $this->motDePasse = $motDePasse;
     }
 
+
     /**
      * @return int
      */

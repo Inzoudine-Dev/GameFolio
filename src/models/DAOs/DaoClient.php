@@ -10,20 +10,25 @@ use PDO;
 
 class DaoClient implements Dao
 {
+    private string $nomTable;
+    private MySqlConnection $MySql;
 
+    public function __construct()
+    {
+        $this->nomTable= "clients";
+        $this->MySql= new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
+    }
     public function SelectAll(): array
     {
-        $tableName="clients";
-        $MySql = new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
         try {
 
             try {
-                $connection = $MySql->getConnection();
+                $connection = $this->MySql->getConnection();
             } catch (Exception $e) {
                 throw new Exception($e->getMessage());
             }
 
-            $sql = 'SELECT * FROM ' . $tableName;
+            $sql = 'SELECT * FROM ' . $this->nomTable;
             $requete = $connection->prepare($sql);
             $requete->execute();
             $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
@@ -63,19 +68,19 @@ class DaoClient implements Dao
 
 */
 
-    public function Insert(object $client): void
-    { $MySql =new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
+    public function insert(object $client): void
+    { //$MySql =new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
         try {
 
             try {
-                $connection = $MySql->getConnection();
+                $connection = $this->MySql->getConnection();
             } catch (Exception $e) {
                 throw new Exception($e->getMessage());
             }
 
-                $nomTable = "clients";
+                //$nomTable = "clients";
 
-                $sql = 'INSERT INTO ' . $nomTable . '(nom,prenom,dateNaissance,email,telephone,motdepasse) VALUES (?,?,?,?,?,?)';
+                $sql = 'INSERT INTO ' . $this->nomTable . '(nom,prenom,dateNaissance,email,telephone,motdepasse) VALUES (?,?,?,?,?,?)';
 
                 $nom = $client->getNom();
                 $prenom = $client->getPrenom();
@@ -102,5 +107,20 @@ class DaoClient implements Dao
             throw new Exception($e->getMessage());
         }
 
+    }
+
+    public function SelectAllById(int $id): object
+    {
+        // TODO: Implement SelectAllById() method.
+    }
+
+    public function update(object $objet): void
+    {
+        // TODO: Implement update() method.
+    }
+
+    public function delete(object $objet): void
+    {
+        // TODO: Implement delete() method.
     }
 }
