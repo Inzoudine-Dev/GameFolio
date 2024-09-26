@@ -18,4 +18,11 @@ class HomeController extends Controller
         parent::render("Home", $ListeClient);
     }
 
+
+    #[Route('/GameFolio','GET')]
+    public function indexRedirect()
+    {
+        $this->index();
+    }
+
 }

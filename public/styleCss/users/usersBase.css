@@ -2,70 +2,7 @@ body{
 
 }
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    /*z-index: 1000;*/
-    background-color: #fff;
-    box-shadow: 0 4px 2px -2px gray;
-}
 
 main{
     margin-top: 120px;
-}
-
-
-.header_class{
-    color:blue;
-}
-
-.lien_logo_class{
-    width: 5%;
-}
-
-.logo_class{
-    border: solid 2px;
-    width: 100%;
-}
-
-.lien_iconeConnexion_class{
-    width: 5%;
-}
-
-.icone_connexion{
-    border: solid 2px;
-    width: 100%;
-    border-radius: 20px;
-}
-
-
-
-.nav_class{
-    width: 99%;
-    margin: auto;
-}
-
-.ul_class{
- display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-}
-
-.li_class{
-
-}
-
-#six_id{
-    margin-right: 0;
-}
-
-ul{
-    list-style: none;
-}
-
-a{
-    text-decoration: none;
 }

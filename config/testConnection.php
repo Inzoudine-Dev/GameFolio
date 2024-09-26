@@ -5,8 +5,15 @@ use Maham\GameFolio\models\objects\Client;
 
 require '../vendor/autoload.php';
 
-$MySql =new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
+$MySql =new MySqlConnection('localhost', 'gestion_abonnement1', 'root', '');
 
+/*test exceptions*/
+try {
+    $MySql->getConnection();
+    echo "connexion ok!!!";
+}catch (Exception $e){
+    throw new Exception("getConnection() a revoyer une erreur :".$e->getMessage());
+}
 //echo $MySql->__tostring()."\n";
 
 // Fonction personnalisée pour gérer les exceptions
