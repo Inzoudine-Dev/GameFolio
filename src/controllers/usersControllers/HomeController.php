@@ -19,7 +19,7 @@ class HomeController extends Controller
     }
 
 
-    #[Route('/GameFolio','GET')]
+    #[Route('/GameFolio/home/','GET')]
     public function indexRedirect()
     {
         $this->index();
