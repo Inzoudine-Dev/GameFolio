@@ -6,95 +6,130 @@
         </form>
 
         <section>
-        <div class="offres_class">
+
+            <div class="offres_class">
 
 
-            <a href="/GameFolio/home/offres" class="lien_offre1_class">
-            <article class="offre1_class">
-                <?php echo $objet1;?>
-            </article>
-            </a>
+                <a href="/GameFolio/home/offres" class="lien_offre1_class">
 
-            <a href="/GameFolio/home/offres" class="lien_offre2_class">
-            <article class="offre2_class">
-                <?php echo $objet1;?>
-            </article>
-            </a>
+                    <article class="offre1_class">
+                        <?php echo $objet1;?>
+                    </article>
 
-        </div>
+                </a>
+
+                <a href="/GameFolio/home/offres" class="lien_offre2_class">
+
+                    <article class="offre2_class">
+                        <?php echo $objet1;?>
+                    </article>
+
+                </a>
+
+            </div>
+
         </section>
 
         <hr>
 
         <section>
-    <h1 class="titre_jeuxCourses_class">Jeux de courses</h1>
 
-    <div class="games_race_class">
+            <h1 class="titre_jeuxCourses_class">Jeux de courses</h1>
 
-        <article class="game_class">
+            <div class="games_race_class">
 
-            <a href="/GameFolio/home/games" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+                <article class="game_class">
 
-        </article>
+                    <a href="/GameFolio/home/games" class="lien_imageGame1_class">
+                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+                    </a>
 
-
-        <article class="game_class">
-
-            <a href="/GameFolio/home/games" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
-
-        </article>
+                </article>
 
 
-        <article class="game_class">
+                <article class="game_class">
 
-            <a href="/GameFolio/home/games" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+                    <a href="/GameFolio/home/games" class="lien_imageGame1_class">
+                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+                    </a>
 
-        </article>
+                </article>
 
 
-        <article class="game_class">
+                <article class="game_class">
 
-            <a href="/GameFolio/home/games" class="lien_imageGame1_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+                    <a href="/GameFolio/home/games" class="lien_imageGame1_class">
+                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+                    </a>
 
-        </article>
+                </article>
 
-    </div>
+
+                <article class="game_class">
+
+                    <a href="/GameFolio/home/games" class="lien_imageGame1_class">
+                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+                    </a>
+
+                </article>
+
+            </div>
+
         </section>
 
-    <hr>
+
+        <hr>
+
 
         <section>
-    <h1 class="titre_jeuxCombat_class">Jeux de combat</h1>
 
-    <div class="games_race_class">
+            <h1 class="titre_jeuxCombat_class">Jeux de combat</h1>
 
-        <article class="game_class">
+            <div class="games_race_class">
 
-            <a href="/GameFolio/home/games" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+                <article class="game_class">
 
-        </article>
+                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
 
+                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
-        <article class="game_class">
+                    </a>
 
-            <a href="/GameFolio/home/games" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
-
-        </article>
+                </article>
 
 
-        <article class="game_class">
+                <article class="game_class">
 
-            <a href="/GameFolio/home/games" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
 
-        </article>
+                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+
+                    </a>
+
+                </article>
 
 
-        <article class="game_class">
+                <article class="game_class">
 
-            <a href="/GameFolio/home/games" class="lien_iconeConnexion_class"> <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/> </a>
+                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
 
-        </article>
+                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
-    </div>
+                    </a>
 
-</section>
+                </article>
+
+
+                <article class="game_class">
+
+                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
+
+                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
