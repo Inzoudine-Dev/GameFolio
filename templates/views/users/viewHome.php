@@ -1,4 +1,3 @@
-<?php $titre_page="Home";?>
 
 <section>
 
@@ -95,8 +94,5 @@
         </article>
 
     </div>
-
-
-
 
 </section>
