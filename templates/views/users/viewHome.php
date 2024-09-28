@@ -1,12 +1,11 @@
 
-<section>
 
 
         <form class="form_recherche_class">
             <input type="text" placeholder="Recherche" class="input_recherche_class">
         </form>
 
-
+        <section>
         <div class="offres_class">
 
 
@@ -23,10 +22,11 @@
             </a>
 
         </div>
-
+        </section>
 
         <hr>
 
+        <section>
     <h1 class="titre_jeuxCourses_class">Jeux de courses</h1>
 
     <div class="games_race_class">
@@ -59,9 +59,11 @@
         </article>
 
     </div>
+        </section>
 
     <hr>
 
+        <section>
     <h1 class="titre_jeuxCombat_class">Jeux de combat</h1>
 
     <div class="games_race_class">
