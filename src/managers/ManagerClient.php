@@ -4,7 +4,7 @@ namespace Maham\GameFolio\managers;
 
 
 use Maham\GameFolio\models\DAOs\DaoClient;
-use Maham\GameFolio\models\objects\Client;
+
 
 class ManagerClient implements Manager
 {

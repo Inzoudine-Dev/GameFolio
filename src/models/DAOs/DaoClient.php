@@ -18,6 +18,8 @@ class DaoClient implements Dao
         $this->nomTable= "clients";
         $this->MySql= new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
     }
+
+
     public function SelectAll(): array
     {
         try {
@@ -47,29 +49,8 @@ class DaoClient implements Dao
         }
     }
 
-
-        /* public function existeClient(Client $client):bool
-         {
-
-                 $tab=$this->selectAllClient();
-                 $resultat = false;
-                 for ($i = 0; $i < count($tab); $i++) {
-
-                     $resultat = $resultat || (($client->getNom() == $tab[$i]->getNom()) &&
-                             ($client->getPrenom() == $tab[$i]->getPrenom()) &&
-                             ($client->getPrenom() == $tab[$i]->getPrenom()) &&
-                             ($client->getDateNaissance() == $tab[$i]->getDateNaissance()) &&
-                             ($client->getEmail() == $tab[$i]->getEmail()) &&
-                             ($client->getTelephone() == $tab[$i]->getTelephone()) &&
-                             ($client->getMotDePasse() == $tab[$i]->getMotDePasse()));
-                 }
-                 return $resultat;
-         }
-
-*/
-
     public function insert(object $client): void
-    { //$MySql =new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
+    {
         try {
 
             try {
@@ -78,36 +59,67 @@ class DaoClient implements Dao
                 throw new Exception($e->getMessage());
             }
 
-                //$nomTable = "clients";
+            if (get_class($client) == 'Maham\GameFolio\models\objects\Client') {
 
-                $sql = 'INSERT INTO ' . $this->nomTable . '(nom,prenom,dateNaissance,email,telephone,motdepasse) VALUES (?,?,?,?,?,?)';
 
-                $nom = $client->getNom();
-                $prenom = $client->getPrenom();
-                $dateNaissance = $client->getDateNaissance();
-                $email = $client->getEmail();
-                $telephone = $client->getTelephone();
-                $motdepasse = $client->getMotDePasse();
+                if ($this->existeClient($client)) {
+                    echo "l'element existe déja!!";
+                } else {
 
-                if ($dateNaissance instanceof DateTime) {
-                    $dateNaissance = $dateNaissance->format('Y-m-d');
+                    $sql = 'INSERT INTO ' . $this->nomTable . '(nom,prenom,dateNaissance,email,telephone,motdepasse) VALUES (?,?,?,?,?,?)';
+
+                    $nom = $client->getNom();
+                    $prenom = $client->getPrenom();
+                    $dateNaissance = $client->getDateNaissance();
+                    $email = $client->getEmail();
+                    $telephone = $client->getTelephone();
+                    $motdepasse = $client->getMotDePasse();
+
+                    if ($dateNaissance instanceof DateTime) {
+                        $dateNaissance = $dateNaissance->format('Y-m-d');
+                    }
+
+                    $requete = $connection->prepare($sql);
+                    $requete->bindParam(1, $nom);
+                    $requete->bindParam(2, $prenom);
+                    $requete->bindParam(3, $dateNaissance);
+                    $requete->bindParam(4, $email);
+                    $requete->bindParam(5, $telephone);
+                    $requete->bindParam(6, $motdepasse);
+                    $requete->execute();
+                    $requete->fetchAll();
                 }
-
-                $requete = $connection->prepare($sql);
-                $requete->bindParam(1, $nom);
-                $requete->bindParam(2, $prenom);
-                $requete->bindParam(3, $dateNaissance);
-                $requete->bindParam(4, $email);
-                $requete->bindParam(5, $telephone);
-                $requete->bindParam(6, $motdepasse);
-                $requete->execute();
-                $requete->fetchAll();
             }
+        }
         catch (Exception $e){
             throw new Exception($e->getMessage());
         }
 
     }
+
+
+
+    public function existeClient(Client $client):bool
+     {
+
+             $tab=$this->selectAll();
+             $resultat = false;
+             for ($i = 0; $i < count($tab); $i++) {
+
+                 $resultat = $resultat || (($client->getNom() == $tab[$i]->getNom()) &&
+                         ($client->getPrenom() == $tab[$i]->getPrenom()) &&
+                         ($client->getPrenom() == $tab[$i]->getPrenom()) &&
+                         ($client->getDateNaissance() == $tab[$i]->getDateNaissance()) &&
+                         ($client->getEmail() == $tab[$i]->getEmail()) &&
+                         ($client->getTelephone() == $tab[$i]->getTelephone()) &&
+                         ($client->getMotDePasse() == $tab[$i]->getMotDePasse()));
+             }
+             return $resultat;
+
+     }
+
+
+
 
     public function SelectAllById(int $id): object
     {

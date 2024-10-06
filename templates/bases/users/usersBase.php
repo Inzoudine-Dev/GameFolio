@@ -36,7 +36,7 @@
 
     </body>
 
-    <script type="text/javascript" src=""></script>
+  <!--  <script type="text/javascript" src="/GameFolio/public/scriptsJs/scriptHeader.js"></script> -->
 
 </html>
 

@@ -3,10 +3,8 @@
 namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
-use DateTime;
 use Maham\GameFolio\controllers\Controller;
 use Maham\GameFolio\managers\ManagerClient;
-use Maham\GameFolio\models\objects\Client;
 
 
 class LoginController extends Controller
@@ -15,7 +13,14 @@ class LoginController extends Controller
     #[Route('/GameFolio/home/login', 'GET')]
     public function index()
     {
-        parent::render("Login", null);
+        $Data["title"]="Login";/*determine le titre de la page*/
+        parent::render("Login", $Data);
+    }
+
+    #[Route('/GameFolio/home/login/','GET')]
+    public function indexRedirect()
+    {
+        $this->index();
     }
 
     #[Route('/GameFolio/home/login', 'POST')]
@@ -24,11 +29,15 @@ class LoginController extends Controller
 
         $ManagerClient=new ManagerClient();
         if($this->isValid($_POST["email"],$_POST["password"])==false){
-            parent::render("Login",  $donnees=['msg'=>'Email ou mot de passe incorrecte!!']);
-        }else{
-            $ManagerClient->insert(new Client('1','SAID2','MADI2',new DateTime('1994-04-25 02:00:00'),$_POST['email'],"07129596332",$_POST['password']));
+            $Data["msg"]='Email ou mot de passe incorrecte!!';
+            $Data["title"]="Login";
+            parent::render("Login",  $Data);
+        }
+
+        else{
             header('Location:/GameFolio/home');/*a modifier*/
         }
+
     }
 
     public function isValid(string $email, string $password): bool {

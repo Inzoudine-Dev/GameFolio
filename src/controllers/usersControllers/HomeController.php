@@ -14,9 +14,9 @@ class HomeController extends Controller
     {
 
         $ManagerClient=new ManagerClient();
-        $ListeClient=$ManagerClient->SelectAll();
-        $ListeClient["title"]="Home";/*determine le titre de la page*/
-        parent::render("Home", $ListeClient);
+        $Data=$ManagerClient->SelectAll();
+        $Data["title"]="Home";/*determine le titre de la page*/
+        parent::render("Home", $Data);
     }
 
 
