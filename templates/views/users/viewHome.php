@@ -51,7 +51,7 @@
 
         <section>
 
-            <h1 class="titre_jeuxCourses_class"><?php echo $jeu1->getCategorie();?></h1>
+            <h1 class="titre_jeuxCourses_class">Jeux de combat</h1>
 
             <div class="games_race_class">
 
