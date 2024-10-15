@@ -13,10 +13,10 @@
                 <a href="/GameFolio/home/offres" class="lien_offre1_class">
 
                     <article class="offre1_class">
-                        <p class="data_offre_class"><?php echo $offre1->getId();?></p>
-                        <p class="data_offre_class"><?php echo $offre1->getNomOffre();?></p>
-                        <p class="data_offre_class"><?php echo $offre1->getReduction();?></p>
-                        <p class="data_offre_class"><?php echo $offre1->getJeuVideoId();?></p>
+                        <p class="data_offre_class"><?php echo 'Identifiant offre '.$offre1->getId();?></p>
+                        <p class="data_offre_class"><?php echo $offre1->getNomOffre().' disponible !';?></p>
+                        <p class="data_offre_class"><?php echo 'Réduction de '.$offre1->getReduction().' euros';?></p>
+                        <p class="data_offre_class"><?php echo "Identifiant jeu de l'offre ".$offre1->getJeuVideoId();?></p>
                     </article>
 
                 </a>
@@ -24,10 +24,10 @@
                 <a href="/GameFolio/home/offres" class="lien_offre2_class">
 
                     <article class="offre2_class">
-                        <p class="data_offre_class"><?php echo $offre2->getId();?></p>
-                        <p class="data_offre_class"><?php echo $offre2->getNomOffre();?></p>
-                        <p class="data_offre_class"><?php echo $offre2->getReduction();?></p>
-                        <p class="data_offre_class"><?php echo $offre2->getJeuVideoId();?></p>
+                        <p class="data_offre_class"><?php echo 'Identifiant offre '.$offre2->getId();?></p>
+                        <p class="data_offre_class"><?php echo $offre2->getNomOffre().' disponible !';?></p>
+                        <p class="data_offre_class"><?php echo 'Réduction de '.$offre2->getReduction().' euros';?></p>
+                        <p class="data_offre_class"><?php echo "Identifiant jeu de l'offre ".$offre2->getJeuVideoId();?></p>
                     </article>
 
                 </a>
@@ -35,10 +35,10 @@
                 <a href="/GameFolio/home/offres" class="lien_offre2_class">
 
                     <article class="offre2_class">
-                        <p class="data_offre_class"><?php echo $offre2->getId();?></p>
-                        <p class="data_offre_class"><?php echo $offre2->getNomOffre();?></p>
-                        <p class="data_offre_class"><?php echo $offre2->getReduction();?></p>
-                        <p class="data_offre_class"><?php echo $offre2->getJeuVideoId();?></p>
+                        <p class="data_offre_class"><?php echo 'Identifiant offre '.$offre2->getId();?></p>
+                        <p class="data_offre_class"><?php echo $offre2->getNomOffre().' disponible !';?></p>
+                        <p class="data_offre_class"><?php echo 'Réduction de '.$offre2->getReduction().' euros';?></p>
+                        <p class="data_offre_class"><?php echo "Identifiant jeu de l'offre ".$offre2->getJeuVideoId();?></p>
                     </article>
 
                 </a>
