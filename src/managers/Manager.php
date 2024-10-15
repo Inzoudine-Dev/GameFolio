@@ -2,7 +2,7 @@
 
 namespace Maham\GameFolio\managers;
 
-use Maham\GameFolio\models\objects\Client;
+use Maham\GameFolio\models\entities\Client;
 
 interface Manager
 {

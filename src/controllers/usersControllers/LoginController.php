@@ -35,6 +35,7 @@ class LoginController extends Controller
         }
 
         else{
+
             header('Location:/GameFolio/home');/*a modifier*/
         }
 

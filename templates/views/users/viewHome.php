@@ -13,7 +13,7 @@
                 <a href="/GameFolio/home/offres" class="lien_offre1_class">
 
                     <article class="offre1_class">
-                        <?php echo $objet1;?>
+                        <?php echo $objet2;?>
                     </article>
 
                 </a>
@@ -21,7 +21,7 @@
                 <a href="/GameFolio/home/offres" class="lien_offre2_class">
 
                     <article class="offre2_class">
-                        <?php echo $objet1;?>
+                        <?php echo $objet2;?>
                     </article>
 
                 </a>

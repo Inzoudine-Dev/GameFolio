@@ -5,7 +5,7 @@ namespace Maham\GameFolio\models\DAOs;
 use Config\dbConfig\MySqlConnection;
 use DateTime;
 use Exception;
-use Maham\GameFolio\models\objects\Client;
+use Maham\GameFolio\models\entities\Client;
 use PDO;
 
 class DaoClient implements Dao
@@ -16,7 +16,7 @@ class DaoClient implements Dao
     public function __construct()
     {
         $this->nomTable= "clients";
-        $this->MySql= new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
+        $this->MySql= new MySqlConnection('localhost', 'jvdb', 'root', '');
     }
 
 
@@ -62,10 +62,6 @@ class DaoClient implements Dao
             if (get_class($client) == 'Maham\GameFolio\models\objects\Client') {
 
 
-                if ($this->existeClient($client)) {
-                    echo "l'element existe déja!!";
-                } else {
-
                     $sql = 'INSERT INTO ' . $this->nomTable . '(nom,prenom,dateNaissance,email,telephone,motdepasse) VALUES (?,?,?,?,?,?)';
 
                     $nom = $client->getNom();
@@ -89,7 +85,6 @@ class DaoClient implements Dao
                     $requete->execute();
                     $requete->fetchAll();
                 }
-            }
         }
         catch (Exception $e){
             throw new Exception($e->getMessage());
@@ -99,7 +94,7 @@ class DaoClient implements Dao
 
 
 
-    public function existeClient(Client $client):bool
+    /*public function existeClient(Client $client):bool
      {
 
              $tab=$this->selectAll();
@@ -107,7 +102,6 @@ class DaoClient implements Dao
              for ($i = 0; $i < count($tab); $i++) {
 
                  $resultat = $resultat || (($client->getNom() == $tab[$i]->getNom()) &&
-                         ($client->getPrenom() == $tab[$i]->getPrenom()) &&
                          ($client->getPrenom() == $tab[$i]->getPrenom()) &&
                          ($client->getDateNaissance() == $tab[$i]->getDateNaissance()) &&
                          ($client->getEmail() == $tab[$i]->getEmail()) &&
@@ -117,6 +111,23 @@ class DaoClient implements Dao
              return $resultat;
 
      }
+
+    public function existeParams(Client $client):bool
+    {
+
+        $tab=$this->selectAll();
+        $resultat=false;
+        for ($i = 0; $i < count($tab); $i++) {
+
+            $resultat = $resultat || ((
+
+                    ($client->getEmail() == $tab[$i]->getEmail()) ||
+                    ($client->getTelephone() == $tab[$i]->getTelephone()) ||
+                    ($client->getMotDePasse() == $tab[$i]->getMotDePasse())));
+        }
+        return $resultat;
+
+    }*/
 
 
 

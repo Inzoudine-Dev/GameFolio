@@ -1,6 +1,6 @@
 <?php
 
-namespace Maham\GameFolio\models\objects;
+namespace Maham\GameFolio\models\entities;
 
 use DateTime;
 
