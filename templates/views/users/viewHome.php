@@ -13,7 +13,10 @@
                 <a href="/GameFolio/home/offres" class="lien_offre1_class">
 
                     <article class="offre1_class">
-                        <?php echo $objet2;?>
+                        <p class="data_offre_class"><?php echo $offre1->getId();?></p>
+                        <p class="data_offre_class"><?php echo $offre1->getNomOffre();?></p>
+                        <p class="data_offre_class"><?php echo $offre1->getReduction();?></p>
+                        <p class="data_offre_class"><?php echo $offre1->getJeuVideoId();?></p>
                     </article>
 
                 </a>
@@ -21,7 +24,21 @@
                 <a href="/GameFolio/home/offres" class="lien_offre2_class">
 
                     <article class="offre2_class">
-                        <?php echo $objet2;?>
+                        <p class="data_offre_class"><?php echo $offre2->getId();?></p>
+                        <p class="data_offre_class"><?php echo $offre2->getNomOffre();?></p>
+                        <p class="data_offre_class"><?php echo $offre2->getReduction();?></p>
+                        <p class="data_offre_class"><?php echo $offre2->getJeuVideoId();?></p>
+                    </article>
+
+                </a>
+
+                <a href="/GameFolio/home/offres" class="lien_offre2_class">
+
+                    <article class="offre2_class">
+                        <p class="data_offre_class"><?php echo $offre2->getId();?></p>
+                        <p class="data_offre_class"><?php echo $offre2->getNomOffre();?></p>
+                        <p class="data_offre_class"><?php echo $offre2->getReduction();?></p>
+                        <p class="data_offre_class"><?php echo $offre2->getJeuVideoId();?></p>
                     </article>
 
                 </a>
@@ -34,7 +51,7 @@
 
         <section>
 
-            <h1 class="titre_jeuxCourses_class">Jeux de courses</h1>
+            <h1 class="titre_jeuxCourses_class"><?php echo $jeu1->getCategorie();?></h1>
 
             <div class="games_race_class">
 
@@ -42,6 +59,14 @@
 
                     <a href="/GameFolio/home/games" class="lien_imageGame1_class">
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+
+
+                            <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
+                            <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
+                            <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
+                            <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
+
+
                     </a>
 
                 </article>
@@ -51,6 +76,12 @@
 
                     <a href="/GameFolio/home/games" class="lien_imageGame1_class">
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+
+                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
+
                     </a>
 
                 </article>
@@ -60,6 +91,12 @@
 
                     <a href="/GameFolio/home/games" class="lien_imageGame1_class">
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+
+                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
+
                     </a>
 
                 </article>
@@ -69,6 +106,13 @@
 
                     <a href="/GameFolio/home/games" class="lien_imageGame1_class">
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+
+                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
+
+
                     </a>
 
                 </article>
@@ -93,16 +137,10 @@
 
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
-                    </a>
-
-                </article>
-
-
-                <article class="game_class">
-
-                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
-
-                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
 
                     </a>
 
@@ -115,6 +153,11 @@
 
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
+                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
+
                     </a>
 
                 </article>
@@ -125,6 +168,27 @@
                     <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
 
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+
+                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
+
+                    </a>
+
+                </article>
+
+
+                <article class="game_class">
+
+                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
+
+                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+
+                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
+                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
 
                     </a>
 

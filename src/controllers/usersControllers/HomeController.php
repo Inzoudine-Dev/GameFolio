@@ -5,6 +5,8 @@ namespace Maham\GameFolio\controllers\usersControllers;
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
 use Maham\GameFolio\managers\ManagerClient;
+use Maham\GameFolio\managers\ManagerJeu;
+use Maham\GameFolio\managers\ManagerOffre;
 
 class HomeController extends Controller
 {
@@ -14,8 +16,17 @@ class HomeController extends Controller
     {
 
         $ManagerClient=new ManagerClient();
-        $Data=$ManagerClient->SelectAll();
+        $ManagerOffre=new ManagerOffre();
+        $ManagerJeu=new ManagerJeu();
+
+        $Data1=$ManagerClient->SelectAll();
+        $Data2=$ManagerOffre->SelectAll();
+        $Data3=$ManagerJeu->SelectAll();
+
+        $Data=$Data1+$Data2+$Data3;
+
         $Data["title"]="Home";/*determine le titre de la page*/
+
         parent::render("Home", $Data);
     }
 

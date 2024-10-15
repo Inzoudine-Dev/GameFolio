@@ -2,14 +2,20 @@
 
 namespace Maham\GameFolio\managers;
 
-use Maham\GameFolio\models\entities\Client;
+use Maham\GameFolio\models\DAOs\DaoOffre;
 
 class ManagerOffre implements Manager
 {
 
     public function SelectAll(): array
     {
-        // TODO: Implement SelectAll() method.
+        $daoOffre=new DaoOffre();
+        $listeOffre=$daoOffre->SelectAll();
+        $listeOffreAssociative=[];
+        for($i=0;$i<count($listeOffre);$i++){
+            $listeOffreAssociative=$listeOffreAssociative+["offre".$i+1=>$listeOffre[$i]];
+        }
+        return $listeOffreAssociative;
     }
 
     public function SelectAllById(): array
@@ -17,7 +23,7 @@ class ManagerOffre implements Manager
         // TODO: Implement SelectAllById() method.
     }
 
-    public function insert(Client $client): void
+    public function insert(Object $client): void
     {
         // TODO: Implement insert() method.
     }

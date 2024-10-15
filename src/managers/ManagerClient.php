@@ -16,7 +16,7 @@ class ManagerClient implements Manager
         $listeClient=$daoClient->SelectAll();
         $listeClientAssociative=[];
         for($i=0;$i<count($listeClient);$i++){
-            $listeClientAssociative=$listeClientAssociative+["objet".$i+1=>$listeClient[$i]];
+            $listeClientAssociative=$listeClientAssociative+["client".$i+1=>$listeClient[$i]];
         }
         return $listeClientAssociative;
     }

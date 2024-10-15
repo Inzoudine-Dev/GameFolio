@@ -9,7 +9,7 @@ require '../vendor/autoload.php';
 $MySql =new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
 
 /*test exceptions*/
-try {
+/*try {
     $MySql->getConnection();
     echo "connexion ok!!!";
 }catch (Exception $e){
@@ -27,7 +27,7 @@ try {
 // Définir cette fonction comme gestionnaire des exceptions
 set_exception_handler('monGestionnaireException');*/
 
-$daoClient=new DaoClient();
+/*$daoClient=new DaoClient();
 
 $client=new Client(1,"MAHAMOUD","Inzoudine",new DateTime('2024-09-08 00:00:00'),"mahamoud-inzoudine@hotmail.fr","0612919361","monMdp");
 
@@ -43,3 +43,13 @@ echo"\n";
 echo $daoClient->existeClient($client4);
 echo $daoClient->existeParams($client);
 /*$daoClient->insert($client2);*/
+
+$Data1["title1"]="Home1";
+$Data1["title2"]="Home1";
+$Data1["title3"]="Home3";
+
+$Data2["title4"]="Home4";
+$Data2["title5"]="Home5";
+$Data2["title6"]="Home6";
+
+var_dump($Data1+$Data2);

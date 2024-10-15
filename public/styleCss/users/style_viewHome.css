@@ -18,8 +18,14 @@
 
     margin: 5px;
     display: flex;
+    justify-content: center;
 
 }
+
+p.info_jeu_class{
+    text-align: center;
+}
+
 
 .offre1_class{
     border:solid 1px;
