@@ -10,7 +10,7 @@
             <div class="offres_class">
 
 
-                <a href="/GameFolio/home/offres" class="lien_offre1_class">
+                <a href="/GameFolio/users/home/offres" class="lien_offre1_class">
 
                     <article class="offre1_class">
                         <p class="data_offre_class"><?php echo 'Identifiant offre '.$offre1->getId();?></p>
@@ -21,7 +21,7 @@
 
                 </a>
 
-                <a href="/GameFolio/home/offres" class="lien_offre2_class">
+                <a href="/GameFolio/users/home/offres" class="lien_offre2_class">
 
                     <article class="offre2_class">
                         <p class="data_offre_class"><?php echo 'Identifiant offre '.$offre2->getId();?></p>
@@ -32,7 +32,7 @@
 
                 </a>
 
-                <a href="/GameFolio/home/offres" class="lien_offre2_class">
+                <a href="/GameFolio/users/home/offres" class="lien_offre2_class">
 
                     <article class="offre2_class">
                         <p class="data_offre_class"><?php echo 'Identifiant offre '.$offre2->getId();?></p>
