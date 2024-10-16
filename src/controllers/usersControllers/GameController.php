@@ -8,13 +8,12 @@ use Maham\GameFolio\managers\ManagerClient;
 
 class GameController extends Controller
 {
-    #[Route('/GameFolio/home/games', 'GET')]
+    #[Route('/GameFolio/users/home/games', 'GET')]
     public function index()
     {
 
-        $ManagerClient=new ManagerClient();
-        $ListeClient=$ManagerClient->SelectAll();
-        parent::render("Game", $ListeClient);
+        $Data["title"]="Games";/*determine le titre de la page*/
+        parent::render("Game", $Data);
     }
 
 }

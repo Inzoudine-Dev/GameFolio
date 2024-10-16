@@ -57,7 +57,7 @@
 
                 <article class="game_class">
 
-                    <a href="/GameFolio/home/games" class="lien_imageGame1_class">
+                    <a href="/GameFolio/users/home/games" class="lien_imageGame1_class">
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
 
@@ -74,7 +74,7 @@
 
                 <article class="game_class">
 
-                    <a href="/GameFolio/home/games" class="lien_imageGame1_class">
+                    <a href="/GameFolio/users/home/games" class="lien_imageGame1_class">
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
                         <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
@@ -89,7 +89,7 @@
 
                 <article class="game_class">
 
-                    <a href="/GameFolio/home/games" class="lien_imageGame1_class">
+                    <a href="/GameFolio/users/home/games" class="lien_imageGame1_class">
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
                         <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
@@ -104,7 +104,7 @@
 
                 <article class="game_class">
 
-                    <a href="/GameFolio/home/games" class="lien_imageGame1_class">
+                    <a href="/GameFolio/users/home/games" class="lien_imageGame1_class">
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
                         <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
@@ -133,7 +133,7 @@
 
                 <article class="game_class">
 
-                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
+                    <a href="/GameFolio/users/home/games" class="lien_iconeConnexion_class">
 
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
@@ -149,7 +149,7 @@
 
                 <article class="game_class">
 
-                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
+                    <a href="/GameFolio/users/home/games" class="lien_iconeConnexion_class">
 
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
@@ -165,7 +165,7 @@
 
                 <article class="game_class">
 
-                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
+                    <a href="/GameFolio/users/home/games" class="lien_iconeConnexion_class">
 
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 
@@ -181,7 +181,7 @@
 
                 <article class="game_class">
 
-                    <a href="/GameFolio/home/games" class="lien_iconeConnexion_class">
+                    <a href="/GameFolio/users/home/games" class="lien_iconeConnexion_class">
 
                         <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
 

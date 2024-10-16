@@ -11,7 +11,7 @@ use Maham\GameFolio\managers\ManagerOffre;
 class HomeController extends Controller
 {
 
-    #[Route('/GameFolio/home', 'GET')]
+    #[Route('/GameFolio/users/home', 'GET')]
     public function index()
     {
 
@@ -27,11 +27,12 @@ class HomeController extends Controller
 
         $Data["title"]="Home";/*determine le titre de la page*/
 
+
         parent::render("Home", $Data);
     }
 
 
-    #[Route('/GameFolio/home/','GET')]
+    #[Route('/GameFolio/users/home/','GET')]
     public function indexRedirect()
     {
         $this->index();

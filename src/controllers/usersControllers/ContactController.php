@@ -9,13 +9,12 @@ use Maham\GameFolio\managers\ManagerClient;
 class ContactController extends  Controller
 {
 
-    #[Route('/GameFolio/home/contacts', 'GET')]
+    #[Route('/GameFolio/users/home/contacts', 'GET')]
     public function index()
     {
 
-        $ManagerClient=new ManagerClient();
-        $ListeClient=$ManagerClient->SelectAll();
-        parent::render("Contact", $ListeClient);
+        $Data["title"]="Contacts";/*determine le titre de la page*/
+        parent::render("Contact", $Data);
     }
 
 }

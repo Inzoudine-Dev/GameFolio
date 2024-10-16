@@ -10,20 +10,20 @@ use Maham\GameFolio\managers\ManagerClient;
 class LoginController extends Controller
 {
 
-    #[Route('/GameFolio/home/login', 'GET')]
+    #[Route('/GameFolio/users/home/login', 'GET')]
     public function index()
     {
         $Data["title"]="Login";/*determine le titre de la page*/
         parent::render("Login", $Data);
     }
 
-    #[Route('/GameFolio/home/login/','GET')]
+    #[Route('/GameFolio/users/home/login/','GET')]
     public function indexRedirect()
     {
         $this->index();
     }
 
-    #[Route('/GameFolio/home/login', 'POST')]
+    #[Route('/GameFolio/users/home/login', 'POST')]
     public function login()
     {
 
@@ -36,7 +36,7 @@ class LoginController extends Controller
 
         else{
 
-            header('Location:/GameFolio/home');/*a modifier*/
+            header('Location:/GameFolio/users/home');/*a modifier*/
         }
 
     }

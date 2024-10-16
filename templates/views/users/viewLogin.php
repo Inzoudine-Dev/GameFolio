@@ -8,7 +8,7 @@ header("Pragma: no-cache");
 
     <h1 class="titre_form_login">Connecter-vous !!</h1>
 
-    <form action="/GameFolio/home/login" method="post" class="form_login_class">
+    <form action="/GameFolio/users/home/login" method="post" class="form_login_class">
 
 
             <input type="email" name ="email" placeholder="email" class="input_email_class" required>
@@ -32,6 +32,6 @@ header("Pragma: no-cache");
 
     <div class="text_inscription">
         <h1 class="titre_form_login">Vous n'avez pas encore de conpte ??</h1>
-        <h1 class="titre_form_login"> <a href="/GameFolio/home">Inscrivez-vous avec ce lien!!</a> </h1>
+        <h1 class="titre_form_login"> <a href="/GameFolio/users/home">Inscrivez-vous avec ce lien!!</a> </h1>
     </div>
 </section>
