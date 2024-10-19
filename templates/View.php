@@ -44,7 +44,7 @@ class View
     public function view(array $donnees = null)
     {
 
-        if(file_exists(VIEWS . $this->getFichier()) && file_exists(VIEWS.'../../bases/users/usersBase.php')) {
+        if(file_exists(VIEWS . $this->getFichier()) && file_exists(VIEWS.'../../bases/usersBase.php')) {
             ob_start();
 
             if($donnees){
@@ -54,7 +54,7 @@ class View
             $content = ob_get_clean();
 
 
-            require VIEWS.'../../bases/users/usersBase.php';//de vue utilisateurs on sort une fois et on entre dans templates.
+            require VIEWS . '../../bases/usersBase.php';//de vue utilisateurs on sort une fois et on entre dans templates.
         }
         else{
             throw new \Exception("Attention erreur, la vue ou template demander n'existe pas pour Utilisateurs!!!");
@@ -64,17 +64,17 @@ class View
     public function viewAdmin(array $donnees = null)
     {
 
-        if(file_exists(VIEWS_ADMIN . $this->getFichier()) && file_exists(VIEWS_ADMIN.'../../bases/administrators/administratorsBase.php')) {
+        if(file_exists(VIEWS_ADMIN . $this->getFichier()) && file_exists(VIEWS_ADMIN.'../../bases/administratorsBase.php')) {
             ob_start();
 
             if($donnees){
                 extract($donnees);
             }
-            require VIEWS. $this->getFichier();
+            require VIEWS_ADMIN.$this->getFichier();
             $content = ob_get_clean();
 
 
-            require VIEWS_ADMIN.'../../bases/administrators/administratorsBase.php';//de vue utilisateurs on sort une fois et on entre dans templates.
+            require VIEWS_ADMIN . '../../bases/administratorsBase.php';//de vue utilisateurs on sort une fois et on entre dans templates.
         }
         else{
             throw new \Exception("Attention erreur, la vue ou template demander n'existe pas pour Utilisateurs!!!");

@@ -3,6 +3,7 @@
 namespace Application;
 
 use Config\routes\Router;
+use Maham\GameFolio\controllers\adminControllers\LoginAdminController;
 use Maham\GameFolio\controllers\usersControllers\BoutiqueController;
 use Maham\GameFolio\controllers\usersControllers\ContactController;
 use Maham\GameFolio\controllers\usersControllers\GameController;
@@ -24,6 +25,7 @@ class Application
     // Enregistrement des routes à partir des attributs dans les contrôleurs
     private function registerRoutes()
     {
+        /*users routes*/
         $this->router->addControllerRoutes(HomeController::class);
         $this->router->addControllerRoutes(GameController::class);
         $this->router->addControllerRoutes(OffreController::class);
@@ -31,6 +33,9 @@ class Application
         $this->router->addControllerRoutes(BoutiqueController::class);
         $this->router->addControllerRoutes(ContactController::class);
         $this->router->addControllerRoutes(LoginController::class);
+
+        /*administrators routes*/
+        $this->router->addControllerRoutes(LoginAdminController::class);
     }
 
     // Exécute l'application

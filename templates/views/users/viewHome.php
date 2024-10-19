@@ -1,199 +1,57 @@
+<form class="form_recherche_class">
+    <input type="text" placeholder="Recherche" class="input_recherche_class">
+</form>
 
+<section>
+    <div class="offres_class">
+        <?php foreach ($offres as $offre): ?>
+            <a href="/GameFolio/users/home/offres" class="lien_offre_class">
+                <article class="offre_class">
+                    <p class="data_offre_class">Identifiant offre : <?php echo $offre->getId(); ?></p>
+                    <p class="data_offre_class"><?php echo $offre->getNomOffre(); ?> disponible !</p>
+                    <p class="data_offre_class">Réduction : <?php echo $offre->getReduction(); ?> euros</p>
+                    <p class="data_offre_class">Identifiant jeu de l'offre : <?php echo $offre->getJeuVideoId(); ?></p>
+                </article>
+            </a>
+        <?php endforeach; ?>
+    </div>
 
+</section>
 
-        <form class="form_recherche_class">
-            <input type="text" placeholder="Recherche" class="input_recherche_class">
-        </form>
+<hr>
 
-        <section>
+<section>
 
-            <div class="offres_class">
-
-
-                <a href="/GameFolio/users/home/offres" class="lien_offre1_class">
-
-                    <article class="offre1_class">
-                        <p class="data_offre_class"><?php echo 'Identifiant offre '.$offre1->getId();?></p>
-                        <p class="data_offre_class"><?php echo $offre1->getNomOffre().' disponible !';?></p>
-                        <p class="data_offre_class"><?php echo 'Réduction de '.$offre1->getReduction().' euros';?></p>
-                        <p class="data_offre_class"><?php echo "Identifiant jeu de l'offre ".$offre1->getJeuVideoId();?></p>
-                    </article>
-
+    <div class="games_race_class">
+        <?php foreach ($jeux as $jeu): ?>
+            <article class="game_class">
+                <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
+                    <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+                    <p class="info_jeu_class">ID : <?php echo $jeu->getId(); ?></p>
+                    <p class="info_jeu_class">Nom : <?php echo $jeu->getNomJeu(); ?></p>
+                    <p class="info_jeu_class">Catégorie : <?php echo $jeu->getCategorie(); ?></p>
+                    <p class="info_jeu_class">Prix : <?php echo $jeu->getPrix(); ?> euros</p>
                 </a>
+            </article>
+        <?php endforeach; ?>
+    </div>
+</section>
 
-                <a href="/GameFolio/users/home/offres" class="lien_offre2_class">
+<hr>
 
-                    <article class="offre2_class">
-                        <p class="data_offre_class"><?php echo 'Identifiant offre '.$offre2->getId();?></p>
-                        <p class="data_offre_class"><?php echo $offre2->getNomOffre().' disponible !';?></p>
-                        <p class="data_offre_class"><?php echo 'Réduction de '.$offre2->getReduction().' euros';?></p>
-                        <p class="data_offre_class"><?php echo "Identifiant jeu de l'offre ".$offre2->getJeuVideoId();?></p>
-                    </article>
+<section>
 
+    <div class="games_race_class">
+        <?php foreach ($jeux as $jeu): ?>
+            <article class="game_class">
+                <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
+                    <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+                    <p class="info_jeu_class">ID : <?php echo $jeu->getId(); ?></p>
+                    <p class="info_jeu_class">Nom : <?php echo $jeu->getNomJeu(); ?></p>
+                    <p class="info_jeu_class">Catégorie : <?php echo $jeu->getCategorie(); ?></p>
+                    <p class="info_jeu_class">Prix : <?php echo $jeu->getPrix(); ?> euros</p>
                 </a>
-
-                <a href="/GameFolio/users/home/offres" class="lien_offre2_class">
-
-                    <article class="offre2_class">
-                        <p class="data_offre_class"><?php echo 'Identifiant offre '.$offre2->getId();?></p>
-                        <p class="data_offre_class"><?php echo $offre2->getNomOffre().' disponible !';?></p>
-                        <p class="data_offre_class"><?php echo 'Réduction de '.$offre2->getReduction().' euros';?></p>
-                        <p class="data_offre_class"><?php echo "Identifiant jeu de l'offre ".$offre2->getJeuVideoId();?></p>
-                    </article>
-
-                </a>
-
-            </div>
-
-        </section>
-
-        <hr>
-
-        <section>
-
-            <h1 class="titre_jeuxCourses_class">Jeux de combat</h1>
-
-            <div class="games_race_class">
-
-                <article class="game_class">
-
-                    <a href="/GameFolio/users/home/games" class="lien_imageGame1_class">
-                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
-
-
-                            <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
-                            <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
-                            <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
-                            <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
-
-
-                    </a>
-
-                </article>
-
-
-                <article class="game_class">
-
-                    <a href="/GameFolio/users/home/games" class="lien_imageGame1_class">
-                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
-
-                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
-
-                    </a>
-
-                </article>
-
-
-                <article class="game_class">
-
-                    <a href="/GameFolio/users/home/games" class="lien_imageGame1_class">
-                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
-
-                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
-
-                    </a>
-
-                </article>
-
-
-                <article class="game_class">
-
-                    <a href="/GameFolio/users/home/games" class="lien_imageGame1_class">
-                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
-
-                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
-
-
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <hr>
-
-
-        <section>
-
-            <h1 class="titre_jeuxCombat_class">Jeux de combat</h1>
-
-            <div class="games_race_class">
-
-                <article class="game_class">
-
-                    <a href="/GameFolio/users/home/games" class="lien_iconeConnexion_class">
-
-                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
-
-                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
-
-                    </a>
-
-                </article>
-
-
-                <article class="game_class">
-
-                    <a href="/GameFolio/users/home/games" class="lien_iconeConnexion_class">
-
-                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
-
-                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
-
-                    </a>
-
-                </article>
-
-
-                <article class="game_class">
-
-                    <a href="/GameFolio/users/home/games" class="lien_iconeConnexion_class">
-
-                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
-
-                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
-
-                    </a>
-
-                </article>
-
-
-                <article class="game_class">
-
-                    <a href="/GameFolio/users/home/games" class="lien_iconeConnexion_class">
-
-                        <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
-
-                        <p class="info_jeu_class"><?php echo $jeu1->getId();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getNomJeu();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getCategorie();?></p>
-                        <p class="info_jeu_class"><?php echo $jeu1->getPrix().' euros';?></p>
-
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
+            </article>
+        <?php endforeach; ?>
+    </div>
+</section>

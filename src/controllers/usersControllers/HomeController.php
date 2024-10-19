@@ -4,7 +4,6 @@ namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
-use Maham\GameFolio\managers\ManagerClient;
 use Maham\GameFolio\managers\ManagerJeu;
 use Maham\GameFolio\managers\ManagerOffre;
 
@@ -15,27 +14,46 @@ class HomeController extends Controller
     public function index()
     {
 
-        $ManagerClient=new ManagerClient();
-        $ManagerOffre=new ManagerOffre();
-        $ManagerJeu=new ManagerJeu();
+            // Récupérer les données des managers
 
-        $Data1=$ManagerClient->SelectAll();
-        $Data2=$ManagerOffre->SelectAll();
-        $Data3=$ManagerJeu->SelectAll();
+            $offres = $this->troisOffre();
+            $jeux =$this->quatresJeux();
 
-        $Data=$Data1+$Data2+$Data3;
+            // Créer un tableau de données à passer à la vue
+            $data = [
+                'title' => 'Home',
+                'offres' => $offres,
+                'jeux' => $jeux,
+            ];
 
-        $Data["title"]="Home";/*determine le titre de la page*/
-
-
-        parent::render("Home", $Data);
-    }
-
+            // Appel de la vue avec les données
+            parent::render('home', $data);
+        }
 
     #[Route('/GameFolio/users/home/','GET')]
     public function indexRedirect()
     {
         $this->index();
+    }
+
+        public function troisOffre():array{
+            $newOffres=[];
+            for($i=1;$i<4;$i++){
+                $managerOffre = new ManagerOffre();
+                $offres = $managerOffre->SelectAll();
+                $newOffres[$i]=$offres['offre'.$i];
+            }
+            return $newOffres;
+        }
+
+    public function quatresJeux():array{
+        $newJeux=[];
+        for($i=1;$i<5;$i++){
+            $managerJeux = new ManagerJeu();
+            $jeux = $managerJeux->SelectAll();
+            $newJeux[$i]=$jeux['jeu'.$i];
+        }
+        return $newJeux;
     }
 
 }

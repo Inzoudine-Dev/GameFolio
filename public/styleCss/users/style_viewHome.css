@@ -15,39 +15,26 @@
 }
 
 .offres_class{
-
     margin: 5px;
     display: flex;
-    justify-content: center;
-
+    justify-content: space-evenly;
 }
 
 p.info_jeu_class{
     text-align: center;
 }
 
-
-.offre1_class{
+a.lien_offre_class{
     border:solid 1px;
-    padding: 50px;
-    margin: 5px;
+    padding: 5px;
     border-radius: 20px;
 }
 
-.offre2_class{
-    border:solid 1px;
-    padding: 50px;
-    margin: 5px;
-    border-radius: 20px;
+.data_offre_class{
+    display: flex;
+    justify-content: center;
 }
 
-.offre1_class:hover{
-    border-color:orangered;
-}
-
-.offre2_class:hover{
-    border-color:orangered;
-}
 
 hr{
     margin-top: 20px;
