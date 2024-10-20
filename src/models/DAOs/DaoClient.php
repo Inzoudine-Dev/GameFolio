@@ -16,7 +16,7 @@ class DaoClient implements Dao
     public function __construct()
     {
         $this->nomTable= "clients";
-        $this->MySql= new MySqlConnection('localhost', 'jvdb', 'root', '');
+        $this->MySql= new MySqlConnection('localhost', 'jvdb2', 'root', '');
     }
 
 

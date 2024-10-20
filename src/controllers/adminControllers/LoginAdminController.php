@@ -4,6 +4,7 @@ namespace Maham\GameFolio\controllers\adminControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
+use Maham\GameFolio\managers\ManagerClient;
 
 class LoginAdminController extends Controller
 {
@@ -15,7 +16,6 @@ class LoginAdminController extends Controller
         /*destruction de la session de connection aprés deconnection*/
         session_start();
         session_destroy();
-
 
         $Data["title"]="Login-Admin";
         $Data["statut"]="deconecter";
@@ -35,25 +35,41 @@ class LoginAdminController extends Controller
     public function login()
     {
 
-        //$ManagerClient=new ManagerClient();
+        if ($this->isValid($_POST["email"], $_POST["password"]) == false) {
+            $Data["msg"] = 'Email ou mot de passe incorrecte!!';
+            $Data["title"] = "Login-Admin";
+            $Data["statut"] = "deconecter";
+            parent::renderAmdin("AdminLogin", $Data);
+        } else {
 
-        if($this->isValid($_POST["email"],$_POST["password"])==false){
-            $Data["msg"]='Email ou mot de passe incorrecte!!';
-            $Data["title"]="Login-Admin";
-            $Data["statut"]="deconecter";
-            parent::renderAmdin("AdminLogin",  $Data);
+            if (($this->existeClient($_POST["email"], $_POST["password"])) == false) {
+                $Data["msg"] = 'Email et/ou mot de passe innéxistant!!';
+                $Data["title"] = "Login-Admin";
+                $Data["statut"] = "deconecter";
+                parent::renderAmdin("AdminLogin", $Data);
+            } else {
+                session_start();
+                $_SESSION['statut'] = "connecter";
+                $_SESSION['email'] = $_POST["email"];
+                $_SESSION['password'] = $_POST["password"];
+                header('Location:/GameFolio/administrators/login/home');/*a modifier*/
+            }
+
         }
-
-        else{
-            session_start();
-            $_SESSION['statut']="connecter";
-            $_SESSION['email']=$_POST["email"];
-            $_SESSION['password']=$_POST["password"];
-            header('Location:/GameFolio/administrators/login/home');/*a modifier*/
-        }
-
     }
 
+    /*verification de l'existance de l'email et mot de passe*/
+    public function existeClient(string $email, string $password):bool{
+        $ManagerClient=new ManagerClient();
+        $clients=$ManagerClient->selectAll();
+        $resultat=false;
+        foreach ($clients as $client){
+            if($client->getEmail()==$email && $client->getMotDePasse()==$password){
+                $resultat=$resultat||($client->getEmail()==$email && $client->getMotDePasse()==$password);
+            }
+        }
+        return $resultat;
+    }
 
     public function isValid(string $email, string $password): bool {
         // 1. Validation de l'email
