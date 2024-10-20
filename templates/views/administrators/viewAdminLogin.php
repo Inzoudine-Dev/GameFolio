@@ -1,14 +1,14 @@
-
+<?php session_start(); ?>
 <?php
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 ?>
-<section>
+<section class="sexion_admin_login">
 
     <h1 class="titre_form_login">Connecter-vous !!</h1>
 
-    <form action="/GameFolio/users/home/login" method="post" class="form_login_class">
+    <form action="/GameFolio/administrators/login" method="post" class="form_login_class">
 
 
         <input type="email" name ="email" placeholder="email" class="input_email_class" required>
@@ -23,6 +23,12 @@ header("Pragma: no-cache");
 
 
     </form>
+
+    <p class="statut_connection"><?php echo $statut ?></p>
+
+    <h1 class="testhomeadmin"><?php if(isset($_SESSION['statut'])) echo $_SESSION['statut']?></h1>
+    <h1 class="testhomeadmin"><?php if(isset($_SESSION['email'])) echo $_SESSION['email']?></h1>
+    <h1 class="testhomeadmin"><?php if(isset($_SESSION['password'])) echo $_SESSION['password']?></h1>
 
     <div class="error_class">
         <?php if (isset($donnees['msg'])): ?>

@@ -11,7 +11,7 @@
         <li class="li_class" id="six_id"><a href="/GameFolio/users/home/contacts" class="">CONTACTS</a></li>
         <li class="li_class"><a href="/GameFolio/users/home" class="">USERS</a></li>
         <a href="/GameFolio/users/home/login" class="lien_iconeConnexion_class"  id="icone_id">
-            <img src="/GameFolio/public/images/icone_connexion.png" alt="logo" class="icone_connexion"/>
+            <img src="/GameFolio/public/images/icone_connexion.png" alt="logo" class="icone_connexion" id="icone_connexion_id"/>
         </a>
 
     </ul>

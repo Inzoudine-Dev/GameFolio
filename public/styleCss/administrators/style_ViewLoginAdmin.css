@@ -1,3 +1,8 @@
+.sexion_admin_login{
+    margin-top: 100px;
+}
+
+
 .input_email_class{
     width: 25%;
     margin: auto;
@@ -6,6 +11,10 @@
     text-align: center;
     border-radius: 20px;
 
+}
+
+p.statut_connection{
+    text-align: center;
 }
 
 .titre_form_login{

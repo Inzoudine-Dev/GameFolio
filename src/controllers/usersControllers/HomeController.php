@@ -14,10 +14,9 @@ class HomeController extends Controller
     public function index()
     {
 
-            // Récupérer les données des managers
 
             $offres = $this->troisOffre();
-            $jeux =$this->quatresJeux();
+            $jeux = $this->quatresJeux();
 
             // Créer un tableau de données à passer à la vue
             $data = [
@@ -28,7 +27,8 @@ class HomeController extends Controller
 
             // Appel de la vue avec les données
             parent::render('home', $data);
-        }
+
+    }
 
     #[Route('/GameFolio/users/home/','GET')]
     public function indexRedirect()

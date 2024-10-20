@@ -10,8 +10,8 @@
     <title><?php echo $title ?></title>
     <link rel="shortcut icon" href="/GameFolio/public/images/logoAdmin.png" />
     <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/administrators/adminHeader.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/administrators/style_viewHome.css" media="all" />
-
+    <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/administrators/style_viewLoginAdmin.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/administrators/style_viewHomeAdmin.css" media="all" />
 
 </head>
 
@@ -35,7 +35,7 @@
 
 </body>
 
-<!--  <script type="text/javascript" src="/GameFolio/public/scriptsJs/scriptHeader.js"></script> -->
+<script type="text/javascript" src=<?php echo $scriptIcone_Connection ?>> </script>
 
 </html>
 

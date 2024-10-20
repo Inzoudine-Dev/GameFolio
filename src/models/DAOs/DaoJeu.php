@@ -17,7 +17,7 @@ class DaoJeu implements Dao
     public function __construct()
     {
         $this->nomTable= "jeuxVideos";
-        $this->MySql= new MySqlConnection('localhost', 'jvdb', 'root', '');
+        $this->MySql= new MySqlConnection('localhost', 'jvdb2', 'root', '');
     }
 
 
@@ -40,7 +40,7 @@ class DaoJeu implements Dao
             $tab = [];
             for ($i = 0; $i < count($resultat); $i++) {
 
-                $jeuVideo = new JeuVideo($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix']);
+                $jeuVideo = new JeuVideo($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'],$resultat[$i]['urlImage'], $resultat[$i]['prix']);
                 $tab[$i] = $jeuVideo;
             }
 

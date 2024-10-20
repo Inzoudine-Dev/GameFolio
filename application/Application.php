@@ -3,6 +3,7 @@
 namespace Application;
 
 use Config\routes\Router;
+use Maham\GameFolio\controllers\adminControllers\HomeAdminController;
 use Maham\GameFolio\controllers\adminControllers\LoginAdminController;
 use Maham\GameFolio\controllers\usersControllers\BoutiqueController;
 use Maham\GameFolio\controllers\usersControllers\ContactController;
@@ -36,6 +37,7 @@ class Application
 
         /*administrators routes*/
         $this->router->addControllerRoutes(LoginAdminController::class);
+        $this->router->addControllerRoutes(HomeAdminController::class);
     }
 
     // Exécute l'application

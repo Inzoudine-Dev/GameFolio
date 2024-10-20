@@ -1,3 +1,4 @@
+
 <form class="form_recherche_class">
     <input type="text" placeholder="Recherche" class="input_recherche_class">
 </form>
@@ -26,7 +27,7 @@
         <?php foreach ($jeux as $jeu): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
-                    <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+                    <img src=<?php echo $jeu->getUrlImage(); ?> alt="logo" class="image_game_class"/>
                     <p class="info_jeu_class">ID : <?php echo $jeu->getId(); ?></p>
                     <p class="info_jeu_class">Nom : <?php echo $jeu->getNomJeu(); ?></p>
                     <p class="info_jeu_class">Catégorie : <?php echo $jeu->getCategorie(); ?></p>
@@ -45,7 +46,7 @@
         <?php foreach ($jeux as $jeu): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
-                    <img src="/GameFolio/public/images/imagesGames/imageGame1.jpg" alt="logo" class="image_game_class"/>
+                    <img src=<?php echo $jeu->getUrlImage(); ?> alt="logo" class="image_game_class"/>
                     <p class="info_jeu_class">ID : <?php echo $jeu->getId(); ?></p>
                     <p class="info_jeu_class">Nom : <?php echo $jeu->getNomJeu(); ?></p>
                     <p class="info_jeu_class">Catégorie : <?php echo $jeu->getCategorie(); ?></p>

@@ -36,7 +36,7 @@
 
     </body>
 
-  <!--  <script type="text/javascript" src="/GameFolio/public/scriptsJs/scriptHeader.js"></script> -->
+    <script type="text/javascript" src=<?php echo $scriptIcone_Connection ?>> </script>
 
 </html>
 
