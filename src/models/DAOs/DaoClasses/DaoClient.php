@@ -5,8 +5,8 @@ namespace Maham\GameFolio\models\DAOs\DaoClasses;
 use Config\dbConfig\MySqlConnection;
 use DateTime;
 use Exception;
+use Maham\GameFolio\entities\Client;
 use Maham\GameFolio\models\DAOs\DaoInterfaces\DataClientsInterface;
-use Maham\GameFolio\models\entities\Client;
 use PDO;
 
 class DaoClient implements DataClientsInterface

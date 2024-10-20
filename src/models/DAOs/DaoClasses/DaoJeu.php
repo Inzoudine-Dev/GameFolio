@@ -4,8 +4,8 @@ namespace Maham\GameFolio\models\DAOs\DaoClasses;
 
 use Config\dbConfig\MySqlConnection;
 use Exception;
+use Maham\GameFolio\entities\JeuVideo;
 use Maham\GameFolio\models\DAOs\DaoInterfaces\DataGamesInterface;
-use Maham\GameFolio\models\entities\JeuVideo;
 use PDO;
 
 class DaoJeu implements DataGamesInterface
