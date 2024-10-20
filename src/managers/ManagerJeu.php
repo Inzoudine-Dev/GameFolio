@@ -2,9 +2,9 @@
 
 namespace Maham\GameFolio\managers;
 
-use Maham\GameFolio\models\DAOs\DaoJeu;
+use Maham\GameFolio\models\DAOs\DaoClasses\DaoJeu;
 
-class ManagerJeu implements Manager
+class ManagerJeu
 {
 
     public function SelectAll(): array

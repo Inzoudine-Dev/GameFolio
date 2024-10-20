@@ -1,10 +1,10 @@
 <?php
 
-namespace Maham\GameFolio\managers;
+namespace Maham\GameFolio\models\DAOs\DaoClasses;
 
-use Maham\GameFolio\models\entities\Client;
+use Maham\GameFolio\models\DAOs\DaoInterfaces\DataAdminInterface;
 
-class ManagerAbonnement implements  Manager
+class DaoAdmin implements DataAdminInterface
 {
 
     public function SelectAll(): array
@@ -12,12 +12,12 @@ class ManagerAbonnement implements  Manager
         // TODO: Implement SelectAll() method.
     }
 
-    public function SelectAllById(): array
+    public function SelectAllById(int $id): object
     {
         // TODO: Implement SelectAllById() method.
     }
 
-    public function insert(Client $client): void
+    public function insert(object $object): void
     {
         // TODO: Implement insert() method.
     }

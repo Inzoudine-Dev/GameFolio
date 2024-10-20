@@ -1,9 +1,8 @@
 <?php
 
-namespace Maham\GameFolio\models\DAOs;
+namespace Maham\GameFolio\models\DAOs\DaoInterfaces;
 
-
-interface Dao
+interface DataInterface
 {
 
     /*selectionnne les données en bdd et les met dans un tableau d'objet BO du dossier objects*/
@@ -21,6 +20,5 @@ interface Dao
 
     /*prend un objet BO et le supprime s'il existe dans une table de bdd*/
     public function delete(object $objet):void;
-
 
 }

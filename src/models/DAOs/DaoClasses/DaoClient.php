@@ -1,14 +1,15 @@
 <?php
 
-namespace Maham\GameFolio\models\DAOs;
+namespace Maham\GameFolio\models\DAOs\DaoClasses;
 
 use Config\dbConfig\MySqlConnection;
 use DateTime;
 use Exception;
+use Maham\GameFolio\models\DAOs\DaoInterfaces\DataClientsInterface;
 use Maham\GameFolio\models\entities\Client;
 use PDO;
 
-class DaoClient implements Dao
+class DaoClient implements DataClientsInterface
 {
     private string $nomTable;
     private MySqlConnection $MySql;
@@ -145,5 +146,10 @@ class DaoClient implements Dao
     public function delete(object $objet): void
     {
         // TODO: Implement delete() method.
+    }
+
+    public function SelectByEmail(): array
+    {
+        // TODO: Implement SelectByEmail() method.
     }
 }

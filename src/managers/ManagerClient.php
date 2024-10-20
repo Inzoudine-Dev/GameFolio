@@ -3,10 +3,10 @@
 namespace Maham\GameFolio\managers;
 
 
-use Maham\GameFolio\models\DAOs\DaoClient;
+use Maham\GameFolio\models\DAOs\DaoClasses\DaoClient;
 
 
-class ManagerClient implements Manager
+class ManagerClient
 {
 
 /*ici le tableau de client doi etre associative pour etre utiliser ensuite par le controller*/

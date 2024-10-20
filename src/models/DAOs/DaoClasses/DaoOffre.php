@@ -1,13 +1,14 @@
 <?php
 
-namespace Maham\GameFolio\models\DAOs;
+namespace Maham\GameFolio\models\DAOs\DaoClasses;
 
 use Config\dbConfig\MySqlConnection;
 use Exception;
+use Maham\GameFolio\models\DAOs\DaoInterfaces\DataOffresInterface;
 use Maham\GameFolio\models\entities\Offre;
 use PDO;
 
-class DaoOffre implements Dao
+class DaoOffre implements DataOffresInterface
 {
 
     private string $nomTable;

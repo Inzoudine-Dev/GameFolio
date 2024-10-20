@@ -1,8 +1,6 @@
 <?php
 
 use Config\dbConfig\MySqlConnection;
-use Maham\GameFolio\models\DAOs\DaoClient;
-use Maham\GameFolio\models\entities\Client;
 
 require '../vendor/autoload.php';
 

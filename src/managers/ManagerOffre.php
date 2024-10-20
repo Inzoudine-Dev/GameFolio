@@ -2,9 +2,9 @@
 
 namespace Maham\GameFolio\managers;
 
-use Maham\GameFolio\models\DAOs\DaoOffre;
+use Maham\GameFolio\models\DAOs\DaoClasses\DaoOffre;
 
-class ManagerOffre implements Manager
+class ManagerOffre
 {
 
     public function SelectAll(): array
