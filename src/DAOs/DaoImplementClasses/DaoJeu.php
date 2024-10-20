@@ -1,22 +1,23 @@
 <?php
 
-namespace Maham\GameFolio\models\DAOs\DaoClasses;
+namespace Maham\GameFolio\DAOs\DaoImplementClasses;
 
 use Config\dbConfig\MySqlConnection;
 use Exception;
-use Maham\GameFolio\entities\Offre;
-use Maham\GameFolio\models\DAOs\DaoInterfaces\DataOffresInterface;
+use Maham\GameFolio\DAOs\DaoInterfaces\DataGamesInterface;
+use Maham\GameFolio\entities\JeuVideo;
 use PDO;
 
-class DaoOffre implements DataOffresInterface
+class DaoJeu implements DataGamesInterface
 {
+
 
     private string $nomTable;
     private MySqlConnection $MySql;
 
     public function __construct()
     {
-        $this->nomTable= "offres";
+        $this->nomTable= "jeuxVideos";
         $this->MySql= new MySqlConnection('localhost', 'jvdb2', 'root', '');
     }
 
@@ -40,8 +41,8 @@ class DaoOffre implements DataOffresInterface
             $tab = [];
             for ($i = 0; $i < count($resultat); $i++) {
 
-                $offre = new Offre($resultat[$i]['id'], $resultat[$i]['nomOffre'], $resultat[$i]['reduction'], $resultat[$i]['jeuxVideos_id']);
-                $tab[$i] = $offre;
+                $jeuVideo = new JeuVideo($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'],$resultat[$i]['urlImage'], $resultat[$i]['prix']);
+                $tab[$i] = $jeuVideo;
             }
 
             return $tab;

@@ -3,7 +3,7 @@
 namespace Maham\GameFolio\managers;
 
 
-use Maham\GameFolio\models\DAOs\DaoClasses\DaoClient;
+use Maham\GameFolio\DAOs\DaoImplementClasses\DaoClient;
 
 
 class ManagerClient

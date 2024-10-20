@@ -1,6 +1,6 @@
 <?php
 
-namespace Maham\GameFolio\models\DAOs\DaoInterfaces;
+namespace Maham\GameFolio\DAOs\DaoInterfaces;
 
 interface DataAdminInterface extends DataInterface
 {

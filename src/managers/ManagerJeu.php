@@ -2,7 +2,7 @@
 
 namespace Maham\GameFolio\managers;
 
-use Maham\GameFolio\models\DAOs\DaoClasses\DaoJeu;
+use Maham\GameFolio\DAOs\DaoImplementClasses\DaoJeu;
 
 class ManagerJeu
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Maham\GameFolio\models\DAOs\DaoClasses;
+namespace Maham\GameFolio\DAOs\DaoImplementClasses;
 
-use Maham\GameFolio\models\DAOs\DaoInterfaces\DataAdminInterface;
+use Maham\GameFolio\DAOs\DaoInterfaces\DataAdminInterface;
 
 class DaoAdmin implements DataAdminInterface
 {
