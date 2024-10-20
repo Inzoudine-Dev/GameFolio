@@ -42,7 +42,10 @@ class LoginAdminController extends Controller
             parent::renderAmdin("AdminLogin", $Data);
         } else {
 
-            if (($this->existeClient($_POST["email"], $_POST["password"])) == false) {
+
+            $ManagerClient=new ManagerClient();
+            $clients=$ManagerClient->selectAll();
+            if (($this->existeClient($_POST["email"], $_POST["password"],$clients)) == false) {
                 $Data["msg"] = 'Email et/ou mot de passe innéxistant!!';
                 $Data["title"] = "Login-Admin";
                 $Data["statut"] = "deconecter";
@@ -59,9 +62,8 @@ class LoginAdminController extends Controller
     }
 
     /*verification de l'existance de l'email et mot de passe*/
-    public function existeClient(string $email, string $password):bool{
-        $ManagerClient=new ManagerClient();
-        $clients=$ManagerClient->selectAll();
+    public function existeClient(string $email, string $password,array $clients):bool{
+
         $resultat=false;
         foreach ($clients as $client){
             if($client->getEmail()==$email && $client->getMotDePasse()==$password){
