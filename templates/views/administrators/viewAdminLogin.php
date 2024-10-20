@@ -17,7 +17,7 @@ header("Expires: 0")
 
         <input type="password" name ="password" placeholder="Mot de passe" class="input_password_class" required>
 
-        <input type="text" name ="texttest" placeholder="text test" class="input_password_class" required>
+
 
         <input type="submit" value="connexion" class="bt_connexion_class">
 
