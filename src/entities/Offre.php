@@ -7,30 +7,35 @@ class Offre
     private int $id;
     private String $nomOffre;
     private float $reduction;
+    private bool $principale;
     private int $jeuVideoId;
 
-    /**
-     * @param int $id
-     * @param String $nonOffre
-     * @param float $reduction
-     * @param JeuVideo $jeuVideo
-     */
-    public function __construct(int $id, string $nomOffre, float $reduction, int $jeuVideoId)
+
+    public function __construct(int $id, string $nomOffre, float $reduction, bool $principale,int $jeuVideoId)
     {
         $this->id = $id;
         $this->nomOffre = $nomOffre;
         $this->reduction = $reduction;
+        $this->principale = $principale;
         $this->jeuVideoId = $jeuVideoId;
     }
 
-
-   /* public function test(int $id, string $nonOffre, float $reduction, int $jeuVideoId)
+    /**
+     * @return bool
+     */
+    public function isPrincipale(): bool
     {
-        $this->id = $id;
-        $this->nonOffre = $nonOffre;
-        $this->reduction = $reduction;
-        $this->jeuVideoId = $jeuVideoId;
-    }*/
+        return $this->principale;
+    }
+
+    /**
+     * @param bool $principale
+     */
+    public function setPrincipale(bool $principale): void
+    {
+        $this->principale = $principale;
+    }
+
 
     /**
      * @return int
@@ -81,7 +86,7 @@ class Offre
     }
 
     /**
-     * @return JeuVideo
+     * @return VideoGame
      */
     public function getJeuVideoId(): int
     {
@@ -89,7 +94,7 @@ class Offre
     }
 
     /**
-     * @param JeuVideo $jeuVideo
+     * @param VideoGame $jeuVideo
      */
     public function setJeuVideoId(int $jeuVideoId): void
     {
@@ -98,7 +103,7 @@ class Offre
 
     public function __toString(): string
 {
-    return 'id_Offre:'.$this->getId().', nomOffre :'.$this->getNomOffre().', reduction :'.$this->getReduction().', idJeuVideo :'.$this->getjeuVideoId();
+    return 'id_Offre:'.$this->getId().', nomOffre :'.$this->getNomOffre().', reduction :'.$this->getReduction().', est principale :'.$this->isPrincipale().', idJeuVideo :'.$this->getjeuVideoId();
 }
 
 

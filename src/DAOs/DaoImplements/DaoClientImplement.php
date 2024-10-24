@@ -1,15 +1,15 @@
 <?php
 
-namespace Maham\GameFolio\DAOs\DaoImplementClasses;
+namespace Maham\GameFolio\DAOs\DaoImplements;
 
-use Config\dbConfig\MySqlConnection;
 use DateTime;
 use Exception;
-use Maham\GameFolio\DAOs\DaoInterfaces\DataClientsInterface;
+use Maham\GameFolio\DAOs\DaoInterfaces\DaoClientInterface;
+use Maham\GameFolio\DAOs\dbConfig\MySqlConnection;
 use Maham\GameFolio\entities\Client;
 use PDO;
 
-class DaoClient implements DataClientsInterface
+class DaoClientImplement implements DaoClientInterface
 {
     private string $nomTable;
     private MySqlConnection $MySql;

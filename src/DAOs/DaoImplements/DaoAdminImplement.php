@@ -1,10 +1,10 @@
 <?php
 
-namespace Maham\GameFolio\DAOs\DaoImplementClasses;
+namespace Maham\GameFolio\DAOs\DaoImplements;
 
-use Maham\GameFolio\DAOs\DaoInterfaces\DataAdminInterface;
+use Maham\GameFolio\DAOs\DaoInterfaces\DaoAdminInterface;
 
-class DaoAdmin implements DataAdminInterface
+class DaoAdminImplement implements DaoAdminInterface
 {
 
     public function SelectAll(): array

@@ -4,6 +4,7 @@
 </form>
 
 <section>
+    <h2 class="title_offer">Les offres du jour</h2>
     <div class="offres_class">
         <?php foreach ($offres as $offre): ?>
             <a href="/GameFolio/users/home/offres" class="lien_offre_class">
@@ -11,6 +12,7 @@
                     <p class="data_offre_class">Identifiant offre : <?php echo $offre->getId(); ?></p>
                     <p class="data_offre_class"><?php echo $offre->getNomOffre(); ?> disponible !</p>
                     <p class="data_offre_class">Réduction : <?php echo $offre->getReduction(); ?> euros</p>
+                    <p class="data_offre_class">EST principale : <?php echo $offre->isPrincipale(); ?> </p>
                     <p class="data_offre_class">Identifiant jeu de l'offre : <?php echo $offre->getJeuVideoId(); ?></p>
                 </article>
             </a>
@@ -22,9 +24,9 @@
 <hr>
 
 <section>
-
+    <h2 class="title_figth_games">Jeux de combat</h2>
     <div class="games_race_class">
-        <?php foreach ($jeux as $jeu): ?>
+        <?php foreach ($jeuxCombat as $jeu): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
                     <img src=<?php echo $jeu->getUrlImage(); ?> alt="logo" class="image_game_class"/>
@@ -42,8 +44,9 @@
 
 <section>
 
+    <h2 class="title_race_games">Jeux de course</h2>
     <div class="games_race_class">
-        <?php foreach ($jeux as $jeu): ?>
+        <?php foreach ($jeuxCourse as $jeu): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
                     <img src=<?php echo $jeu->getUrlImage(); ?> alt="logo" class="image_game_class"/>

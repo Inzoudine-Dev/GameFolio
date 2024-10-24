@@ -1,6 +1,6 @@
 <?php
 
-namespace Config\dbConfig;
+namespace Maham\GameFolio\DAOs\dbConfig;
 
 use PDO;
 

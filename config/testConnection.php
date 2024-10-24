@@ -1,6 +1,8 @@
 <?php
 
-use Config\dbConfig\MySqlConnection;
+use Maham\GameFolio\DAOs\DaoImplements\DaoOffreImplement;
+use Maham\GameFolio\DAOs\dbConfig\MySqlConnection;
+use Maham\GameFolio\managers\ManagerImplements\ManagerGameImplement;
 
 require '../vendor/autoload.php';
 
@@ -25,7 +27,7 @@ $MySql =new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
 // Définir cette fonction comme gestionnaire des exceptions
 set_exception_handler('monGestionnaireException');*/
 
-/*$daoClient=new DaoClient();
+/*$daoClient=new DaoClientImplement();
 
 $client=new Client(1,"MAHAMOUD","Inzoudine",new DateTime('2024-09-08 00:00:00'),"mahamoud-inzoudine@hotmail.fr","0612919361","monMdp");
 
@@ -42,7 +44,7 @@ echo $daoClient->existeClient($client4);
 echo $daoClient->existeParams($client);
 /*$daoClient->insert($client2);*/
 
-$Data1["title1"]="Home1";
+/*$Data1["title1"]="Home1";
 $Data1["title2"]="Home1";
 $Data1["title3"]="Home3";
 
@@ -50,4 +52,10 @@ $Data2["title4"]="Home4";
 $Data2["title5"]="Home5";
 $Data2["title6"]="Home6";
 
-var_dump($Data1+$Data2);
+var_dump($Data1+$Data2);*/
+/*$dao=new DaoOffreImplement();
+$dao->selectNOffresPrincipal(3);*/
+
+
+//var_dump((new DaoOffreImplement())->selectNOffresPrincipal(3));
+var_dump((new ManagerGameImplement())->getNRaceGamesPrincipal(4));

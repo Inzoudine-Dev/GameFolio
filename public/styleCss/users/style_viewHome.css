@@ -62,20 +62,16 @@ hr{
     margin:1%;
 }
 
-.image_game_class:hover{
-    /*border: solid blue 5px;*/
-}
 
-.game_class:hover{
-    width: 40%;
-    transform: translateY(-15%);
-    margin: auto;
-}
 
-.titre_jeuxCourses_class{
+.title_figth_games{
     text-align: center;
 }
 
-.titre_jeuxCombat_class{
+.title_race_games{
+    text-align: center;
+}
+
+.title_offer{
     text-align: center;
 }

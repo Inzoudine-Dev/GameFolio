@@ -34,7 +34,7 @@
             <?php include '../../GameFolio/templates/views/users/usersFooter.php'?>
         </footer>
 
-        <script type="text/javascript" src="/GameFolio/public/scriptsJs/users/scriptHeader.js"> </script>
+        <script type="text/javascript" src=<?php echo $scriptIcone_Connection ?>> </script>
     </body>
 
 </html>

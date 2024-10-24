@@ -6,6 +6,7 @@ const dropdownContent = document.querySelector('.dropdown-content');
 dropdownButton.addEventListener('click', function(e) {
     e.preventDefault(); // Empêche le comportement par défaut du lien
     dropdownContent.classList.toggle('show');
+    //dropdownContent.style.position='absolute';
 });
 
 // Ferme le menu si l'utilisateur clique en dehors

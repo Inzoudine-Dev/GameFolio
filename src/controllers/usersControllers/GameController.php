@@ -4,7 +4,6 @@ namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
-use Maham\GameFolio\managers\ManagerClient;
 
 class GameController extends Controller
 {
@@ -12,8 +11,9 @@ class GameController extends Controller
     public function index()
     {
 
-        $Data["title"]="Games";/*determine le titre de la page*/
-        parent::render("Game", $Data);
+            $Data["title"] = "Games";/*determine le titre de la page*/
+            parent::render("Game", $Data);
+
     }
 
 }
