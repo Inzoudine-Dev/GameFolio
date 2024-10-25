@@ -16,7 +16,7 @@
                     <p class="data_offre_class">Identifiant jeu de l'offre : <?php echo $offre->getJeuVideoId(); ?></p>
                 </article>
             </a>
-        <?php endforeach; ?>
+        <?php endforeach ;  ?>
     </div>
 
 </section>
@@ -26,16 +26,18 @@
 <section>
     <h2 class="title_figth_games">Jeux de combat</h2>
     <div class="games_race_class">
-        <?php foreach ($jeuxCombat as $jeu): ?>
+        <?php foreach ($games as $game): ?>
+        <?php if ($game->isAfficher()==true && $game->getCategorie()=="combat"): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
-                    <img src=<?php echo $jeu->getUrlImage(); ?> alt="logo" class="image_game_class"/>
-                    <p class="info_jeu_class">ID : <?php echo $jeu->getId(); ?></p>
-                    <p class="info_jeu_class">Nom : <?php echo $jeu->getNomJeu(); ?></p>
-                    <p class="info_jeu_class">Catégorie : <?php echo $jeu->getCategorie(); ?></p>
-                    <p class="info_jeu_class">Prix : <?php echo $jeu->getPrix(); ?> euros</p>
+                    <img src=<?php echo $game->getUrlImage(); ?> alt="logo" class="image_game_class"/>
+                    <p class="info_jeu_class">ID : <?php echo $game->getId(); ?></p>
+                    <p class="info_jeu_class">Nom : <?php echo $game->getNomJeu(); ?></p>
+                    <p class="info_jeu_class">Catégorie : <?php echo $game->getCategorie(); ?></p>
+                    <p class="info_jeu_class">Prix : <?php echo $game->getPrix(); ?> euros</p>
                 </a>
             </article>
+            <?php endif ;  ?>
         <?php endforeach; ?>
     </div>
 </section>
@@ -46,16 +48,18 @@
 
     <h2 class="title_race_games">Jeux de course</h2>
     <div class="games_race_class">
-        <?php foreach ($jeuxCourse as $jeu): ?>
+        <?php foreach ($games as $game): ?>
+        <?php if ($game->isAfficher()==true && $game->getCategorie()=="course"): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
-                    <img src=<?php echo $jeu->getUrlImage(); ?> alt="logo" class="image_game_class"/>
-                    <p class="info_jeu_class">ID : <?php echo $jeu->getId(); ?></p>
-                    <p class="info_jeu_class">Nom : <?php echo $jeu->getNomJeu(); ?></p>
-                    <p class="info_jeu_class">Catégorie : <?php echo $jeu->getCategorie(); ?></p>
-                    <p class="info_jeu_class">Prix : <?php echo $jeu->getPrix(); ?> euros</p>
+                    <img src=<?php echo $game->getUrlImage(); ?> alt="logo" class="image_game_class"/>
+                    <p class="info_jeu_class">ID : <?php echo $game->getId(); ?></p>
+                    <p class="info_jeu_class">Nom : <?php echo $game->getNomJeu(); ?></p>
+                    <p class="info_jeu_class">Catégorie : <?php echo $game->getCategorie(); ?></p>
+                    <p class="info_jeu_class">Prix : <?php echo $game->getPrix(); ?> euros</p>
                 </a>
             </article>
+            <?php endif ;  ?>
         <?php endforeach; ?>
     </div>
 </section>

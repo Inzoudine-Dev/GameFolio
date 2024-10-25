@@ -10,8 +10,8 @@ class ManagerOffreImplement implements ManagerOffreInterface
 
     public function getNOffresForHome(int $n): array
     {
-        $dao=new DaoOffreImplement();/*utilise dao ici si on utilise pas de factory*/
-        return $dao->selectNOffresForHome($n);
+        /*utilise dao implement ici si on utilise pas de factory*/
+        return (new DaoOffreImplement())->selectNOffresForHome($n);
     }
 
 

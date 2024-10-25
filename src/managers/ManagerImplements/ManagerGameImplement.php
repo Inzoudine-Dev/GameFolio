@@ -8,19 +8,26 @@ use Maham\GameFolio\managers\ManagerInterfaces\ManagerGameInterface;
 class ManagerGameImplement implements ManagerGameInterface
 {
 
+    public function getNGamesForHome(int $n): array
+    {
+        /*utilise daoimplt ici si on utilise pas de factory*/
+        return (new DaoGameImplement())->selectNGamesForHome($n);
+    }
 
     public function getNFightGamesForHome(int $n): array
     {
 
-        $dao=new DaoGameImplement();/*utilise dao ici si on utilise pas de factory*/
-        return $dao->selectNFightGamesForHome($n);
+        /*utilise daoimplt ici si on utilise pas de factory*/
+        return (new DaoGameImplement())->selectNFightGamesForHome($n);
 
     }
 
+
+
     public function getNRaceGamesForHome(int $n): array
     {
-        $dao=new DaoGameImplement();/*utilise dao ici si on utilise pas de factory*/
-        return $dao->selectNRaceGamesForHome($n);
+        /*utilise dao ici si on utilise pas de factory*/
+        return (new DaoGameImplement())->selectNRaceGamesForHome($n);
     }
 
 

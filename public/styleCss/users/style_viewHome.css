@@ -7,9 +7,9 @@
 }
 
 .input_recherche_class{
-    width: 25%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    width: 300px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
     border-radius: 20px;
 }
@@ -65,13 +65,16 @@ hr{
 
 
 .title_figth_games{
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .title_race_games{
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .title_offer{
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }

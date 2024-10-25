@@ -1,5 +1,6 @@
 <?php
 
+use Maham\GameFolio\DAOs\DaoImplements\DaoGameImplement;
 use Maham\GameFolio\DAOs\DaoImplements\DaoOffreImplement;
 use Maham\GameFolio\DAOs\dbConfig\MySqlConnection;
 use Maham\GameFolio\managers\ManagerImplements\ManagerGameImplement;
@@ -56,6 +57,9 @@ var_dump($Data1+$Data2);*/
 /*$dao=new DaoOffreImplement();
 $dao->selectNOffresPrincipal(3);*/
 
+/*<?php if ($offre->getId()>1): ?>
+        <?php endif ;  ?>*/
 
 //var_dump((new DaoOffreImplement())->selectNOffresPrincipal(3));
-var_dump((new ManagerGameImplement())->getNRaceGamesPrincipal(4));
+//var_dump((new ManagerGameImplement())->getNRaceGamesPrincipal(4));
+var_dump((new DaoGameImplement())->selectNGamesForHome(8));

@@ -22,6 +22,30 @@ class DaoGameImplement implements DaoGameInterface
     }
 
 
+    public function selectNGamesForHome(int $n): array
+    {
+        try {
+            $connection = $this->MySql->getConnection();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        $sql = 'SELECT * FROM '.$this->nomTable.' where afficher=1'.' LIMIT '.$n;
+        $requete = $connection->prepare($sql);
+        $requete->execute();
+        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+        $tab = [];
+        for ($i = 0; $i < count($resultat); $i++) {
+
+            $tab[$i]= new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'],$resultat[$i]['urlImage'],$resultat[$i]['afficher']);
+
+        }
+
+        return $tab;
+    }
+
+
     public function selectNRaceGamesForHome(int $n): array
     {
         try {

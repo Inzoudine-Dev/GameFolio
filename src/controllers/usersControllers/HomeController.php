@@ -17,8 +17,7 @@ class HomeController extends Controller
             $data = [
                 'title' => 'Home',
                 'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
-                'jeuxCombat' => (new ManagerGameImplement())->getNFightGamesForHome(4),
-                'jeuxCourse' => (new ManagerGameImplement())->getNRaceGamesForHome(4),
+                'games' => (new ManagerGameImplement())->getNGamesForHome(8),
             ];
 
             // Appel de la vue avec les données
