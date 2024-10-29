@@ -11,6 +11,7 @@ use Maham\GameFolio\controllers\usersControllers\GameController;
 use Maham\GameFolio\controllers\usersControllers\HomeController;
 use Maham\GameFolio\controllers\usersControllers\InfoController;
 use Maham\GameFolio\controllers\usersControllers\LoginController;
+use Maham\GameFolio\controllers\usersControllers\LogoutController;
 use Maham\GameFolio\controllers\usersControllers\OffreController;
 
 class Application
@@ -34,6 +35,7 @@ class Application
         $this->router->addControllerRoutes(BoutiqueController::class);
         $this->router->addControllerRoutes(ContactController::class);
         $this->router->addControllerRoutes(LoginController::class);
+        $this->router->addControllerRoutes(LogoutController::class);
 
         /*administrators routes*/
         $this->router->addControllerRoutes(LoginAdminController::class);

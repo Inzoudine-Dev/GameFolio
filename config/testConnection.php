@@ -7,7 +7,7 @@ use Maham\GameFolio\managers\ManagerImplements\ManagerGameImplement;
 
 require '../vendor/autoload.php';
 
-$MySql =new MySqlConnection('localhost', 'gestion_abonnement2', 'root', '');
+$MySql =new MySqlConnection('localhost', 'jvdb2', 'root', '');
 
 /*test exceptions*/
 /*try {
@@ -62,4 +62,21 @@ $dao->selectNOffresPrincipal(3);*/
 
 //var_dump((new DaoOffreImplement())->selectNOffresPrincipal(3));
 //var_dump((new ManagerGameImplement())->getNRaceGamesPrincipal(4));
-var_dump((new DaoGameImplement())->selectNGamesForHome(8));
+//var_dump((new DaoGameImplement())->selectNGamesForHome(8));
+/*utilisation de as sinon les meme non sont combiner par php-coté phpmyadmin on a tout(ok)*/
+$sql = 'SELECT offres.id AS offre_id, offres.nomOffre,offres.reduction,offres.principale,offres.jeuxvideos_id,
+       videoGames.id AS jeu_id,videoGames.nomjeu,videoGames.prix,videoGames.id,videoGames.categorie,videoGames.urlImage,videoGames.afficher
+        FROM offres
+        INNER JOIN videoGames ON videoGames.id = offres.jeuxvideos_id
+        Limit 3';
+
+/*SELECT *
+        FROM offres
+        JOIN videoGames ON offres.jeuxvideos_id = videoGames.id
+        ORDER BY offres.id ASC*/
+/*/*WHERE utilisateurs.id = :id_utilisateur*/
+$pdo=$MySql->getConnection();
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$result =$stmt->fetchAll(PDO::FETCH_ASSOC);
+var_dump($result);

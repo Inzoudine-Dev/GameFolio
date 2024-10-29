@@ -13,12 +13,28 @@ class HomeController extends Controller
     #[Route('/GameFolio/users/home', 'GET')]
     public function index()
     {
-            // Créer un tableau de données à passer à la vue getNRaceGamesPrincipal
-            $data = [
-                'title' => 'Home',
-                'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
-                'games' => (new ManagerGameImplement())->getNGamesForHome(8),
-            ];
+
+            session_start();
+            if(!isset($_SESSION['statut'],$_SESSION['email'],$_SESSION['password'])){
+
+                $data = [
+                    'title' => 'Home',
+                    'messageDeconnexion' => 'Vous etes deconecter, connecter vous inscrivez vous!!',
+                    'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
+                    'games' => (new ManagerGameImplement())->getNGamesForHome(8),
+                ];
+
+            }else{
+
+                $data = [
+                    'title' => 'Home',
+                    'messageDeconnexion' => 'Bienvenue, vous etes connecter!!',
+                    'script' => '<script type="text/javascript" src=/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js> </script>',
+                    'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
+                    'games' => (new ManagerGameImplement())->getNGamesForHome(8),
+                ];
+
+            }
 
             // Appel de la vue avec les données
             parent::render('home', $data);

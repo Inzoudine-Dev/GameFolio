@@ -29,8 +29,9 @@ class DaoOffreImplement implements DaoOffreInterface
             throw new Exception($e->getMessage());
         }
 
-        $sql = 'SELECT * FROM '.$this->nomTable.' where principale=1'.' LIMIT '.$n;
+        $sql = 'SELECT * FROM '.$this->nomTable.' WHERE principale = 1 LIMIT :limit';
         $requete = $connection->prepare($sql);
+        $requete->bindValue(':limit', (int)$n, PDO::PARAM_INT);
         $requete->execute();
         $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
 

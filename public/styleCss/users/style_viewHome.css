@@ -64,17 +64,13 @@ hr{
 
 
 
-.title_figth_games{
+.title_categorie_games,.title_offer{
     display: flex;
     justify-content: center;
 }
 
-.title_race_games{
+p.statut_connection_class{
     display: flex;
     justify-content: center;
 }
 
-.title_offer{
-    display: flex;
-    justify-content: center;
-}

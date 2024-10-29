@@ -4,7 +4,6 @@ namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
-use Maham\GameFolio\managers\ManagerClient;
 
 
 class LoginController extends Controller
@@ -13,8 +12,8 @@ class LoginController extends Controller
     #[Route('/GameFolio/users/home/login', 'GET')]
     public function index()
     {
-        $Data["title"]="Login";/*determine le titre de la page*/
-        parent::render("Login", $Data);
+        $data["title"]="Login";/*determine le titre de la page*/
+        parent::render("Login", $data);
     }
 
     #[Route('/GameFolio/users/home/login/','GET')]
@@ -27,11 +26,10 @@ class LoginController extends Controller
     public function login()
     {
 
-        $ManagerClient=new ManagerClient();
         if($this->isValid($_POST["email"],$_POST["password"])==false){
-            $Data["msg"]='Email ou mot de passe incorrecte!!';
-            $Data["title"]="Login";
-            parent::render("Login",  $Data);
+            $data["msg"]='Email ou mot de passe incorrecte!!';
+            $data["title"]="Login";
+            parent::render("Login",  $data);
         }
 
         else{
@@ -40,7 +38,7 @@ class LoginController extends Controller
             $_SESSION['statut']="connecter";
             $_SESSION['email']=$_POST["email"];
             $_SESSION['password']=$_POST["password"];
-            header('Location:/GameFolio/users/home');/*a modifier*/
+            header('Location:/GameFolio/users/home');
         }
 
     }

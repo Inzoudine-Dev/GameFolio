@@ -13,23 +13,16 @@
             <li class="li_class" id="six_id"><a href="/GameFolio/users/home/contacts" class="">CONTACTS</a></li>
             <li class="li_class" id="six_id"><a href="/GameFolio/administrators/login" class="">ADMIN</a></li>
 
+            <div class="div_authentification">
 
-            <a href="#" class="lien_iconeConnexion_class" id="icone_id">
-                <img src="/GameFolio/public/images/icone_connexion.png" alt="logo" class="icone_connexion" id="icone_connexion_id" />
-            </a>
+                <a href="/GameFolio/users/home/login" class="lien_iconeConnexion_class" id="icone_id">
+                    <img src="/GameFolio/public/images/icone_connexion.png" alt="logo" class="icone_connexion" id="icone_connexion_id" />
+                </a>
 
-            <!-- Contenu du menu déroulant -->
-            <div class="dropdown-content">
-                <span class="arrow-down">▼</span>
-                <a href="#">Profil</a>
-                <a href="#">Mes offres d'emploi</a>
-                <a href="#">Mes avis</a>
-                <a href="#">Ma démographie</a>
-                <a href="#">Paramètres</a>
-                <a href="#">Centre d'aide</a>
-                <a href="#">Centre de confidentialité</a>
-                <a href="#">Déconnexion</a>
+                <a href="/GameFolio/users/home/logout" class="link_deconexion_class" id="link_deconexion_id">Déconexion</a>
+
             </div>
+
 
 
         </ul>

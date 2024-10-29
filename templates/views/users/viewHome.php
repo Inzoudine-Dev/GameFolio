@@ -3,6 +3,16 @@
     <input type="text" placeholder="Recherche" class="input_recherche_class">
 </form>
 
+
+<p class="statut_connection_class"><?php if(isset ($messageDeconnexion)){
+    echo $messageDeconnexion ;
+}else{
+    echo '';
+}
+?>
+</p>
+
+
 <section>
     <h2 class="title_offer">Les offres du jour</h2>
     <div class="offres_class">
@@ -24,7 +34,7 @@
 <hr>
 
 <section>
-    <h2 class="title_figth_games">Jeux de combat</h2>
+    <h2 class="title_categorie_games">Jeux de combat</h2>
     <div class="games_race_class">
         <?php foreach ($games as $game): ?>
         <?php if ($game->isAfficher()==true && $game->getCategorie()=="combat"): ?>
@@ -46,7 +56,7 @@
 
 <section>
 
-    <h2 class="title_race_games">Jeux de course</h2>
+    <h2 class="title_categorie_games">Jeux de course</h2>
     <div class="games_race_class">
         <?php foreach ($games as $game): ?>
         <?php if ($game->isAfficher()==true && $game->getCategorie()=="course"): ?>
