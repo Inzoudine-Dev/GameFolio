@@ -15,7 +15,7 @@ class LogoutController extends Controller
         session_start();
         if (!isset($_SESSION['statut'], $_SESSION['email'], $_SESSION['password'])) {
             $data['title']='Logout error';
-            $data['errorLogout']='Route non accéssible!! connecter vous!';
+            $data['errorLogout']='Route non accéssible!! connecter vous dabord!';
             parent::render("ErrorLogout", $data);
         }else{
             session_destroy();

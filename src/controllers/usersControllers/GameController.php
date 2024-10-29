@@ -16,6 +16,7 @@ class GameController extends Controller
             header('Location:/GameFolio/users/home/login');
         }else{
             $Data["title"] = "Games";/*determine le titre de la page*/
+            $Data['script']='<script type="text/javascript" src=/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js> </script>';
             parent::render("Game", $Data);
         }
     }
