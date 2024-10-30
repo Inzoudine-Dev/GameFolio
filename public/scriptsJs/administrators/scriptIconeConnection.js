@@ -4,5 +4,5 @@ let icone_connexion2=document.getElementById('icone_connexion2_id');
 
 
 icone_connexion.style.borderColor='green';
-link_deconnexion.style.visibility='visible';
+link_deconnexion.style.display='block';
 icone_connexion2.style.borderColor='green';
