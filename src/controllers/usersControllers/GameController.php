@@ -14,10 +14,11 @@ class GameController extends Controller
         session_start();
         if(!isset($_SESSION['statut'],$_SESSION['email'],$_SESSION['password'])){
             header('Location:/GameFolio/users/home/login');
+            exit();
         }else{
-            $Data["title"] = "Games";/*determine le titre de la page*/
-            $Data['script']='<script type="text/javascript" src=/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js> </script>';
-            parent::render("Game", $Data);
+            $data["title"] = "Games";/*determine le titre de la page*/
+            $data['script']='<script type="text/javascript" src=/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js> </script>';
+            parent::render("Game", $data);
         }
     }
 

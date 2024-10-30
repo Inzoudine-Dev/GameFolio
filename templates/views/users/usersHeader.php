@@ -19,7 +19,7 @@
                     <img src="/GameFolio/public/images/icone_connexion.png" alt="logo" class="icone_connexion" id="icone_connexion_id" />
                 </a>
 
-                <a href="/GameFolio/users/home/logout" class="link_deconexion_class" id="link_deconexion_id">Déconexion</a>
+                <a href="/GameFolio/users/home/logout" class="link_deconexion_class" id="link_deconexion_id">Conexion</a>
 
             </div>
 

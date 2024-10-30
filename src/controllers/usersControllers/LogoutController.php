@@ -20,6 +20,7 @@ class LogoutController extends Controller
         }else{
             session_destroy();
             header('Location:/GameFolio/users/home');
+            //exit();
         }
     }
 

@@ -39,6 +39,7 @@ class LoginController extends Controller
             $_SESSION['email']=$_POST["email"];
             $_SESSION['password']=$_POST["password"];
             header('Location:/GameFolio/users/home');
+            //exit();
         }
 
     }

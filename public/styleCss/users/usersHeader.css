@@ -31,7 +31,8 @@ div.div_authentification{
 
 a.link_deconexion_class{
     margin:0px;
-    display: none;
+    /*display: none;*/
+    pointer-events: none;
 }
 
 .lien_iconeConnexion_class{
