@@ -27,7 +27,7 @@ class LoginController extends Controller
     {
 
         if($this->isValid($_POST["email"],$_POST["password"])==false){
-            $data["msg"]='Email ou mot de passe incorrecte!!';
+            $data["erroMessage"]='Email ou mot de passe incorrecte!!';
             $data["title"]="Login";
             parent::render("Login",  $data);
         }

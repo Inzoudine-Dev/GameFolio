@@ -71,6 +71,21 @@ hr{
 
 p.statut_connection_class{
     display: flex;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+div.div_messageDeconnexion_class{
+    display: flex;
     justify-content: center;
+}
+
+.icone_connexion2{
+    border: solid red 2px;
+    width: 50px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 

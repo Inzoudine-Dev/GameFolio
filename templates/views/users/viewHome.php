@@ -3,14 +3,21 @@
     <input type="text" placeholder="Recherche" class="input_recherche_class">
 </form>
 
+<div class="div_messageDeconnexion_class" id="div_messageDeconnexion_id">
 
-<p class="statut_connection_class"><?php if(isset ($messageDeconnexion)){
-    echo $messageDeconnexion ;
-}else{
-    echo '';
-}
-?>
-</p>
+    <p class="statut_connection_class">
+
+        <?php if(isset ($messageDeconnexion)){
+            echo $messageDeconnexion ;
+            }else{
+                echo '';
+            } ?>
+
+    </p>
+
+    <img src="/GameFolio/public/images/icone_connexion.png" alt="logo" class="icone_connexion2" id="icone_connexion2_id" />
+
+</div>
 
 
 <section>
