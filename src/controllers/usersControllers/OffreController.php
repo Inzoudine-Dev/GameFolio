@@ -18,10 +18,14 @@ class OffreController extends Controller
         if (!isset($_SESSION['statut'],$_SESSION['email'],$_SESSION['password'])) {
             header('Location:/GameFolio/users/home/login');
         } else {
-            $Data["title"] = "Offres";/*determine le titre de la page*/
-            $Data['script']='<script type="text/javascript" src=/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js> </script>';
-            parent::render("Offre", $Data);
+
+            $data = [
+                'title' => 'Offres',
+                'script' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+            ];
+            parent::render("Offre", $data);
         }
+
     }
 
     #[Route('/GameFolio/users/home/offres/','GET')]

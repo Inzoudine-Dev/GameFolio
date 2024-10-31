@@ -10,7 +10,6 @@ class VideoGame
     private string $categorie;
     private float $prix;
     private string $urlimage;
-    private bool $afficher;
 
     /**
      * @param int $id
@@ -18,32 +17,16 @@ class VideoGame
      * @param string $categorie
      * @param float $prix
      */
-    public function __construct(int $id, string $nomJeu, string $categorie, float $prix,string $urlimage,bool $afficher)
+    public function __construct(int $id, string $nomJeu, string $categorie, float $prix,string $urlimage)
     {
         $this->id = $id;
         $this->nomJeu = $nomJeu;
         $this->categorie = $categorie;
         $this->urlimage = $urlimage;
         $this->prix = $prix;
-        $this->afficher = $afficher;
 
     }
 
-    /**
-     * @return bool
-     */
-    public function isAfficher(): bool
-    {
-        return $this->afficher;
-    }
-
-    /**
-     * @param bool $afficher
-     */
-    public function setAfficher(bool $afficher): void
-    {
-        $this->afficher = $afficher;
-    }
 
     /**
      * @return string
@@ -129,7 +112,7 @@ class VideoGame
 
     public function __toString(): string
 {
-    return 'id_jeu:'.$this->getId().', nomJeu :'.$this->getNomJeu().', categorie :'.$this->getCategorie().', prix :'.$this->getPrix().' urlimage :'.$this->getUrlimage().' est afficher :'.$this->isAfficher();
+    return 'id_jeu:'.$this->getId().', nomJeu :'.$this->getNomJeu().', categorie :'.$this->getCategorie().', prix :'.$this->getPrix().' urlimage :'.$this->getUrlimage();
 
 }
 

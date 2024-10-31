@@ -69,6 +69,11 @@ hr{
     justify-content: center;
 }
 
+.title_categorie_games{
+    margin-bottom: 0;
+    margin-top: 50px;
+}
+
 p.statut_connection_class{
     display: flex;
     text-align: center;

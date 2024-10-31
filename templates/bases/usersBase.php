@@ -36,15 +36,10 @@
         </footer>
 
 
-        <?php if(isset ($script)){
-            echo $script ;
-        }else{
-            echo '';
-        }
-        ?>
+
 
     </body>
-
+    <script type="text/javascript" src=<?php echo $script ?>> </script>
 </html>
 
 

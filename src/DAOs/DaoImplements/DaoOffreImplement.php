@@ -29,7 +29,7 @@ class DaoOffreImplement implements DaoOffreInterface
             throw new Exception($e->getMessage());
         }
 
-        $sql = 'SELECT * FROM '.$this->nomTable.' WHERE principale = 1 LIMIT :limit';
+        $sql = 'SELECT * FROM '.$this->nomTable.' LIMIT :limit';
         $requete = $connection->prepare($sql);
         $requete->bindValue(':limit', (int)$n, PDO::PARAM_INT);
         $requete->execute();
@@ -38,7 +38,7 @@ class DaoOffreImplement implements DaoOffreInterface
         $tab = [];
         for ($i = 0; $i < count($resultat); $i++) {
 
-            $tab[$i]= new Offre($resultat[$i]['id'], $resultat[$i]['nomOffre'], $resultat[$i]['reduction'],$resultat[$i]['principale'] ,$resultat[$i]['jeuxVideos_id']);
+            $tab[$i]= new Offre($resultat[$i]['id'], $resultat[$i]['nomOffre'], $resultat[$i]['reduction'],$resultat[$i]['jeuxVideos_id']);
 
         }
 
@@ -65,7 +65,7 @@ class DaoOffreImplement implements DaoOffreInterface
             $tab = [];
             for ($i = 0; $i < count($resultat); $i++) {
 
-                $tab[$i]= new Offre($resultat[$i]['id'], $resultat[$i]['nomOffre'], $resultat[$i]['reduction'],$resultat[$i]['principale'] , $resultat[$i]['jeuxVideos_id']);
+                $tab[$i]= new Offre($resultat[$i]['id'], $resultat[$i]['nomOffre'], $resultat[$i]['reduction'], $resultat[$i]['jeuxVideos_id']);
 
             }
 
@@ -76,4 +76,26 @@ class DaoOffreImplement implements DaoOffreInterface
         }
     }
 
+    public function selectOffreById(int $id): Offre
+    {
+
+        try {
+            $connection = $this->MySql->getConnection();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        $sql = 'SELECT * FROM ' . $this->nomTable . ' WHERE id = :id';
+        $requete = $connection->prepare($sql);
+        $requete->bindValue(':id', $id, PDO::PARAM_INT);
+        $requete->execute();
+        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($resultat) {
+            $offre = new Offre($resultat[0]['id'], $resultat[0]['nomOffre'], $resultat[0]['reduction'], $resultat[0]['jeuxVideos_id']);
+            return $offre;
+        }else{
+            return new Offre(0,'offre inexistant','0.0',0);
+        }
+    }
 }

@@ -7,34 +7,17 @@ class Offre
     private int $id;
     private String $nomOffre;
     private float $reduction;
-    private bool $principale;
     private int $jeuVideoId;
 
 
-    public function __construct(int $id, string $nomOffre, float $reduction, bool $principale,int $jeuVideoId)
+    public function __construct(int $id, string $nomOffre, float $reduction,int $jeuVideoId)
     {
         $this->id = $id;
         $this->nomOffre = $nomOffre;
         $this->reduction = $reduction;
-        $this->principale = $principale;
         $this->jeuVideoId = $jeuVideoId;
     }
 
-    /**
-     * @return bool
-     */
-    public function isPrincipale(): bool
-    {
-        return $this->principale;
-    }
-
-    /**
-     * @param bool $principale
-     */
-    public function setPrincipale(bool $principale): void
-    {
-        $this->principale = $principale;
-    }
 
 
     /**
@@ -103,7 +86,7 @@ class Offre
 
     public function __toString(): string
 {
-    return 'id_Offre:'.$this->getId().', nomOffre :'.$this->getNomOffre().', reduction :'.$this->getReduction().', est principale :'.$this->isPrincipale().', idJeuVideo :'.$this->getjeuVideoId();
+    return 'id_Offre:'.$this->getId().', nomOffre :'.$this->getNomOffre().', reduction :'.$this->getReduction().', idJeuVideo :'.$this->getjeuVideoId();
 }
 
 

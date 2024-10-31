@@ -13,7 +13,6 @@
                     <p class="data_offre_class">Identifiant offre : <?php echo $offre->getId(); ?></p>
                     <p class="data_offre_class"><?php echo $offre->getNomOffre(); ?> disponible !</p>
                     <p class="data_offre_class">Réduction : <?php echo $offre->getReduction(); ?> euros</p>
-                    <p class="data_offre_class">EST principale : <?php echo $offre->isPrincipale(); ?> </p>
                     <p class="data_offre_class">Identifiant jeu de l'offre : <?php echo $offre->getJeuVideoId(); ?></p>
                 </article>
             </a>
@@ -28,7 +27,7 @@
     <h2 class="title_categorie_games">Jeux de combat</h2>
     <div class="games_race_class">
         <?php foreach ($games as $game): ?>
-        <?php if ($game->isAfficher()==true && $game->getCategorie()=="combat"): ?>
+        <?php if ($game->getCategorie()=="combat"): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
                     <img src=<?php echo $game->getUrlImage(); ?> alt="logo" class="image_game_class"/>
@@ -50,7 +49,7 @@
     <h2 class="title_categorie_games">Jeux de course</h2>
     <div class="games_race_class">
         <?php foreach ($games as $game): ?>
-        <?php if ($game->isAfficher()==true && $game->getCategorie()=="course"): ?>
+        <?php if ($game->getCategorie()=="course"): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
                     <img src=<?php echo $game->getUrlImage(); ?> alt="logo" class="image_game_class"/>

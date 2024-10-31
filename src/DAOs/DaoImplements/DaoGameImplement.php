@@ -30,7 +30,7 @@ class DaoGameImplement implements DaoGameInterface
             throw new Exception($e->getMessage());
         }
 
-        $sql = 'SELECT * FROM '.$this->nomTable.' where afficher=1'.' LIMIT '.$n;
+        $sql = 'SELECT * FROM '.$this->nomTable.' LIMIT '.$n;
         $requete = $connection->prepare($sql);
         $requete->execute();
         $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
@@ -38,54 +38,7 @@ class DaoGameImplement implements DaoGameInterface
         $tab = [];
         for ($i = 0; $i < count($resultat); $i++) {
 
-            $tab[$i]= new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'],$resultat[$i]['urlImage'],$resultat[$i]['afficher']);
-
-        }
-
-        return $tab;
-    }
-
-
-    public function selectNRaceGamesForHome(int $n): array
-    {
-        try {
-            $connection = $this->MySql->getConnection();
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-
-        $sql = 'SELECT * FROM '.$this->nomTable.' where categorie="course" and afficher=1'.' LIMIT '.$n;
-        $requete = $connection->prepare($sql);
-        $requete->execute();
-        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
-
-        $tab = [];
-        for ($i = 0; $i < count($resultat); $i++) {
-
-            $tab[$i]= new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'],$resultat[$i]['urlImage'],$resultat[$i]['afficher']);
-
-        }
-
-        return $tab;
-    }
-
-    public function selectNFightGamesForHome(int $n): array
-    {
-        try {
-            $connection = $this->MySql->getConnection();
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-
-        $sql = 'SELECT * FROM '.$this->nomTable.' where categorie="combat" and afficher=1'.' LIMIT '.$n;
-        $requete = $connection->prepare($sql);
-        $requete->execute();
-        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
-
-        $tab = [];
-        for ($i = 0; $i < count($resultat); $i++) {
-
-            $tab[$i]= new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'],$resultat[$i]['urlImage'], $resultat[$i]['afficher']);
+            $tab[$i]= new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'],$resultat[$i]['urlImage']);
 
         }
 
@@ -112,7 +65,7 @@ class DaoGameImplement implements DaoGameInterface
             $tab = [];
             for ($i = 0; $i < count($resultat); $i++) {
 
-                $jeuVideo = new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'],$resultat[$i]['urlImage'], $resultat[$i]['afficher']);
+                $jeuVideo = new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'],$resultat[$i]['urlImage']);
                 $tab[$i] = $jeuVideo;
             }
 
@@ -123,4 +76,29 @@ class DaoGameImplement implements DaoGameInterface
         }
     }
 
+    public function selectGamesById(int $id): string //VideoGame
+    {
+
+        try {
+            $connection = $this->MySql->getConnection();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        $sql = 'SELECT nomJeu FROM ' . $this->nomTable . ' WHERE id = :id';
+        $requete = $connection->prepare($sql);
+        $requete->bindValue(':id', $id, PDO::PARAM_INT);
+        $requete->execute();
+        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($resultat) {
+            //$game = new VideoGame($resultat[0]['id'], $resultat[0]['nomJeu'],$resultat[0]['categorie'], $resultat[0]['prix'],$resultat[0]['urlImage']);
+            $nomJeu=$resultat[0]['nomJeu'];
+            return $nomJeu;
+        }else{
+            return 'jeu inexistant'; //new VideoGame(0,'jeu inexistant','inexistant',0,'vide');
+        }
+
+
+    }
 }

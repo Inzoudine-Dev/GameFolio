@@ -3,13 +3,12 @@
 namespace Maham\GameFolio\DAOs\DaoInterfaces;
 
 
+use Maham\GameFolio\entities\VideoGame;
+
 interface DaoGameInterface
 {
-
-
-    public function selectNRaceGamesForHome(int $n):array;
-    public function selectNFightGamesForHome(int $n):array;
     public function selectNGamesForHome(int $n):array;
+    public function selectGamesById(int $id):string; //VideoGame;
     public function selectAll():array;
 
 

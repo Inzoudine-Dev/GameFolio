@@ -15,9 +15,11 @@ class InfoController extends Controller
         if (!isset($_SESSION['statut'], $_SESSION['email'], $_SESSION['password'])) {
             header('Location:/GameFolio/users/home/login');
         } else {
-            $Data["title"] = "Infos";/*determine le titre de la page*/
-            $Data['script']='<script type="text/javascript" src=/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js> </script>';
-            parent::render("Info", $Data);
+            $data = [
+                'title' => 'Infos',
+                'script' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+            ];
+            parent::render("Info", $data);
         }
     }
 }
