@@ -19,8 +19,8 @@ class LoginAdminController extends Controller
 
         $Data["title"]="Login-Admin";
         $Data["statut"]="deconecter";
-
-        parent::renderAmdin("AdminLogin", $Data);
+        $Data["url"]="/GameFolio/administrators/login";
+        parent::renderAdminShared("Login", $Data);
     }
 
     #[Route('/GameFolio/administrators/login/', 'GET')]
@@ -39,7 +39,8 @@ class LoginAdminController extends Controller
             $Data["msg"] = 'Email ou mot de passe incorrecte!!';
             $Data["title"] = "Login-Admin";
             $Data["statut"] = "deconecter";
-            parent::renderAmdin("AdminLogin", $Data);
+            $Data["url"]="/GameFolio/administrators/login";
+            parent::renderAdminShared("Login", $Data);
         } else {
 
 
@@ -49,7 +50,8 @@ class LoginAdminController extends Controller
                 $Data["msg"] = 'Email et/ou mot de passe innéxistant!!';
                 $Data["title"] = "Login-Admin";
                 $Data["statut"] = "deconecter";
-                parent::renderAmdin("AdminLogin", $Data);
+                $Data["url"]="/GameFolio/administrators/login";
+                parent::renderAdminShared("Login", $Data);
             } else {
                 session_start();
                 $_SESSION['statut'] = "connecter";

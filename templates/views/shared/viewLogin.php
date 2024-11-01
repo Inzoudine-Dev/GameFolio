@@ -9,7 +9,7 @@ header("Pragma: no-cache");
 
     <h1 class="titre_form_login">Connecter-vous !!</h1>
 
-    <form action="/GameFolio/users/home/login" method="post" class="form_login_class">
+    <form action="<?php echo $url?>" method="post" class="form_login_class">
 
 
             <input type="email" name ="email" placeholder="email" class="input_email_class" required>

@@ -13,7 +13,9 @@ class LoginController extends Controller
     public function index()
     {
         $data["title"]="Login";/*determine le titre de la page*/
-        parent::render("Login", $data);
+        $data["url"]="/GameFolio/users/home/login";
+        //parent::render("Login", $data);
+        parent::renderUserShared("Login", $data);
     }
 
     #[Route('/GameFolio/users/home/login/','GET')]
@@ -29,7 +31,8 @@ class LoginController extends Controller
         if($this->isValid($_POST["email"],$_POST["password"])==false){
             $data["erroMessage"]='Email ou mot de passe incorrecte!!';
             $data["title"]="Login";
-            parent::render("Login",  $data);
+            $data["url"]="/GameFolio/users/home/login";
+            parent::renderUserShared("Login",  $data);
         }
 
         else{

@@ -18,7 +18,7 @@
 <body>
 
 <header class="header_class">
-    <?php include '../../GameFolio/templates/views/administrators/adminHeader.php'?>
+    <?php include '../templates/views/shared/administrators/adminHeader.php'?>
 </header>
 
 
@@ -30,7 +30,7 @@
 
 
 <footer class="footer_class">
-    <?php include '../../GameFolio/templates/views/administrators/adminFooter.php'?>
+    <?php include '../templates/views/shared/administrators/adminFooter.php'?>
 </footer>
 
 </body>

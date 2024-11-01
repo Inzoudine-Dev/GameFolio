@@ -20,7 +20,7 @@
     <body>
 
         <header class="header_class">
-            <?php include '../../GameFolio/templates/views/users/usersHeader.php'?>
+            <?php include '../templates/views/shared/users/usersHeader.php'?>
         </header>
 
 
@@ -32,14 +32,14 @@
 
 
         <footer class="footer_class">
-            <?php include '../../GameFolio/templates/views/users/usersFooter.php'?>
+            <?php include '../templates/views/shared/users/usersFooter.php'?>
         </footer>
 
 
 
 
     </body>
-    <script type="text/javascript" src=<?php echo $script ?>> </script>
+    <script type="text/javascript" src=<?php if(isset($script)) echo $script ?>> </script>
 </html>
 
 
