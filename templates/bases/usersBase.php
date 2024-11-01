@@ -39,7 +39,9 @@
 
 
     </body>
+
     <script type="text/javascript" src=<?php if(isset($script)) echo $script ?>> </script>
+
 </html>
 
 
