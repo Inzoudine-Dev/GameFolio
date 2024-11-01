@@ -13,7 +13,7 @@
                     <p class="data_offre_class">Identifiant offre : <?php echo $offre->getId(); ?></p>
                     <p class="data_offre_class"><?php echo $offre->getNomOffre(); ?> disponible !</p>
                     <p class="data_offre_class">Réduction : <?php echo $offre->getReduction(); ?> euros</p>
-                    <p class="data_offre_class">Identifiant jeu de l'offre : <?php echo $offre->getJeuVideoId(); ?></p>
+                    <p class="data_offre_class">jeu de l'offre : <?php echo $offre->getGame()->getNomJeu(); ?></p>
                 </article>
             </a>
         <?php endforeach ;  ?>

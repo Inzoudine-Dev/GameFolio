@@ -7,15 +7,15 @@ class Offre
     private int $id;
     private String $nomOffre;
     private float $reduction;
-    private int $jeuVideoId;
+    private VideoGame $game;
 
 
-    public function __construct(int $id, string $nomOffre, float $reduction,int $jeuVideoId)
+    public function __construct(int $id, string $nomOffre, float $reduction,VideoGame $game)
     {
         $this->id = $id;
         $this->nomOffre = $nomOffre;
         $this->reduction = $reduction;
-        $this->jeuVideoId = $jeuVideoId;
+        $this->game = $game;
     }
 
 
@@ -71,22 +71,24 @@ class Offre
     /**
      * @return VideoGame
      */
-    public function getJeuVideoId(): int
+    public function getGame(): VideoGame
     {
-        return $this->jeuVideoId;
+        return $this->game;
     }
 
     /**
-     * @param VideoGame $jeuVideo
+     * @param VideoGame $game
      */
-    public function setJeuVideoId(int $jeuVideoId): void
+    public function setGame(VideoGame $game): void
     {
-        $this->jeuVideoId = $jeuVideoId;
+        $this->game = $game;
     }
+
+
 
     public function __toString(): string
 {
-    return 'id_Offre:'.$this->getId().', nomOffre :'.$this->getNomOffre().', reduction :'.$this->getReduction().', idJeuVideo :'.$this->getjeuVideoId();
+    return 'id_Offre:'.$this->getId().', nomOffre :'.$this->getNomOffre().', reduction :'.$this->getReduction().', JeuVideo :'.$this->getGame();
 }
 
 

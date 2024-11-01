@@ -35,9 +35,6 @@
             <?php include '../templates/views/shared/users/usersFooter.php'?>
         </footer>
 
-
-
-
     </body>
 
     <script type="text/javascript" src=<?php if(isset($script)) echo $script ?>> </script>

@@ -6,6 +6,7 @@ use Exception;
 use Maham\GameFolio\DAOs\DaoInterfaces\DaoOffreInterface;
 use Maham\GameFolio\DAOs\dbConfig\MySqlConnection;
 use Maham\GameFolio\entities\Offre;
+use Maham\GameFolio\entities\VideoGame;
 use PDO;
 
 class DaoOffreImplement implements DaoOffreInterface
@@ -19,6 +20,7 @@ class DaoOffreImplement implements DaoOffreInterface
         $this->nomTable= "offres";
         $this->MySql= new MySqlConnection('localhost', 'jvdb2', 'root', '');
     }
+
 
     public function selectNOffresForHome(int $n): array
     {
@@ -38,11 +40,35 @@ class DaoOffreImplement implements DaoOffreInterface
         $tab = [];
         for ($i = 0; $i < count($resultat); $i++) {
 
-            $tab[$i]= new Offre($resultat[$i]['id'], $resultat[$i]['nomOffre'], $resultat[$i]['reduction'],$resultat[$i]['jeuxVideos_id']);
+            $tab[$i]= new Offre($resultat[$i]['id'], $resultat[$i]['nomOffre'], $resultat[$i]['reduction'],(new DaoGameImplement())->selectGameById($resultat[$i]['jeuxVideos_id']));
 
         }
 
         return $tab;
+    }
+
+
+    public function selectOffreById(int $id): Offre
+    {
+
+        try {
+            $connection = $this->MySql->getConnection();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        $sql = 'SELECT * FROM ' . $this->nomTable . ' WHERE id = :id';
+        $requete = $connection->prepare($sql);
+        $requete->bindValue(':id', $id, PDO::PARAM_INT);
+        $requete->execute();
+        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($resultat) {
+            $offre = new Offre($resultat[0]['id'], $resultat[0]['nomOffre'], $resultat[0]['reduction'], $resultat[0]['jeuxVideos_id']);
+            return $offre;
+        }else{
+            return new Offre(0,'offre inexistant','0.0',new VideoGame(0,'innéxistant','rien',0,'urlVide'));
+        }
     }
 
 
@@ -65,7 +91,7 @@ class DaoOffreImplement implements DaoOffreInterface
             $tab = [];
             for ($i = 0; $i < count($resultat); $i++) {
 
-                $tab[$i]= new Offre($resultat[$i]['id'], $resultat[$i]['nomOffre'], $resultat[$i]['reduction'], $resultat[$i]['jeuxVideos_id']);
+                $tab[$i]= new Offre($resultat[$i]['id'], $resultat[$i]['nomOffre'], $resultat[$i]['reduction'], (new DaoGameImplement())->selectGameById($resultat[$i]['jeuxVideos_id']));
 
             }
 
@@ -76,26 +102,4 @@ class DaoOffreImplement implements DaoOffreInterface
         }
     }
 
-    public function selectOffreById(int $id): Offre
-    {
-
-        try {
-            $connection = $this->MySql->getConnection();
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
-
-        $sql = 'SELECT * FROM ' . $this->nomTable . ' WHERE id = :id';
-        $requete = $connection->prepare($sql);
-        $requete->bindValue(':id', $id, PDO::PARAM_INT);
-        $requete->execute();
-        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
-
-        if ($resultat) {
-            $offre = new Offre($resultat[0]['id'], $resultat[0]['nomOffre'], $resultat[0]['reduction'], $resultat[0]['jeuxVideos_id']);
-            return $offre;
-        }else{
-            return new Offre(0,'offre inexistant','0.0',0);
-        }
-    }
 }

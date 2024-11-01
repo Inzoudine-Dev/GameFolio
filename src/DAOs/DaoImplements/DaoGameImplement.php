@@ -76,7 +76,7 @@ class DaoGameImplement implements DaoGameInterface
         }
     }
 
-    public function selectGamesById(int $id): string //VideoGame
+    public function selectGameById(int $id): VideoGame
     {
 
         try {
@@ -85,18 +85,18 @@ class DaoGameImplement implements DaoGameInterface
             throw new Exception($e->getMessage());
         }
 
-        $sql = 'SELECT nomJeu FROM ' . $this->nomTable . ' WHERE id = :id';
+        $sql = 'SELECT * FROM ' . $this->nomTable . ' WHERE id = :id';
         $requete = $connection->prepare($sql);
         $requete->bindValue(':id', $id, PDO::PARAM_INT);
         $requete->execute();
         $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
 
         if ($resultat) {
-            //$game = new VideoGame($resultat[0]['id'], $resultat[0]['nomJeu'],$resultat[0]['categorie'], $resultat[0]['prix'],$resultat[0]['urlImage']);
-            $nomJeu=$resultat[0]['nomJeu'];
-            return $nomJeu;
+            $game = new VideoGame($resultat[0]['id'], $resultat[0]['nomJeu'],$resultat[0]['categorie'], $resultat[0]['prix'],$resultat[0]['urlImage']);
+            //$nomJeu=$resultat[0]['nomJeu'];
+            return $game;
         }else{
-            return 'jeu inexistant'; //new VideoGame(0,'jeu inexistant','inexistant',0,'vide');
+            new VideoGame(0,'jeu inexistant','inexistant',0,'vide');
         }
 
 
