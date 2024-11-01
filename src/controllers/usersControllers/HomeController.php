@@ -20,6 +20,7 @@ class HomeController extends Controller
                 $data = [
                     'title' => 'Home',
                     'messageDeconnexion' => 'Vous etes deconecter, connecter vous inscrivez vous!!',
+                    'scriptMenue' => '/GameFolio/public/scriptsJs/users/scriptHeader.js',
                     'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
                     'games' => (new ManagerGameImplement())->getNGamesForHome(8),
                 ];
@@ -29,7 +30,8 @@ class HomeController extends Controller
                 $data = [
                     'title' => 'Home',
                     'messageDeconnexion' => 'Bienvenue, vous etes connecter!!',
-                    'script' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+                    'scriptConnexion' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+                    'scriptMenue' => '/GameFolio/public/scriptsJs/users/scriptHeader.js',
                     'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
                     'games' => (new ManagerGameImplement())->getNGamesForHome(8),
                 ];

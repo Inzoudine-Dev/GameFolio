@@ -17,7 +17,7 @@ class InfoController extends Controller
         } else {
             $data = [
                 'title' => 'Infos',
-                'script' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+                'scriptConnexion' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
             ];
             parent::render("Info", $data);
         }

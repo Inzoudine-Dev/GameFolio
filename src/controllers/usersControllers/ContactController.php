@@ -19,7 +19,7 @@ class ContactController extends  Controller
         }else{
             $data = [
                 'title' => 'Contacts',
-                'script' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+                'scriptConnexion' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
             ];
             parent::render("Contact", $data);
         }

@@ -37,7 +37,8 @@
 
     </body>
 
-    <script type="text/javascript" src=<?php if(isset($script)) echo $script ?>> </script>
+    <script type="text/javascript" src=<?php if(isset($scriptConnexion)) echo $scriptConnexion ?>> </script>
+    <script type="text/javascript" src=<?php if(isset($scriptMenue)) echo $scriptMenue ?>> </script>
 
 </html>
 
