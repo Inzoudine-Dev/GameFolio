@@ -4,7 +4,6 @@ namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
-use Maham\GameFolio\managers\ManagerClient;
 
 class ContactController extends  Controller
 {
@@ -19,7 +18,7 @@ class ContactController extends  Controller
         }else{
             $data = [
                 'title' => 'Contacts',
-                'scriptConnexion' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
             ];
             parent::render("Contact", $data);
         }

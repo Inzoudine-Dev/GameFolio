@@ -4,7 +4,7 @@ namespace Maham\GameFolio\controllers\adminControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
-use Maham\GameFolio\managers\ManagerClient;
+use Maham\GameFolio\managers\ManagerImplements\ManagerClientImplement;
 
 class LoginAdminController extends Controller
 {
@@ -20,7 +20,7 @@ class LoginAdminController extends Controller
         $Data["title"]="Login-Admin";
         $Data["statut"]="deconecter";
         $Data["url"]="/GameFolio/administrators/login";
-        parent::renderAdminShared("Login", $Data);
+        parent::renderAdmin("AdminLogin", $Data);
     }
 
     #[Route('/GameFolio/administrators/login/', 'GET')]
@@ -40,18 +40,18 @@ class LoginAdminController extends Controller
             $Data["title"] = "Login-Admin";
             $Data["statut"] = "deconecter";
             $Data["url"]="/GameFolio/administrators/login";
-            parent::renderAdminShared("Login", $Data);
+            parent::renderAdmin("AdminLogin", $Data);
         } else {
 
 
-            $ManagerClient=new ManagerClient();
+            $ManagerClient=new ManagerClientImplement();
             $clients=$ManagerClient->selectAll();
             if (($this->existeClient($_POST["email"], $_POST["password"],$clients)) == false) {
                 $Data["msg"] = 'Email et/ou mot de passe innéxistant!!';
                 $Data["title"] = "Login-Admin";
                 $Data["statut"] = "deconecter";
                 $Data["url"]="/GameFolio/administrators/login";
-                parent::renderAdminShared("Login", $Data);
+                parent::renderAdmin("AdminLogin", $Data);
             } else {
                 session_start();
                 $_SESSION['statut'] = "connecter";

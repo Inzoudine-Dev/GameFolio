@@ -18,7 +18,7 @@ class GameController extends Controller
         }else{
             $data = [
                 'title' => 'Games',
-                'scriptConnexion' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
                 ];
             parent::render("Game", $data);
         }

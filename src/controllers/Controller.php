@@ -12,24 +12,10 @@ abstract class Controller
 
     }
 
-    public function renderUserShared(string $actionVue, array $donnees=null ){
-
-        $vue =new View($actionVue);
-        $vue->viewUserShared($donnees);
-
-    }
-
-    public function renderAmdin(string $actionVue, array $donnees=null ){
+    public function renderAdmin(string $actionVue, array $donnees=null ){
 
         $vue =new View($actionVue);
         $vue->viewAdmin($donnees);
-
-    }
-
-    public function renderAdminShared(string $actionVue, array $donnees=null ){
-
-        $vue =new View($actionVue);
-        $vue->viewAdminShared($donnees);
 
     }
 

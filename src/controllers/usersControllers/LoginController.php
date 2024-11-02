@@ -4,6 +4,7 @@ namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
+use Maham\GameFolio\DAOs\DaoImplements\DaoClientImplement;
 
 
 class LoginController extends Controller
@@ -12,10 +13,12 @@ class LoginController extends Controller
     #[Route('/GameFolio/users/home/login', 'GET')]
     public function index()
     {
-        $data["title"]="Login";/*determine le titre de la page*/
-        $data["url"]="/GameFolio/users/home/login";
-        //parent::render("Login", $data);
-        parent::renderUserShared("Login", $data);
+
+        $data=[
+            'title'=>htmlspecialchars("Login", ENT_QUOTES, 'UTF-8'),
+            'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
+        ];
+        parent::render("Login", $data);
     }
 
     #[Route('/GameFolio/users/home/login/','GET')]
@@ -28,23 +31,54 @@ class LoginController extends Controller
     public function login()
     {
 
-        if($this->isValid($_POST["email"],$_POST["password"])==false){
-            $data["erroMessage"]='Email ou mot de passe incorrecte!!';
-            $data["title"]="Login";
-            $data["url"]="/GameFolio/users/home/login";
-            parent::renderUserShared("Login",  $data);
+        if (($this->isValid($_POST["email"], $_POST["password"]) == false)) {
+
+            $data=[
+                'title'=>htmlspecialchars("Login", ENT_QUOTES, 'UTF-8'),
+                'errorMessage'=>htmlspecialchars("format email ou mot de passe incorecte!!",ENT_QUOTES, 'UTF-8'),
+                'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
+            ];
+
+            parent::render("Login", $data);
+
+        } else {
+
+            if (((new DaoClientImplement())->SelectPasswordByEmail($_POST["email"]))!="email ou mot de passe inconnue !!") {
+
+                if (((new DaoClientImplement())->SelectPasswordByEmail($_POST["email"])) != $_POST["password"]) {
+
+                    $data=[
+                        'errorMessage'=>htmlspecialchars("Mot de passe incorrect !!",ENT_QUOTES, 'UTF-8'),
+                        'title'=>htmlspecialchars("Login", ENT_QUOTES, 'UTF-8'),
+                        'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
+                    ];
+
+                    parent::render("Login", $data);
+
+
+                } else {
+
+                    session_start();
+                    $_SESSION['statut'] = "connecter";
+                    $_SESSION['email'] = $_POST["email"];
+                    $_SESSION['password'] = $_POST["password"];
+                    header('Location:/GameFolio/users/home');
+                    exit();
+
+                }
+            }else{
+
+                $data=[
+                    'title'=>htmlspecialchars("Login", ENT_QUOTES, 'UTF-8'),
+                    'errorMessage'=>htmlspecialchars("Email inconnue!!",ENT_QUOTES, 'UTF-8'),
+                    'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
+                ];
+
+                parent::render("Login", $data);
+
+            }
+
         }
-
-        else{
-
-            session_start();
-            $_SESSION['statut']="connecter";
-            $_SESSION['email']=$_POST["email"];
-            $_SESSION['password']=$_POST["password"];
-            header('Location:/GameFolio/users/home');
-            exit();
-        }
-
     }
 
     public function isValid(string $email, string $password): bool {

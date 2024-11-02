@@ -1,15 +1,22 @@
 <?php
 
-namespace Maham\GameFolio\managers;
+namespace Maham\GameFolio\managers\ManagerImplements;
 
 
 use Maham\GameFolio\DAOs\DaoImplements\DaoClientImplement;
+use Maham\GameFolio\managers\ManagerInterfaces\ManagerClientInterface;
 
 
-class ManagerClient
+class ManagerClientImplement implements ManagerClientInterface
 {
 
-/*ici le tableau de client doi etre associative pour etre utiliser ensuite par le controller*/
+
+    public function getPasswordByEmail(string $email): string
+    {
+        (new DaoClientImplement())->SelectPasswordByEmail($email);
+    }
+
+/*
     public function SelectAll(): array
     {
         $daoClient=new DaoClientImplement();
@@ -27,18 +34,5 @@ class ManagerClient
         $daoClient->insert($client);
     }
 
-    public function SelectAllById(): array
-    {
-        // TODO: Implement SelectAllById() method.
-    }
-
-    public function update(object $objet): void
-    {
-        // TODO: Implement update() method.
-    }
-
-    public function delete(object $objet): void
-    {
-        // TODO: Implement delete() method.
-    }
+    */
 }

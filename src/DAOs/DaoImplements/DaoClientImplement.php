@@ -20,8 +20,30 @@ class DaoClientImplement implements DaoClientInterface
         $this->MySql= new MySqlConnection('localhost', 'jvdb2', 'root', '');
     }
 
+    public function SelectPasswordByEmail(string $email): string
+    {
+        try {
+            $connection = $this->MySql->getConnection();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
 
-    public function SelectAll(): array
+        $sql = 'SELECT motdepasse FROM '.$this->nomTable.' where email= :email';
+        $requete = $connection->prepare($sql);
+        $requete->bindValue(':email', $email, PDO::PARAM_STR);
+        $requete->execute();
+        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+        if($resultat){
+            return $resultat[0]['motdepasse'];
+        }else{
+            return 'email ou mot de passe inconnue !!';
+        }
+
+    }
+
+
+    /*public function SelectAll(): array
     {
         try {
 
@@ -130,26 +152,4 @@ class DaoClientImplement implements DaoClientInterface
 
     }*/
 
-
-
-
-    public function SelectAllById(int $id): object
-    {
-        // TODO: Implement SelectAllById() method.
-    }
-
-    public function update(object $objet): void
-    {
-        // TODO: Implement update() method.
-    }
-
-    public function delete(object $objet): void
-    {
-        // TODO: Implement delete() method.
-    }
-
-    public function SelectByEmail(): array
-    {
-        // TODO: Implement SelectByEmail() method.
-    }
 }

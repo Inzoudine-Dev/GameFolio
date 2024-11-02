@@ -37,8 +37,9 @@
 
     </body>
 
-    <script type="text/javascript" src=<?php if(isset($scriptConnexion)) echo $scriptConnexion ?>> </script>
-    <script type="text/javascript" src=<?php if(isset($scriptMenue)) echo $scriptMenue ?>> </script>
+    <script type="text/javascript" src="/GameFolio/public/scriptsJs/users/scriptMenueHeader.js"> </script>
+    <script type="text/javascript" src=<?php if(isset($scriptDeconecter)) echo $scriptDeconecter ?>> </script>
+    <script type="text/javascript" src=<?php if(isset($scriptConecter)) echo $scriptConecter ?>> </script>
 
 </html>
 

@@ -56,27 +56,7 @@ class View
             $content = ob_get_clean();
 
 
-            require VIEWSBASES. 'bases/usersBase.php';//de vue utilisateurs on sort une fois et on entre dans templates.
-        }
-        else{
-            throw new \Exception("Attention erreur, la vue ou template demander n'existe pas pour Utilisateurs!!!");
-        }
-    }
-
-    public function viewUserShared(array $donnees = null)
-    {
-
-        if(file_exists(VIEWSSHARED . $this->getFichier()) && file_exists(VIEWSBASES.'bases/usersBase.php')) {
-            ob_start();
-
-            if($donnees){
-                extract($donnees);
-            }
-            require VIEWSSHARED. $this->getFichier();
-            $content = ob_get_clean();
-
-
-            require VIEWSBASES. 'bases/usersBase.php';//de vue utilisateurs on sort une fois et on entre dans templates.
+            require VIEWSBASES. 'bases/usersBase.php';
         }
         else{
             throw new \Exception("Attention erreur, la vue ou template demander n'existe pas pour Utilisateurs!!!");
@@ -103,25 +83,5 @@ class View
         }
     }
 
-
-    public function viewAdminShared(array $donnees = null)
-    {
-
-        if(file_exists(VIEWSSHARED . $this->getFichier()) && file_exists(VIEWSBASES. 'bases/administratorsBase.php')) {
-            ob_start();
-
-            if($donnees){
-                extract($donnees);
-            }
-            require VIEWSSHARED. $this->getFichier();
-            $content = ob_get_clean();
-
-
-            require VIEWSBASES. 'bases/administratorsBase.php';//de vue utilisateurs on sort une fois et on entre dans templates.
-        }
-        else{
-            throw new \Exception("Attention erreur, la vue ou template demander n'existe pas pour Utilisateurs!!!");
-        }
-    }
 
 }

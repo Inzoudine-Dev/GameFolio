@@ -18,9 +18,8 @@ class HomeController extends Controller
             if(!isset($_SESSION['statut'],$_SESSION['email'],$_SESSION['password'])){
 
                 $data = [
-                    'title' => 'Home',
-                    'messageDeconnexion' => 'Vous etes deconecter, connecter vous inscrivez vous!!',
-                    'scriptMenue' => '/GameFolio/public/scriptsJs/users/scriptHeader.js',
+                    'title' => htmlspecialchars('Home',ENT_QUOTES,'UTF-8'),
+                    'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
                     'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
                     'games' => (new ManagerGameImplement())->getNGamesForHome(8),
                 ];
@@ -28,10 +27,8 @@ class HomeController extends Controller
             }else{
 
                 $data = [
-                    'title' => 'Home',
-                    'messageDeconnexion' => 'Bienvenue, vous etes connecter!!',
-                    'scriptConnexion' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
-                    'scriptMenue' => '/GameFolio/public/scriptsJs/users/scriptHeader.js',
+                    'title' => htmlspecialchars('Home',ENT_QUOTES,'UTF-8'),
+                    'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
                     'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
                     'games' => (new ManagerGameImplement())->getNGamesForHome(8),
                 ];

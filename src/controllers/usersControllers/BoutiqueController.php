@@ -19,7 +19,7 @@ class BoutiqueController extends Controller
         } else {
             $data = [
                 'title' => 'Boutiques',
-                'scriptConnexion' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
             ];
             parent::render("Boutique", $data);
         }

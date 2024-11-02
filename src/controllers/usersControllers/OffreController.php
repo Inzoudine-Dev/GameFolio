@@ -21,7 +21,7 @@ class OffreController extends Controller
 
             $data = [
                 'title' => 'Offres',
-                'scriptConnexion' => '/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js',
+                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
             ];
             parent::render("Offre", $data);
         }

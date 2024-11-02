@@ -1,5 +1,6 @@
 <?php
 
+use Maham\GameFolio\DAOs\DaoImplements\DaoClientImplement;
 use Maham\GameFolio\DAOs\DaoImplements\DaoGameImplement;
 use Maham\GameFolio\DAOs\DaoImplements\DaoOffreImplement;
 use Maham\GameFolio\DAOs\dbConfig\MySqlConnection;
@@ -64,11 +65,13 @@ $dao->selectNOffresPrincipal(3);*/
 //var_dump((new ManagerGameImplement())->getNRaceGamesPrincipal(4));
 //var_dump((new DaoGameImplement())->selectNGamesForHome(8));
 /*utilisation de as sinon les meme non sont combiner par php-coté phpmyadmin on a tout(ok)*/
-$sql = 'SELECT offres.id AS offre_id, offres.nomOffre,offres.reduction,offres.jeuxvideos_id,
+/*$sql = 'SELECT offres.id AS offre_id, offres.nomOffre,offres.reduction,offres.jeuxvideos_id,
        videoGames.id AS jeu_id,videoGames.nomjeu,videoGames.prix,videoGames.id,videoGames.categorie,videoGames.urlImage
         FROM offres
         INNER JOIN videoGames ON videoGames.id = offres.jeuxvideos_id
-        Limit 3';
+        Limit 3';*/
+
+$sql = 'SELECT motdepasse FROM clients where email="mart.bille@example.com"';
 
 /*SELECT *
         FROM offres
@@ -84,3 +87,15 @@ var_dump($result);
 
 //var_dump((new DaoOffreImplement())->selectOffreById(20));
 //var_dump((new DaoGameImplement())->selectGameById(2));
+var_dump((new DaoClientImplement())->SelectPasswordByEmail("papamart.bille@example.com"));
+
+/*$data["erroMessage"] = htmlspecialchars('<script>Email inconnue!!</script>', ENT_QUOTES, 'UTF-8');
+echo $data["erroMessage"];*/
+
+
+$errorMessage = htmlspecialchars("<Email inconnu!!", ENT_QUOTES, 'UTF-8');
+?>
+<div>
+    <p><?php echo $errorMessage; ?></p>
+    <p><?php var_dump($errorMessage); ?></p>
+</div>
