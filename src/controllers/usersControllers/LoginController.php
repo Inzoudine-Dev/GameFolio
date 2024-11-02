@@ -43,6 +43,7 @@ class LoginController extends Controller
 
         } else {
 
+            //utiliser ces daoimplt dans mannager et remplace les ici par le mananger getPasswordByEmail();
             if (((new DaoClientImplement())->SelectPasswordByEmail($_POST["email"]))!="email ou mot de passe inconnue !!") {
 
                 if (((new DaoClientImplement())->SelectPasswordByEmail($_POST["email"])) != $_POST["password"]) {

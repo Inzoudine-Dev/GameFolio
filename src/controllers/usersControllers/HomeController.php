@@ -18,7 +18,7 @@ class HomeController extends Controller
             if(!isset($_SESSION['statut'],$_SESSION['email'],$_SESSION['password'])){
 
                 $data = [
-                    'title' => htmlspecialchars('Home',ENT_QUOTES,'UTF-8'),
+                    'title' =>'Home',
                     'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
                     'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
                     'games' => (new ManagerGameImplement())->getNGamesForHome(8),
@@ -27,7 +27,7 @@ class HomeController extends Controller
             }else{
 
                 $data = [
-                    'title' => htmlspecialchars('Home',ENT_QUOTES,'UTF-8'),
+                    'title' =>'Home',
                     'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
                     'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
                     'games' => (new ManagerGameImplement())->getNGamesForHome(8),
@@ -43,9 +43,14 @@ class HomeController extends Controller
     #[Route('/GameFolio/users/home/','GET')]
     public function indexRedirect()
     {
-        $this->index();
+        header('Location:/GameFolio/users/home');
     }
 
+    #[Route('/GameFolio/users/','GET')]
+    public function indexRedirectHome()
+    {
+        header('Location:/GameFolio/users/home');
+    }
 
 
 }
