@@ -7,16 +7,16 @@ header("Pragma: no-cache");
 
 <section>
 
-    <h1 class="titre_form_login">Connecter-vous !!</h1>
+    <h1 class="titre_form_login">Vous etes un administrateur de ce site? Connecter-vous !!</h1>
 
     <form action="/GameFolio/administrators/login" method="post" class="form_login_class">
 
 
-            <input type="email" name ="email" placeholder="email" class="input_email_class" required>
+            <input type="email" name ="email" placeholder="email" class="input_email_class" aria-label="email" required>
 
 
 
-            <input type="password" name ="password" placeholder="Mot de passe" class="input_password_class" required>
+            <input type="password" name ="password" placeholder="Mot de passe" class="input_password_class" aria-label="password" required>
 
 
 
@@ -31,8 +31,5 @@ header("Pragma: no-cache");
         <?php endif; ?>
     </div>
 
-    <div class="text_inscription">
-        <h1 class="titre_form_login">Vous n'avez pas encore de conpte ??</h1>
-        <h1 class="titre_form_login">Inscrivez-vous !!</h1>
-    </div>
+
 </section>

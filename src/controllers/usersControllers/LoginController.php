@@ -4,7 +4,7 @@ namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
-use Maham\GameFolio\DAOs\DaoImplements\DaoClientImplement;
+use Maham\GameFolio\managers\ManagerImplements\ManagerClientImplement;
 
 
 class LoginController extends Controller
@@ -15,7 +15,7 @@ class LoginController extends Controller
     {
 
         $data=[
-            'title'=>htmlspecialchars("Login", ENT_QUOTES, 'UTF-8'),
+            'title'=>"Login",
             'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
         ];
         parent::render("Login", $data);
@@ -34,8 +34,8 @@ class LoginController extends Controller
         if (($this->isValid($_POST["email"], $_POST["password"]) == false)) {
 
             $data=[
-                'title'=>htmlspecialchars("Login", ENT_QUOTES, 'UTF-8'),
-                'errorMessage'=>htmlspecialchars("format email ou mot de passe incorecte!!",ENT_QUOTES, 'UTF-8'),
+                'title'=>"Login",
+                'errorMessage'=>"format email ou mot de passe incorecte!!",
                 'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
             ];
 
@@ -44,13 +44,13 @@ class LoginController extends Controller
         } else {
 
             //utiliser ces daoimplt dans mannager et remplace les ici par le mananger getPasswordByEmail();
-            if (((new DaoClientImplement())->SelectPasswordByEmail($_POST["email"]))!="email ou mot de passe inconnue !!") {
+            if (((new ManagerClientImplement())->getPasswordByEmail($_POST["email"]))!="email ou mot de passe inconnue !!") {
 
-                if (((new DaoClientImplement())->SelectPasswordByEmail($_POST["email"])) != $_POST["password"]) {
+                if (((new ManagerClientImplement())->getPasswordByEmail($_POST["email"])) != $_POST["password"]) {
 
                     $data=[
-                        'errorMessage'=>htmlspecialchars("Mot de passe incorrect !!",ENT_QUOTES, 'UTF-8'),
-                        'title'=>htmlspecialchars("Login", ENT_QUOTES, 'UTF-8'),
+                        'errorMessage'=>"Mot de passe incorrect !!",
+                        'title'=>"Login",
                         'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
                     ];
 
@@ -70,8 +70,8 @@ class LoginController extends Controller
             }else{
 
                 $data=[
-                    'title'=>htmlspecialchars("Login", ENT_QUOTES, 'UTF-8'),
-                    'errorMessage'=>htmlspecialchars("Email inconnue!!",ENT_QUOTES, 'UTF-8'),
+                    'title'=>"Login",
+                    'errorMessage'=>"Email inconnue!!",
                     'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
                 ];
 

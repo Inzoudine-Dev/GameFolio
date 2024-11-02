@@ -13,7 +13,7 @@ class ManagerClientImplement implements ManagerClientInterface
 
     public function getPasswordByEmail(string $email): string
     {
-        (new DaoClientImplement())->SelectPasswordByEmail($email);
+        return (new DaoClientImplement())->SelectPasswordByEmail($email);
     }
 
 /*

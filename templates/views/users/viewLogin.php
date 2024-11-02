@@ -1,6 +1,12 @@
+<?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
+
 <div class="error_class">
     <?php if (isset($goodBayMessage)): ?>
-        <p class="error_login_class"><?php echo $goodBayMessage; ?></p>
+        <p class="error_login_class"><?php echo htmlspecialchars($goodBayMessage,ENT_QUOTES,'UTF-8'); ?></p>
     <?php endif; ?>
 
 </div>
@@ -11,11 +17,11 @@
     <form action="/GameFolio/users/home/login" method="post" class="form_login_class">
 
 
-            <input type="email" name ="email" placeholder="email" class="input_email_class" required>
+            <input type="email" name ="email" placeholder="email" class="input_email_class" aria-label="email" required>
 
 
 
-            <input type="password" name ="password" placeholder="Mot de passe" class="input_password_class" required>
+            <input type="password" name ="password" placeholder="Mot de passe" class="input_password_class" aria-label="password" required>
 
 
 
@@ -26,7 +32,7 @@
 
     <div class="error_class">
         <?php if (isset($errorMessage)): ?>
-            <p class="error_login_class"><?php echo $errorMessage; ?></p>
+            <p class="error_login_class"><?php echo htmlspecialchars($errorMessage,ENT_QUOTES,'UTF-8'); ?></p>
         <?php endif; ?>
     </div>
 

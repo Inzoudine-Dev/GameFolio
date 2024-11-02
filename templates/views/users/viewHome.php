@@ -10,7 +10,6 @@
         <?php if(isset($offres))foreach ($offres as $offre): ?>
             <a href="/GameFolio/users/home/offres" class="lien_offre_class">
                 <article class="offre_class">
-                    <p class="data_offre_class">Identifiant offre : <?php echo $offre->getId(); ?></p>
                     <p class="data_offre_class"><?php echo htmlspecialchars($offre->getNomOffre(),ENT_QUOTES,'UTF-8');?> disponible !</p>
                     <p class="data_offre_class">Réduction : <?php echo $offre->getReduction(); ?> euros</p>
                     <p class="data_offre_class">jeu de l'offre : <?php echo htmlspecialchars($offre->getGame()->getNomJeu(),ENT_QUOTES,'UTF-8');?></p>
@@ -31,7 +30,6 @@
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
                     <img src=<?php echo $game->getUrlImage(); ?> class="image_game_class" alt="logo"/>
-                    <p class="info_jeu_class">ID : <?php echo $game->getId(); ?></p>
                     <p class="info_jeu_class">Nom : <?php echo htmlspecialchars($game->getNomJeu(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="info_jeu_class">Catégorie : <?php echo htmlspecialchars($game->getCategorie(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="info_jeu_class">Prix : <?php echo $game->getPrix(); ?> euros</p>
@@ -53,7 +51,6 @@
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
                     <img src=<?php echo $game->getUrlImage(); ?> class="image_game_class" alt="logo"/>
-                    <p class="info_jeu_class">ID : <?php echo $game->getId(); ?></p>
                     <p class="info_jeu_class">Nom : <?php echo htmlspecialchars($game->getNomJeu(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="info_jeu_class">Catégorie : <?php echo htmlspecialchars($game->getCategorie(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="info_jeu_class">Prix : <?php echo $game->getPrix(); ?> euros</p>

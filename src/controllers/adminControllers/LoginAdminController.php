@@ -13,14 +13,13 @@ class LoginAdminController extends Controller
     public function index()
     {
 
-        /*destruction de la session de connection aprés deconnection*/
-        session_start();
-        session_destroy();
 
-        $Data["title"]="Login-Admin";
-        $Data["statut"]="deconecter";
-        $Data["url"]="/GameFolio/administrators/login";
-        parent::renderAdmin("AdminLogin", $Data);
+        $data=[
+            "title"=>"Login-Admin",
+
+        ];
+
+        parent::renderAdmin("AdminLogin", $data);
     }
 
     #[Route('/GameFolio/administrators/login/', 'GET')]
@@ -34,45 +33,7 @@ class LoginAdminController extends Controller
     #[Route('/GameFolio/administrators/login', 'POST')]
     public function login()
     {
-
-        if ($this->isValid($_POST["email"], $_POST["password"]) == false) {
-            $Data["msg"] = 'Email ou mot de passe incorrecte!!';
-            $Data["title"] = "Login-Admin";
-            $Data["statut"] = "deconecter";
-            $Data["url"]="/GameFolio/administrators/login";
-            parent::renderAdmin("AdminLogin", $Data);
-        } else {
-
-
-            $ManagerClient=new ManagerClientImplement();
-            $clients=$ManagerClient->selectAll();
-            if (($this->existeClient($_POST["email"], $_POST["password"],$clients)) == false) {
-                $Data["msg"] = 'Email et/ou mot de passe innéxistant!!';
-                $Data["title"] = "Login-Admin";
-                $Data["statut"] = "deconecter";
-                $Data["url"]="/GameFolio/administrators/login";
-                parent::renderAdmin("AdminLogin", $Data);
-            } else {
-                session_start();
-                $_SESSION['statut'] = "connecter";
-                $_SESSION['email'] = $_POST["email"];
-                $_SESSION['password'] = $_POST["password"];
-                header('Location:/GameFolio/administrators/login/home');/*a modifier*/
-            }
-
-        }
-    }
-
-    /*verification de l'existance de l'email et mot de passe*/
-    public function existeClient(string $email, string $password,array $clients):bool{
-
-        $resultat=false;
-        foreach ($clients as $client){
-            if($client->getEmail()==$email && $client->getMotDePasse()==$password){
-                $resultat=$resultat||($client->getEmail()==$email && $client->getMotDePasse()==$password);
-            }
-        }
-        return $resultat;
+        //logique connexion coté administrators
     }
 
     public function isValid(string $email, string $password): bool {

@@ -4,17 +4,13 @@
 
 
 .input_email_class{
-    width: 25%;
+    width: 300px;
     margin: auto;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
     border-radius: 20px;
 
-}
-
-p.statut_connection{
-    text-align: center;
 }
 
 .titre_form_login{
@@ -26,10 +22,10 @@ p.statut_connection{
 }
 
 .input_password_class{
-    width: 25%;
+    width: 300px;
     margin: auto;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
     border-radius: 20px;
     margin-top: 10px;
@@ -37,13 +33,14 @@ p.statut_connection{
 }
 
 .bt_connexion_class{
-    width: 26%;
+    width: 315px;
     margin: auto;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
     margin-top: 10px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .form_login_class{

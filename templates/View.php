@@ -63,6 +63,7 @@ class View
         }
     }
 
+
     public function viewAdmin(array $donnees = null)
     {
 
