@@ -1,7 +1,7 @@
 
 <div class="header_content">
 
-    <a href="/GameFolio/users/home" class="lien_logo_class"><img src="/GameFolio/public/images/logo_jeuxVideos.png" alt="logo" class="logo_class"/></a>
+    <a href="/GameFolio/users/home" class="lien_logo_class"><img src="/GameFolio/public/images/imagesLogo/logoUsers.png" alt="logo" class="logo_class"/></a>
 
     <nav class="nav_class">
 
@@ -21,8 +21,10 @@
 
     <div class="img_links">
 
-        <img src="/GameFolio/public/images/icone_connexion.png" alt="icone" class="icone_connexion_class" id="icone_connexion_id"/>
+        <img src="/GameFolio/public/images/imagesIconConnexion/icone_connexion.png" alt="icone" class="icone_connexion_class" id="icone_connexion_id"/>
+
         <div class="links">
+
             <span class="arrow-down">▼</span>
             <div class=""><a href="">ACCUEIL</a></div>
             <div class=""><a href="">ACCUEIL</a></div>

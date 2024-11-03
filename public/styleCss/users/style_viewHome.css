@@ -1,15 +1,23 @@
 .form_recherche_class{
     display: flex;
     justify-content: center;
-    margin-top:5%;
-    margin-bottom:3%;
+    margin-top:10px;
+    margin-bottom:80px;
+    margin-right: 6px;
+}
 
+hr{
+
+    border-color: blue;
+    width: 60%;     /* Largeur du trait */
+    margin: auto;
 }
 
 .input_recherche_class{
     width: 300px;
     padding-top: 15px;
     padding-bottom: 15px;
+
     text-align: center;
     border-radius: 20px;
 }
@@ -18,6 +26,7 @@
     margin: 5px;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 50px;
 }
 
 p.info_jeu_class{
@@ -37,11 +46,11 @@ a.lien_offre_class{
 
 
 hr{
-    margin-top: 20px;
+    /*margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 5px;
     margin-right:5px;
-    border:solid 1px;
+    border:solid 1px;*/
 }
 
 .games_race_class{

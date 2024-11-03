@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php if(isset($title)) echo $title ?></title>
-    <link rel="shortcut icon" href="/GameFolio/public/images/logoAdmin.png" />
+    <link rel="shortcut icon" href="/GameFolio/public/images/imagesLogo/logoAdministrators.png" />
     <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/administrators/adminHeader.css" media="all" />
     <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/administrators/style_viewLoginAdmin.css" media="all" />
     <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/administrators/style_viewHomeAdmin.css" media="all" />

@@ -1,3 +1,6 @@
-.footer_class{
-
+.footer_content_class{
+    border: 2px blue solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

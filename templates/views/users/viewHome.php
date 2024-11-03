@@ -29,7 +29,7 @@
         <?php if ($game->getCategorie()=="combat"): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
-                    <img src=<?php echo $game->getUrlImage(); ?> class="image_game_class" alt="logo"/>
+                    <img src="<?php echo $game->getUrlImage(); ?>" class="image_game_class" alt="logo"/>
                     <p class="info_jeu_class">Nom : <?php echo htmlspecialchars($game->getNomJeu(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="info_jeu_class">Catégorie : <?php echo htmlspecialchars($game->getCategorie(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="info_jeu_class">Prix : <?php echo $game->getPrix(); ?> euros</p>
@@ -50,7 +50,7 @@
         <?php if ($game->getCategorie()=="course"): ?>
             <article class="game_class">
                 <a href="/GameFolio/users/home/games" class="lien_imageGame_class">
-                    <img src=<?php echo $game->getUrlImage(); ?> class="image_game_class" alt="logo"/>
+                    <img src="<?php echo $game->getUrlImage(); ?>" class="image_game_class" alt="logo"/>
                     <p class="info_jeu_class">Nom : <?php echo htmlspecialchars($game->getNomJeu(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="info_jeu_class">Catégorie : <?php echo htmlspecialchars($game->getCategorie(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="info_jeu_class">Prix : <?php echo $game->getPrix(); ?> euros</p>
