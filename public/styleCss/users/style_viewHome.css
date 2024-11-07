@@ -3,14 +3,14 @@
     justify-content: center;
     margin-top:10px;
     margin-bottom:80px;
-    margin-right: 6px;
 }
 
 hr{
 
-    border-color: blue;
-    width: 60%;     /* Largeur du trait */
-    margin: auto;
+    border-color: lightslategray;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .input_recherche_class{

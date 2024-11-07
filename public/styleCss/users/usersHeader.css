@@ -12,13 +12,16 @@ header{
 
 .lien_logo_class{
     width: 70px;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
 
 }
 
 .logo_class{
     border: solid 2px;
     width: 70px;
-    margin-left: 5px;
+
 }
 
 .header_content{
@@ -33,7 +36,6 @@ header{
 .icone_connexion_class{
     border:2px red solid;
     margin-top: 4px;
-    margin-right:4px;
     margin-bottom: 4px;
     width: 70px;
     border-radius: 20px;
@@ -79,7 +81,7 @@ a{
 .arrow-down{
     position: absolute;
     top:-15px;
-    left:47px;
+    left:65px;
 }
 
 .links{
@@ -92,10 +94,11 @@ a{
     text-align: center;
     display: none;
     position: absolute;
-    left: -24px;
+    left:  -39px;
     top: 82px;
     width: 112px;
     padding-top: 8px;
+
 }
 
 
@@ -103,13 +106,15 @@ a{
 .img_links{
     position: relative;
     /*border:2px orangered solid;*/
-    width: 112px;
+    width: 90px;
     /*margin-left: 4px;
     margin-bottom: 4px;
     margin-top: 4px;
     margin-right: 4px;
     width: 112px;
     position: relative;*/
+    display: flex;
+    justify-content: center;
 
 }
 

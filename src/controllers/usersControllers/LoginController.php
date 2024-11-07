@@ -35,7 +35,7 @@ class LoginController extends Controller
 
             $data=[
                 'title'=>"Login",
-                'errorMessage'=>"format email ou mot de passe incorecte!!",
+                'errorMessage'=>"format mot de passe incorecte!!",
                 'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
             ];
 
@@ -43,12 +43,10 @@ class LoginController extends Controller
 
         } else {
 
-            //utiliser ces daoimplt dans mannager et remplace les ici par le mananger getPasswordByEmail();
             if (((new ManagerClientImplement())->getPasswordByEmail($_POST["email"]))!="email ou mot de passe inconnue !!") {
 
-                if (((new ManagerClientImplement())->getPasswordByEmail($_POST["email"])) != $_POST["password"]) {
-
-                    $data=[
+                    if (!(password_verify($_POST["password"], ((new ManagerClientImplement())->getPasswordByEmail($_POST["email"]))))){
+                        $data=[
                         'errorMessage'=>"Mot de passe incorrect !!",
                         'title'=>"Login",
                         'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",

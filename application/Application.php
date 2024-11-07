@@ -13,6 +13,7 @@ use Maham\GameFolio\controllers\usersControllers\InfoController;
 use Maham\GameFolio\controllers\usersControllers\LoginController;
 use Maham\GameFolio\controllers\usersControllers\LogoutController;
 use Maham\GameFolio\controllers\usersControllers\OffreController;
+use Maham\GameFolio\controllers\usersControllers\RegisterController;
 
 class Application
 {
@@ -36,6 +37,7 @@ class Application
         $this->router->addControllerRoutes(ContactController::class);
         $this->router->addControllerRoutes(LoginController::class);
         $this->router->addControllerRoutes(LogoutController::class);
+        $this->router->addControllerRoutes(RegisterController::class);
 
         /*administrators routes*/
         $this->router->addControllerRoutes(LoginAdminController::class);

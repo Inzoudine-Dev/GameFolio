@@ -2,7 +2,6 @@
 
 namespace Maham\GameFolio\DAOs\DaoImplements;
 
-use DateTime;
 use Exception;
 use Maham\GameFolio\DAOs\DaoInterfaces\DaoClientInterface;
 use Maham\GameFolio\DAOs\dbConfig\MySqlConnection;
@@ -16,8 +15,8 @@ class DaoClientImplement implements DaoClientInterface
 
     public function __construct()
     {
-        $this->nomTable= "clients";
-        $this->MySql= new MySqlConnection('localhost', 'jvdb2', 'root', '');
+        $this->nomTable = "clients";
+        $this->MySql = new MySqlConnection('localhost', 'jvdb2', 'root', '');
     }
 
     public function SelectPasswordByEmail(string $email): string
@@ -28,19 +27,70 @@ class DaoClientImplement implements DaoClientInterface
             throw new Exception($e->getMessage());
         }
 
-        $sql = 'SELECT motdepasse FROM '.$this->nomTable.' where email= :email';
+        $sql = 'SELECT motdepasse FROM ' . $this->nomTable . ' where email= :email';
         $requete = $connection->prepare($sql);
         $requete->bindValue(':email', $email, PDO::PARAM_STR);
         $requete->execute();
         $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-        if($resultat){
+        if ($resultat) {
             return $resultat[0]['motdepasse'];
-        }else{
+        } else {
             return 'email ou mot de passe inconnue !!';
         }
 
     }
+
+    public function SelectTelephoneByEmail(string $email): string
+    {
+        try {
+            $connection = $this->MySql->getConnection();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        $sql = 'SELECT telephone FROM ' . $this->nomTable . ' where email= :email';
+        $requete = $connection->prepare($sql);
+        $requete->bindValue(':email', $email, PDO::PARAM_STR);
+        $requete->execute();
+        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($resultat) {
+            return $resultat[0]['telephone'];
+        } else {
+            return 'email inconnue !!';
+        }
+
+    }
+
+    public function InsertClient(Client $client): void
+    {
+
+            try {
+                $connection = $this->MySql->getConnection();
+            } catch (Exception $e) {
+                throw new Exception($e->getMessage());
+            }
+
+        $sql = 'INSERT INTO ' . $this->nomTable . ' (nom, prenom, dateNaissance, email, telephone, motdepasse) 
+        VALUES (:nom, :prenom, :dateNaissance, :email, :telephone, :motdepasse)';
+
+                $nom = $client->getNom();
+                $prenom = $client->getPrenom();
+                $dateNaissance = $client->getDateNaissance()->format('Y-m-d');
+                $email = $client->getEmail();
+                $telephone = $client->getTelephone();
+                $motdepasse = $client->getMotDePasse();
+                $requete = $connection->prepare($sql);
+                $requete->bindValue(':nom', $nom, PDO::PARAM_STR);
+                $requete->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+                $requete->bindValue(':dateNaissance', $dateNaissance, PDO::PARAM_STR);
+                $requete->bindValue(':email', $email, PDO::PARAM_STR);
+                $requete->bindValue(':telephone', $telephone, PDO::PARAM_STR);
+                $requete->bindValue(':motdepasse', $motdepasse, PDO::PARAM_STR);
+                $requete->execute();
+
+            }
 
 
     /*public function SelectAll(): array

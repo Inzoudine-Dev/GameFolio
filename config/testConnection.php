@@ -4,6 +4,8 @@ use Maham\GameFolio\DAOs\DaoImplements\DaoClientImplement;
 use Maham\GameFolio\DAOs\DaoImplements\DaoGameImplement;
 use Maham\GameFolio\DAOs\DaoImplements\DaoOffreImplement;
 use Maham\GameFolio\DAOs\dbConfig\MySqlConnection;
+use Maham\GameFolio\entities\Client;
+use Maham\GameFolio\managers\ManagerImplements\ManagerClientImplement;
 use Maham\GameFolio\managers\ManagerImplements\ManagerGameImplement;
 
 require '../vendor/autoload.php';
@@ -71,7 +73,7 @@ $dao->selectNOffresPrincipal(3);*/
         INNER JOIN videoGames ON videoGames.id = offres.jeuxvideos_id
         Limit 3';*/
 
-$sql = 'SELECT motdepasse FROM clients where email="mart.bille@example.com"';
+$sql = 'SELECT motdepasse FROM clients where email="mahamoud-inzoudine@hotmail.fr"';
 
 /*SELECT *
         FROM offres
@@ -83,19 +85,36 @@ $pdo=$MySql->getConnection();
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $result =$stmt->fetchAll(PDO::FETCH_ASSOC);
-var_dump($result);
+//var_dump($result);
 
 //var_dump((new DaoOffreImplement())->selectOffreById(20));
 //var_dump((new DaoGameImplement())->selectGameById(2));
-var_dump((new DaoClientImplement())->SelectPasswordByEmail("papamart.bille@example.com"));
-
+var_dump((new DaoClientImplement())->SelectPasswordByEmail("mahamoud-inzoudine@hotmail.fr"));
+var_dump((new ManagerClientImplement())->getPasswordByEmail("mahamoud-inzoudine@hotmail.fr"));
+echo "\n";
+echo (new ManagerClientImplement())->getPasswordByEmail("mahamoud-inzoudine@hotmail.fr");
+echo "\n";
+echo password_hash("Inzoudinemahamoud1994.", PASSWORD_BCRYPT);
+echo "\n";
+$pss2='Inzoudinemahamoud1994.';
+var_dump($pss2);
+var_dump(password_verify($pss2,((new ManagerClientImplement())->getPasswordByEmail("mahamoud-inzoudine@hotmail.fr"))));
+echo "\n";
+echo password_hash("Inzoudinemahamoud1994.", PASSWORD_BCRYPT);
+echo "\n";
+var_dump(password_verify("Inzoudinemahamoud1994.",password_hash("Inzoudinemahamoud1994.", PASSWORD_BCRYPT)));
+/*
+$pass='Inzoudinemahamoud1994.';
+$hashpass=password_hash($pass, PASSWORD_BCRYPT);
+var_dump($pass);
+var_dump($hashpass);
+var_dump(password_verify($pass,$hashpass));
 /*$data["erroMessage"] = htmlspecialchars('<script>Email inconnue!!</script>', ENT_QUOTES, 'UTF-8');
 echo $data["erroMessage"];*/
+//var_dump((new DaoClientImplement())->SelectTelephoneByEmail(("mart.bille@example.com")));
+//(new DaoClientImplement())->InsertClient(new Client(0,'DANIELS','Sam',new DateTime('2024-12-25'),'sDaniels@gmail.com','0782616233','modepassetest'));
+echo "\n";
+$storedHash = (new ManagerClientImplement())->getPasswordByEmail("mahamoud-inzoudine@hotmail.fr");
+$plainPassword = 'Inzoudinemahamoud1994.';
 
-
-$errorMessage = htmlspecialchars("<Email inconnu!!", ENT_QUOTES, 'UTF-8');
-?>
-<div>
-    <p><?php echo $errorMessage; ?></p>
-    <p><?php var_dump($errorMessage); ?></p>
-</div>
+var_dump(password_verify($plainPassword, $storedHash)); // Doit renvoyer true

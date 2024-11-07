@@ -36,7 +36,7 @@ class HomeController extends Controller
             }
 
             // Appel de la vue avec les données
-            parent::render('home', $data);
+            parent::render('Home', $data);
 
     }
 

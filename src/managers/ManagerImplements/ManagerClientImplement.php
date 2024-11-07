@@ -4,6 +4,7 @@ namespace Maham\GameFolio\managers\ManagerImplements;
 
 
 use Maham\GameFolio\DAOs\DaoImplements\DaoClientImplement;
+use Maham\GameFolio\entities\Client;
 use Maham\GameFolio\managers\ManagerInterfaces\ManagerClientInterface;
 
 
@@ -15,6 +16,19 @@ class ManagerClientImplement implements ManagerClientInterface
     {
         return (new DaoClientImplement())->SelectPasswordByEmail($email);
     }
+
+
+    public function getTelephoneByEmail(string $email): string
+    {
+        return (new DaoClientImplement())->SelectTelephoneByEmail($email);
+    }
+
+
+    public function InsertClient(Client $client): void
+    {
+         (new DaoClientImplement())->InsertClient($client);
+    }
+
 
 /*
     public function SelectAll(): array
@@ -35,4 +49,5 @@ class ManagerClientImplement implements ManagerClientInterface
     }
 
     */
+
 }

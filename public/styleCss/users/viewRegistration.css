@@ -1,0 +1,99 @@
+
+
+.input_password_register_class{
+    width: 300px;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+
+
+.input_email_register_class{
+    width: 300px;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+
+
+.input_dateNaissance_register_class{
+    width: 300px;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+
+.input_prenom_register_class{
+    width: 300px;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+
+.input_nom_register_class{
+    width: 300px;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+
+.input_telephone_register_class{
+    width: 300px;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+
+.msg_register_class,.email_register_class{
+    color: green;
+    display: flex;
+    justify-content: center;
+}
+
+.bt_register_class{
+    width: 315px;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+.titl_register_class{
+    display: flex;
+    justify-content: center;
+}
+
+.form_register_class{
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 50px;
+}
