@@ -2,8 +2,8 @@
 
 namespace Templates;
 
-define('VIEWSBASES', dirname(__DIR__).DIRECTORY_SEPARATOR.'templates/bases'.DIRECTORY_SEPARATOR);
-define('VIEWS', dirname(__DIR__).DIRECTORY_SEPARATOR.'templates/'.DIRECTORY_SEPARATOR);
+define('BASES', dirname(__DIR__).DIRECTORY_SEPARATOR.'templates/bases'.DIRECTORY_SEPARATOR);
+define('Templates', dirname(__DIR__).DIRECTORY_SEPARATOR.'templates/'.DIRECTORY_SEPARATOR);
 
 
 class View
@@ -18,8 +18,8 @@ class View
     {
 
         $this->chemin =$chemin;
-        $this->cheminBaseUsers="views/users/";
-        $this->cheminBaseAdmin="views/administrators/";
+        $this->cheminBaseUsers="users/";
+        $this->cheminBaseAdmin="administrators/";
 
     }
 
@@ -78,30 +78,30 @@ class View
     public function view(array $donnees = null)
     {
 
-        if (file_exists(VIEWS . $this->getChemin()) && strpos(VIEWS . $this->getChemin(), $this->getCheminBaseUsers()) != false) {
+        if (file_exists(Templates . $this->getChemin()) && strpos(Templates. $this->getChemin(), $this->getCheminBaseUsers()) != false) {
 
             ob_start();
 
             if ($donnees) {
                 extract($donnees);
             }
-            require $this->chemin;
+            require Templates.$this->getChemin();
             $content = ob_get_clean();
 
-            require VIEWSBASES . 'usersBase.php';//traiter le cas de admin base
+            require BASES . 'usersBase.php';//traiter le cas de admin base
 
         } else {
-            if (file_exists(VIEWS . $this->getChemin()) && strpos(VIEWS . $this->getChemin(), $this->getCheminBaseAdmin()) != false) {
+            if (file_exists(Templates . $this->getChemin()) && strpos(Templates . $this->getChemin(), $this->getCheminBaseAdmin()) != false) {
 
                 ob_start();
 
                 if ($donnees) {
                     extract($donnees);
                 }
-                require $this->chemin;
+                require Templates.$this->chemin;
                 $content = ob_get_clean();
 
-                require VIEWSBASES . 'administratorsBase.php';//traiter le cas de admin base
+                require BASES . 'administratorsBase.php';//traiter le cas de admin base
 
             } else {
                 throw new \Exception("Attention erreur, la vue ou template demander n'existe pas pour Utilisateurs!!!");

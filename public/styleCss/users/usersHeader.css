@@ -42,6 +42,10 @@ header{
     cursor: pointer;
 }
 
+#icone_connexion_class2{
+    border-color: green;
+}
+
 
 li.link{
 

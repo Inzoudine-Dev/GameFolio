@@ -21,7 +21,7 @@
 
     <div class="img_links">
 
-        <img src="/GameFolio/public/images/imagesIconConnexion/icone_connexion.png" alt="icone" class="icone_connexion_class" id="icone_connexion_id"/>
+        <img src="/GameFolio/public/images/imagesIconConnexion/icone_connexion.png" alt="icone" class="icone_connexion_class"  id="icone_connexion_id"/>
 
         <div class="links">
 
