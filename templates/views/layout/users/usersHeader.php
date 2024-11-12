@@ -1,12 +1,12 @@
 
 <div class="header_content">
 
-    <a href="/GameFolio/users/home" class="lien_logo_class"><img src="/GameFolio/public/images/imagesLogo/logoUsers.png" alt="logo" class="logo_class"/></a>
+    <a href="/GameFolio/users/login" class="lien_logo_class"><img src="/GameFolio/public/images/imagesLogo/logoUsers.png" alt="logo" class="logo_class"/></a>
 
     <nav class="nav_class">
 
         <ul class="nav_links">
-            <li class="link"><a href="/GameFolio/users/home" class="">ACCUEIL</a></li>
+            <li class="link"><a href="/GameFolio/users/login" class="">ACCUEIL</a></li>
             <li class="link"><a href="/GameFolio/users/home/games" class="">JEUX VIDEOS</a></li>
             <li class="link"><a href="/GameFolio/users/home/offres" class="">OFFRES</a></li>
             <li class="link"><a href="/GameFolio/users/home/infos" class="">NOUS</a></li>

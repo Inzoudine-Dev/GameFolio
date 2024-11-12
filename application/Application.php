@@ -3,12 +3,12 @@
 namespace Application;
 
 use Config\routes\Router;
-use Maham\GameFolio\controllers\adminControllers\HomeAdminController;
+//use Maham\GameFolio\controllers\adminControllers\HomeController;
 use Maham\GameFolio\controllers\adminControllers\LoginAdminController;
 use Maham\GameFolio\controllers\usersControllers\BoutiqueController;
 use Maham\GameFolio\controllers\usersControllers\ContactController;
 use Maham\GameFolio\controllers\usersControllers\GameController;
-use Maham\GameFolio\controllers\usersControllers\HomeController;
+//use Maham\GameFolio\controllers\usersControllers\HomeController;
 use Maham\GameFolio\controllers\usersControllers\InfoController;
 use Maham\GameFolio\controllers\usersControllers\LoginController;
 use Maham\GameFolio\controllers\usersControllers\LogoutController;
@@ -29,7 +29,7 @@ class Application
     private function registerRoutes()
     {
         /*users routes*/
-        $this->router->addControllerRoutes(HomeController::class);
+        $this->router->addControllerRoutes(\Maham\GameFolio\controllers\usersControllers\HomeController::class);
         $this->router->addControllerRoutes(GameController::class);
         $this->router->addControllerRoutes(OffreController::class);
         $this->router->addControllerRoutes(InfoController::class);
@@ -41,7 +41,7 @@ class Application
 
         /*administrators routes*/
         $this->router->addControllerRoutes(LoginAdminController::class);
-        $this->router->addControllerRoutes(HomeAdminController::class);
+        $this->router->addControllerRoutes(\Maham\GameFolio\controllers\adminControllers\HomeController::class);
     }
 
     // Exécute l'application

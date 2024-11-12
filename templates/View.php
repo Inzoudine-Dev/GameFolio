@@ -39,7 +39,22 @@ class View
     public function view(array $donnees = null)
     {
 
-        if(file_exists("../templates/".$this->getChemin()) && file_exists(VIEWSBASES.'bases/usersBase.php')) {
+            if(file_exists("../templates/".$this->getChemin()) && strpos("../templates/".$this->getChemin(), "views/users/")!=false){
+
+                ob_start();
+
+                if ($donnees) {
+                    extract($donnees);
+                }
+                require $this->chemin;
+                $content = ob_get_clean();
+
+                require VIEWSBASES . 'bases/usersBase.php';//traiter le cas de admin base
+
+            }
+
+        if(file_exists("../templates/".$this->getChemin()) && strpos("../templates/".$this->getChemin(), "views/administrators/")!=false){
+
             ob_start();
 
             if ($donnees) {
@@ -48,8 +63,10 @@ class View
             require $this->chemin;
             $content = ob_get_clean();
 
-            require VIEWSBASES . 'bases/usersBase.php';
+            require VIEWSBASES . 'bases/administratorsBase.php';//traiter le cas de admin base
+
         }
+
         else{
             throw new \Exception("Attention erreur, la vue ou template demander n'existe pas pour Utilisateurs!!!");
         }

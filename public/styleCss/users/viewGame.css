@@ -1,0 +1,16 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne automatiquement */
+    gap: 20px; /* Espace entre les éléments */
+    justify-content: center;
+}
+
+.item {
+    width: 250px; /* Taille fixe pour chaque élément */
+    text-align: center;
+}
+
+.item img {
+    width: 100%; /* L'image prend toute la largeur de son conteneur */
+    height: auto; /* Maintient le ratio de l'image */
+}
