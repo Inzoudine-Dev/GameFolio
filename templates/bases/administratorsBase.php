@@ -19,7 +19,7 @@
 <body>
 
 <header class="header_class">
-    <?php include '../templates/views/shared/administrators/adminHeader.php'?>
+    <?php include '../templates/views/layout/administrators/adminHeader.php'?>
 </header>
 
 
@@ -31,7 +31,7 @@
 
 
 <footer class="footer_class">
-    <?php include '../templates/views/shared/administrators/adminFooter.php'?>
+    <?php include '../templates/views/layout/administrators/adminFooter.php'?>
 </footer>
 
 </body>

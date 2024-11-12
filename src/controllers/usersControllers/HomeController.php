@@ -29,14 +29,14 @@ class HomeController extends Controller
                 $data = [
                     'title' =>'Home',
                     'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
+                    'msgConceter' => 'Bienvenue sur votre compte GameFolio!!, vous etes connecter!!',
                     'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
                     'games' => (new ManagerGameImplement())->getNGamesForHome(8),
                 ];
 
             }
 
-            // Appel de la vue avec les données
-            parent::render('Home', $data);
+            parent::render('views/users/viewHome.php', $data);
 
     }
 

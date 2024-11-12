@@ -5,17 +5,11 @@ use Templates\View;
 
 abstract class Controller
 {
-    public function render(string $actionVue, array $donnees=null ){
 
-        $vue =new View($actionVue);
+    public function render(string $chemin, array $donnees=null ){
+
+        $vue =new View($chemin);
         $vue->view($donnees);
-
-    }
-
-    public function renderAdmin(string $actionVue, array $donnees=null ){
-
-        $vue =new View($actionVue);
-        $vue->viewAdmin($donnees);
 
     }
 

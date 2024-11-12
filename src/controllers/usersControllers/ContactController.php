@@ -20,7 +20,7 @@ class ContactController extends  Controller
                 'title' => 'Contacts',
                 'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
             ];
-            parent::render("Contact", $data);
+            parent::render("views/users/viewContact.php", $data);
         }
     }
 

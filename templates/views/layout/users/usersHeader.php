@@ -29,7 +29,7 @@
             <div class=""><a href="">ACCUEIL</a></div>
             <div class=""><a href="">ACCUEIL</a></div>
             <div class=""><a href="">ACCUEIL</a></div>
-            <div class=""><a href="/GameFolio/users/home/registration">Inscription</a></div>
+            <div id="link_registration_id"><a href="/GameFolio/users/home/registration">Inscription</a></div>
             <div class="" id="link_conexion_id"><a href="/GameFolio/users/home/login">Conexion</a></div>
             <div class="" id="link_deconexion_id"><a href="/GameFolio/users/home/logout">Deconexion</a></div>
 

@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
         ];
 
-        parent::render('Registration', $data);
+        parent::render('views/users/viewRegistration.php', $data);
     }
 
 
@@ -44,19 +44,18 @@ class RegisterController extends Controller
                 'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
             ];
 
-            parent::render("Registration", $data);
+            parent::render("views/users/viewRegistration.php", $data);
         }
         else{
 
-            $pattern = '/^0[1-9]\d{8}$/';
-            if(!preg_match($pattern, $_POST['telephone'])){
+            if(!preg_match( '/^0[1-9]\d{8}$/', $_POST['telephone'])){
                 $data = [
                 'title' =>'Registration',
                 'errorMessage'=>"Le fromat du numero de telephone est incorrecte!!",
                 'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
             ];
 
-            parent::render("Registration", $data);
+            parent::render("views/users/viewRegistration.php", $data);
 
             }else{
 
@@ -67,7 +66,7 @@ class RegisterController extends Controller
                     'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
                 ];
 
-                parent::render("Registration", $data);
+                parent::render("views/users/viewRegistration.php", $data);
             }else{
 
                 ((new ManagerClientImplement()))->InsertClient(new Client(0,$_POST['nom'],$_POST['prenom'],new DateTime($_POST['dateNaissance']),$_POST['email'],$_POST['telephone'],password_hash($_POST['password'], PASSWORD_BCRYPT)));
@@ -79,7 +78,7 @@ class RegisterController extends Controller
                     'identifiantEmail' => $_POST['email'],
                 ];
 
-                parent::render("Registration", $data);
+                parent::render("views/users/viewRegistration.php", $data);
             }
         }
     }

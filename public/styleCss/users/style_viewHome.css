@@ -13,6 +13,12 @@ hr{
     justify-content: center;
 }
 
+.text_msg_class,.msg_connecter_class{
+    color: green;
+    display: flex;
+    justify-content: center;
+}
+
 .input_recherche_class{
     width: 300px;
     padding-top: 15px;

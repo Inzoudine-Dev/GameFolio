@@ -21,7 +21,7 @@ class HomeAdminController extends Controller
 
         $Data["scriptIcone_Connection"]="/GameFolio/public/scriptsJs/administrators/scriptIconeConnection.js";
 
-        parent::renderAmdin("HomeAdmin", $Data);
+        parent::render("views/administrators/viewHomeAdmin.php", $Data);
         }
 
     }

@@ -21,7 +21,7 @@ class BoutiqueController extends Controller
                 'title' => 'Boutiques',
                 'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
             ];
-            parent::render("Boutique", $data);
+            parent::render("views/users/viewBoutique.php", $data);
         }
     }
 

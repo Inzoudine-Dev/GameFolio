@@ -20,7 +20,7 @@ class GameController extends Controller
                 'title' => 'Games',
                 'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
                 ];
-            parent::render("Game", $data);
+            parent::render("views/users/viewGame.php", $data);
         }
     }
 

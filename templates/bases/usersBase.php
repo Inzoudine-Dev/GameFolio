@@ -22,7 +22,7 @@
     <body>
 
         <header class="header_class">
-            <?php include '../templates/views/shared/users/usersHeader.php'?>
+            <?php include '../templates/views/layout/users/usersHeader.php'?>
         </header>
 
 
@@ -34,7 +34,7 @@
 
 
         <footer class="footer_class">
-            <?php include '../templates/views/shared/users/usersFooter.php'?>
+            <?php include '../templates/views/layout/users/usersFooter.php'?>
         </footer>
 
     </body>

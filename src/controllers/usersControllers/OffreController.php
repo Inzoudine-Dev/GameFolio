@@ -23,7 +23,7 @@ class OffreController extends Controller
                 'title' => 'Offres',
                 'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
             ];
-            parent::render("Offre", $data);
+            parent::render("views/users/viewOffre.php", $data);
         }
 
     }

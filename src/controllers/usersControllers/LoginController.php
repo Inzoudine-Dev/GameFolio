@@ -18,7 +18,7 @@ class LoginController extends Controller
             'title'=>"Login",
             'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
         ];
-        parent::render("Login", $data);
+        parent::render("views/users/viewLogin.php", $data);
     }
 
     #[Route('/GameFolio/users/home/login/','GET')]
@@ -39,8 +39,6 @@ class LoginController extends Controller
                 'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
             ];
 
-            parent::render("Login", $data);
-
         } else {
 
             if (((new ManagerClientImplement())->getPasswordByEmail($_POST["email"]))!="email ou mot de passe inconnue !!") {
@@ -51,9 +49,6 @@ class LoginController extends Controller
                         'title'=>"Login",
                         'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
                     ];
-
-                    parent::render("Login", $data);
-
 
                 } else {
 
@@ -73,12 +68,12 @@ class LoginController extends Controller
                     'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
                 ];
 
-                parent::render("Login", $data);
-
             }
 
         }
+        parent::render("views/users/viewLogin.php", $data);
     }
+
 
     public function isValid(string $email, string $password): bool {
         // 1. Validation de l'email

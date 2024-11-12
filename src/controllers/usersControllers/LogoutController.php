@@ -26,7 +26,7 @@ class LogoutController extends Controller
                 'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
             ];
 
-            parent::render('Login',$data);
+            parent::render('views/users/viewLogin.php',$data);
 
         }
 

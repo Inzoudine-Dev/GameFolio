@@ -16,10 +16,9 @@ class LoginAdminController extends Controller
 
         $data=[
             "title"=>"Login-Admin",
-
         ];
 
-        parent::renderAdmin("AdminLogin", $data);
+        parent::render("views/administrators/viewAdminLogin.php", $data);
     }
 
     #[Route('/GameFolio/administrators/login/', 'GET')]

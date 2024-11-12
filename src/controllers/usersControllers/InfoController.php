@@ -19,7 +19,7 @@ class InfoController extends Controller
                 'title' => 'Infos',
                 'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
             ];
-            parent::render("Info", $data);
+            parent::render("views/users/viewInfo.php", $data);
         }
     }
 }

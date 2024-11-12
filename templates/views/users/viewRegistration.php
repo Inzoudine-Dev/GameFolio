@@ -28,7 +28,7 @@ header("Pragma: no-cache");
 
     <input type="text" name ="prenom" placeholder="Prenom" class="input_prenom_register_class" aria-label="name"  required>
 
-    <input type="datetime-local" name ="dateNaissance" placeholder="Date de naissance" class="input_dateNaissance_register_class" aria-label="date" required>
+    <input type="date" name ="dateNaissance" placeholder="Date de naissance" class="input_dateNaissance_register_class" aria-label="date" required>
 
     <input type="text" name ="telephone" placeholder="Telephone" class="input_telephone_register_class" aria-label="telephone" required>
 
