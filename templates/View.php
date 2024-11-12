@@ -2,7 +2,8 @@
 
 namespace Templates;
 
-define('VIEWSBASES', dirname(__DIR__).DIRECTORY_SEPARATOR.'Templates'.DIRECTORY_SEPARATOR);
+define('VIEWSBASES', dirname(__DIR__).DIRECTORY_SEPARATOR.'templates/bases'.DIRECTORY_SEPARATOR);
+define('VIEWS', dirname(__DIR__).DIRECTORY_SEPARATOR.'templates/'.DIRECTORY_SEPARATOR);
 
 
 class View
@@ -10,13 +11,51 @@ class View
 
 
     private string $chemin;
+    private string $cheminBaseUsers;
+    private string $cheminBaseAdmin;
 
     public function __construct(string $chemin)
     {
 
         $this->chemin =$chemin;
+        $this->cheminBaseUsers="views/users/";
+        $this->cheminBaseAdmin="views/administrators/";
 
     }
+
+    /**
+     * @return string
+     */
+    public function getCheminBaseUsers(): string
+    {
+        return $this->cheminBaseUsers;
+    }
+
+    /**
+     * @param string $cheminBaseUsers
+     */
+    public function setCheminBaseUsers(string $cheminBaseUsers): void
+    {
+        $this->cheminBaseUsers = $cheminBaseUsers;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCheminBaseAdmin(): string
+    {
+        return $this->cheminBaseAdmin;
+    }
+
+    /**
+     * @param string $cheminBaseAdmin
+     */
+    public function setCheminBaseAdmin(string $cheminBaseAdmin): void
+    {
+        $this->cheminBaseAdmin = $cheminBaseAdmin;
+    }
+
+
 
     /**
      * @return string
@@ -39,21 +78,7 @@ class View
     public function view(array $donnees = null)
     {
 
-            if(file_exists("../templates/".$this->getChemin()) && strpos("../templates/".$this->getChemin(), "views/users/")!=false){
-
-                ob_start();
-
-                if ($donnees) {
-                    extract($donnees);
-                }
-                require $this->chemin;
-                $content = ob_get_clean();
-
-                require VIEWSBASES . 'bases/usersBase.php';//traiter le cas de admin base
-
-            }
-
-        if(file_exists("../templates/".$this->getChemin()) && strpos("../templates/".$this->getChemin(), "views/administrators/")!=false){
+        if (file_exists(VIEWS . $this->getChemin()) && strpos(VIEWS . $this->getChemin(), $this->getCheminBaseUsers()) != false) {
 
             ob_start();
 
@@ -63,12 +88,24 @@ class View
             require $this->chemin;
             $content = ob_get_clean();
 
-            require VIEWSBASES . 'bases/administratorsBase.php';//traiter le cas de admin base
+            require VIEWSBASES . 'usersBase.php';//traiter le cas de admin base
 
-        }
+        } else {
+            if (file_exists(VIEWS . $this->getChemin()) && strpos(VIEWS . $this->getChemin(), $this->getCheminBaseAdmin()) != false) {
 
-        else{
-            throw new \Exception("Attention erreur, la vue ou template demander n'existe pas pour Utilisateurs!!!");
+                ob_start();
+
+                if ($donnees) {
+                    extract($donnees);
+                }
+                require $this->chemin;
+                $content = ob_get_clean();
+
+                require VIEWSBASES . 'administratorsBase.php';//traiter le cas de admin base
+
+            } else {
+                throw new \Exception("Attention erreur, la vue ou template demander n'existe pas pour Utilisateurs!!!");
+            }
         }
     }
 
