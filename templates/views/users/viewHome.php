@@ -14,6 +14,38 @@ header("Pragma: no-cache");
 </form>
 
 
+<section class="section_slide_class">
+
+    <div class="slider-container">
+        <div class="slider" aria-label="Galerie d'images">
+            <div class="slide" tabindex="0">
+                <img src="/GameFolio/public/images/imagesGames/RaceGames/img.png" alt="Description de l'image 1" />
+            </div>
+            <div class="slide" tabindex="0">
+                <img src="/GameFolio/public/images/imagesGames/RaceGames/img_1.png" alt="Description de l'image 2" />
+            </div>
+            <div class="slide" tabindex="0">
+                <img src="/GameFolio/public/images/imagesGames/RaceGames/img_2.png" alt="Description de l'image 3" />
+            </div>
+        </div>
+
+        <!-- Boutons de navigation -->
+        <button class="prev" aria-label="Image précédente">❮</button>
+        <button class="next" aria-label="Image suivante">❯</button>
+
+        <!-- Indicateurs pour SEO et navigation -->
+        <div class="indicators">
+            <button aria-label="Aller à l'image 1" data-index="0"></button>
+            <button aria-label="Aller à l'image 2" data-index="1"></button>
+            <button aria-label="Aller à l'image 3" data-index="2"></button>
+        </div>
+    </div>
+
+
+</section>
+
+
+
 <div class="msg_connecter_class">
     <?php if (isset($msgConceter)): ?>
         <p class="text_msg_class"><?php echo htmlspecialchars($msgConceter,ENT_QUOTES,'UTF-8'); ?></p>

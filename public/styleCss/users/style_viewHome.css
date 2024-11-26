@@ -2,14 +2,15 @@
     display: flex;
     justify-content: center;
     margin-top:0px;
-    margin-bottom:80px;
+    margin-bottom:25px;
 }
 
 .input_recherche_class{
     width: 550px;
     padding-top: 15px;
     padding-bottom: 15px;
-    border-radius: 0px;padding-left: 10px;
+    border-radius: 0px;
+    padding-left: 10px;
     border: black solid 1px;
 }
 
@@ -139,3 +140,122 @@ div.div_messageDeconnexion_class{
     margin-left: 10px;
 }
 
+/*home slide*/
+
+/* Slider container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Maintient un ratio pour les images */
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Slides */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 1;
+    min-width: 100%;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste les images pour qu'elles remplissent l'espace */
+}
+
+/* Navigation buttons */
+button.prev,
+button.next {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Boutons gauche et droit */
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/* Boutons adaptatifs */
+button.prev:hover,
+button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Indicateurs */
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.indicators button {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicators button.active {
+    background-color: white;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    button.prev,
+    button.next {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .indicators button {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    button.prev,
+    button.next {
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+    }
+
+    .indicators button {
+        width: 8px;
+        height: 8px;
+    }
+}

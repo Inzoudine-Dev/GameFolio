@@ -20,6 +20,7 @@ class HomeController extends Controller
                 $data = [
                     'title' =>'Home',
                     'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
+                    'scriptSlide'=>  '/GameFolio/public/scriptsJs/users/scriptSlide.js',
                     'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
                     'games' => (new ManagerGameImplement())->getNGamesForHome(8),
                 ];
@@ -29,6 +30,7 @@ class HomeController extends Controller
                 $data = [
                     'title' =>'Home',
                     'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
+                    'scriptSlide'=>  '/GameFolio/public/scriptsJs/users/scriptSlide.js',
                     'msgConceter' => 'Bienvenue sur votre compte GameFolio!!, vous etes connecter!!',
                     'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
                     'games' => (new ManagerGameImplement())->getNGamesForHome(8),
