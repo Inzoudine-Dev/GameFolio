@@ -25,7 +25,23 @@ div.recherche_class{
     padding-top: 4px;
     padding-bottom: 4px;
     border-left: 0px;
+    cursor: pointer;
 }
+
+
+/* Styles de base */
+input{
+
+    box-sizing: border-box;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet focus personnalisé */
+input:focus{
+    outline: none; /* Supprime la bordure par défaut */
+    border: 1px solid black; /* Couleur de bordure personnalisée */
+}
+
 
 hr{
 
