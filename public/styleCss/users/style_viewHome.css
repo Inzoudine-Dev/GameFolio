@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top:0px;
-    margin-bottom:25px;
+    margin-bottom:15px;
 }
 
 .input_recherche_class{
@@ -147,10 +147,11 @@ div.div_messageDeconnexion_class{
     position: relative;
     width: 100%;
     max-width: 1200px;
-    height: auto;
     aspect-ratio: 16 / 9; /* Maintient un ratio pour les images */
     margin: auto;
     overflow: hidden;
+    display: flex;
+    height: 500px;
 }
 
 /* Slides */
@@ -175,7 +176,7 @@ div.div_messageDeconnexion_class{
 button.prev,
 button.next {
     position: absolute;
-    top: 35%;
+    top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -209,7 +210,7 @@ button.next:hover {
 /* Indicateurs */
 .indicators {
     position: absolute;
-    top: 62%;
+    top: 95%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

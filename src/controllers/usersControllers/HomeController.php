@@ -38,6 +38,7 @@ class HomeController extends Controller
 
             }
 
+
             parent::render('views/users/viewHome.php', $data);
 
     }
