@@ -1,8 +1,30 @@
 .form_recherche_class{
     display: flex;
     justify-content: center;
-    margin-top:10px;
+    margin-top:0px;
     margin-bottom:80px;
+}
+
+.input_recherche_class{
+    width: 550px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 0px;padding-left: 10px;
+    border: black solid 1px;
+}
+
+div.recherche_class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_loupe_class{
+    width: 50px;
+    border: black solid 1px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-left: 0px;
 }
 
 hr{
@@ -17,15 +39,6 @@ hr{
     color: green;
     display: flex;
     justify-content: center;
-}
-
-.input_recherche_class{
-    width: 300px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-
-    text-align: center;
-    border-radius: 20px;
 }
 
 .offres_class{
@@ -71,6 +84,7 @@ hr{
 
 .image_game_class{
     width:100%;
+    border: black solid 1px;
 }
 
 .game_class{

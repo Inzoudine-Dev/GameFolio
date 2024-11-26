@@ -7,7 +7,10 @@ header("Pragma: no-cache");
 
 
 <form class="form_recherche_class">
-    <input type="text" placeholder="Recherche" class="input_recherche_class" aria-label="Recherche">
+    <div class="recherche_class">
+        <input type="text" placeholder="Recherche..." class="input_recherche_class" aria-label="Recherche">
+        <img src="/GameFolio/public/images/loupeRecherche.png" class="img_loupe_class">
+    </div>
 </form>
 
 
