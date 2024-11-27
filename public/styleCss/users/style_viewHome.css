@@ -5,13 +5,21 @@
     margin-bottom:15px;
 }
 
+.btn_recherche{
+    width: 60px;
+    padding-left:0;
+    padding-right:0;
+    border: lightgray solid 1px;
+    border-left: 0px;
+}
+
 .input_recherche_class{
     width: 550px;
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 0px;
     padding-left: 10px;
-    border: black solid 1px;
+    border: lightgray solid 1px;
 }
 
 div.recherche_class{
@@ -21,12 +29,9 @@ div.recherche_class{
 }
 
 .img_loupe_class{
-    width: 50px;
-    border: black solid 1px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    border-left: 0px;
+    width: 100%;
     cursor: pointer;
+    display: flex;
 }
 
 

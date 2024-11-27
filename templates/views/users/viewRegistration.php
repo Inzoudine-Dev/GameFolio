@@ -23,7 +23,6 @@ header("Pragma: no-cache");
 
 <form action="/GameFolio/users/home/registration" method="post" class="form_register_class" autocomplete="off">
 
-
     <input type="text" name ="nom" placeholder="Nom" class="input_nom_register_class" aria-label="name" value="" required>
 
     <input type="text" name ="prenom" placeholder="Prenom" class="input_prenom_register_class" aria-label="name"  required>

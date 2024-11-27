@@ -6,13 +6,20 @@ header("Pragma: no-cache");
 ?>
 
 
-<form class="form_recherche_class">
+<form action="" method="" class="form_recherche_class">
     <div class="recherche_class">
-        <input type="text" placeholder="Recherche..." class="input_recherche_class" aria-label="Recherche">
-        <img src="/GameFolio/public/images/loupeRecherche.png" class="img_loupe_class">
+        <input type="text" name="recherche" placeholder="Recherche..." class="input_recherche_class" aria-label="Recherche">
+        <button type="submit" class="btn_recherche">
+            <img src="/GameFolio/public/images/loupeRecherche.png" class="img_loupe_class">
+        </button>
     </div>
 </form>
 
+<div class="msg_connecter_class">
+    <?php if (isset($msgConceter)): ?>
+        <p class="text_msg_class"><?php echo htmlspecialchars($msgConceter,ENT_QUOTES,'UTF-8'); ?></p>
+    <?php endif; ?>
+</div>
 
 <section class="section_slide_class">
 
@@ -44,13 +51,6 @@ header("Pragma: no-cache");
 
 </section>
 
-
-
-<div class="msg_connecter_class">
-    <?php if (isset($msgConceter)): ?>
-        <p class="text_msg_class"><?php echo htmlspecialchars($msgConceter,ENT_QUOTES,'UTF-8'); ?></p>
-    <?php endif; ?>
-</div>
 
 <section>
     <h2 class="title_offer" id="title_offer_id">Les offres du jour</h2>

@@ -18,27 +18,21 @@ class HomeController extends Controller
             if(!isset($_SESSION['statut'],$_SESSION['email'],$_SESSION['password'])){
 
                 $data = [
-                    'title' =>'Home',
                     'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
-                    'scriptSlide'=>  '/GameFolio/public/scriptsJs/users/scriptSlide.js',
-                    'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
-                    'games' => (new ManagerGameImplement())->getNGamesForHome(8),
                 ];
 
             }else{
 
                 $data = [
-                    'title' =>'Home',
                     'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
-                    'scriptSlide'=>  '/GameFolio/public/scriptsJs/users/scriptSlide.js',
                     'msgConceter' => 'Bienvenue sur votre compte GameFolio!!, vous etes connecter!!',
-                    'offres' => (new ManagerOffreImplement())->getNOffresForHome(3),
-                    'games' => (new ManagerGameImplement())->getNGamesForHome(8),
                 ];
 
             }
 
-
+            $data['title']='Home';
+            $data['offres']=(new ManagerOffreImplement())->getNOffresForHome(3);
+            $data['games']=(new ManagerGameImplement())->getNGamesForHome(8);
             parent::render('views/users/viewHome.php', $data);
 
     }
