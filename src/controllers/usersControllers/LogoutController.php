@@ -8,7 +8,7 @@ use Maham\GameFolio\controllers\Controller;
 class LogoutController extends Controller
 {
 
-    #[Route('/GameFolio/users/home/logout', 'GET')]
+    #[Route('/GameFolio/users/home/login/logout', 'GET')]
     public function index()
     {
 
@@ -18,18 +18,16 @@ class LogoutController extends Controller
             header('Location:/GameFolio/users/home/login');
             exit();
         }else{
-
             session_destroy();
             $data=[
-                "title "=> htmlspecialchars("Login", ENT_QUOTES, 'UTF-8'),
+                "title"=> htmlspecialchars("Logout", ENT_QUOTES, 'UTF-8'),
                 'goodBayMessage'=>'Merci pour votre connexion et A bientot!!',
                 'scriptDeconecter'=>"/GameFolio/public/scriptsJs/users/scriptDeconecter.js",
             ];
-
-            parent::render('views/users/viewLogin.php',$data);
+            parent::render('views/users/viewLogout.php',$data);
 
         }
 
-    }
+   }
 
 }

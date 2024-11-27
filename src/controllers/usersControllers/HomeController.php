@@ -26,6 +26,7 @@ class HomeController extends Controller
                 $data = [
                     'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
                     'msgConceter' => 'Bienvenue sur votre compte GameFolio!!, vous etes connecter!!',
+                    'email' => $_SESSION["email"],
                 ];
 
             }

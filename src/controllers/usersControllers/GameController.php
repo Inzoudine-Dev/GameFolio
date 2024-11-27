@@ -19,6 +19,7 @@ class GameController extends Controller
             $data = [
                 'title' => 'Games',
                 'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
+                'email' => $_SESSION["email"]
                 ];
             parent::render("views/users/viewGame.php", $data);
         }

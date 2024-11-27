@@ -17,7 +17,8 @@ class InfoController extends Controller
         } else {
             $data = [
                 'title' => 'Infos',
-                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
+                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
+                'email' => $_SESSION["email"]
             ];
             parent::render("views/users/viewInfo.php", $data);
         }

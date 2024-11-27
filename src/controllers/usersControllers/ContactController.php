@@ -18,7 +18,8 @@ class ContactController extends  Controller
         }else{
             $data = [
                 'title' => 'Contacts',
-                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
+                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
+                'email' => $_SESSION["email"]
             ];
             parent::render("views/users/viewContact.php", $data);
         }

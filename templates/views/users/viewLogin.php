@@ -4,13 +4,6 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 ?>
 
-
-<div class="error_class">
-    <?php if (isset($goodBayMessage)): ?>
-        <p class="error_login_class"><?php echo htmlspecialchars($goodBayMessage,ENT_QUOTES,'UTF-8'); ?></p>
-    <?php endif; ?>
-
-</div>
 <section>
 
     <h1 class="titre_form_login">Connecter-vous !!</h1>

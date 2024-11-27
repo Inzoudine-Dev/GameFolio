@@ -1,0 +1,30 @@
+.error_login_class{
+    text-align: center;
+    color: red;
+}
+
+.section_logout{
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
+
+.btn_logout_content{
+    display: flex;
+    justify-content: center;
+}
+
+.btn_logout{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.btn_accueil{
+    width: 200px;
+    margin-bottom: 5px;
+}
+
+.btn_connexion{
+    width: 200px;
+    margin-top: 5px;
+}

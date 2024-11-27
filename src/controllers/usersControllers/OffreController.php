@@ -21,7 +21,8 @@ class OffreController extends Controller
 
             $data = [
                 'title' => 'Offres',
-                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js'
+                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
+                'email' => $_SESSION["email"]
             ];
             parent::render("views/users/viewOffre.php", $data);
         }
