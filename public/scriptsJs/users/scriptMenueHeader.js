@@ -8,7 +8,6 @@ const dropdownContent = document.querySelector('.links');
 iconeConnexion.addEventListener('click', function(e) {
 
     dropdownContent.classList.toggle('show');
-    /*iconeConnexion.style.='red';*/
 });
 
 // Ferme le menu si l'utilisateur clique en dehors

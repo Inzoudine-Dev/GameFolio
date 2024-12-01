@@ -27,7 +27,6 @@ class Router
         }
     }
 
-    // Gère la requête en fonction de l'URL et de la méthode HTTP
     public function handleRequest()
     {
         // Récupérer et décoder l'URI demandée
@@ -43,9 +42,17 @@ class Router
 
         // Parcourir les routes pour trouver une correspondance
         foreach ($this->routes as $route) {
-            if ($route['path'] === $requestedUri && $route['method'] === $requestedMethod) {
+            // Créer une expression régulière à partir de la route
+            $regex = '#^' . preg_replace('/\{[^}]+\}/', '([^/]+)', $route['path']) . '$#';
+
+            // Vérifier si l'URL correspond à la route via l'expression régulière
+            if (preg_match($regex, $requestedUri, $matches) && $route['method'] === $requestedMethod) {
+                // Supprimer la première correspondance (l'URL elle-même)
+                array_shift($matches);
+
+                // Passer les paramètres dynamiques au contrôleur
                 $controller = new $route['controller']();
-                call_user_func([$controller, $route['action']]);
+                call_user_func_array([$controller, $route['action']], $matches);
                 return;
             }
         }
@@ -54,6 +61,7 @@ class Router
         http_response_code(404);
         echo "Page non trouvée";
     }
+
 
     // Vérifie si une URL est sûre (sans code malveillant)
     private function isUrlSafe($url)

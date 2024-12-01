@@ -24,7 +24,7 @@ class OffreController extends Controller
                 'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
                 'email' => $_SESSION["email"]
             ];
-            parent::render("views/users/viewOffre.php", $data);
+            parent::render("views/users/viewOffres.php", $data);
         }
 
     }
@@ -33,5 +33,18 @@ class OffreController extends Controller
     public function indexRedirect()
     {
         $this->index();
+    }
+
+    #[Route('/GameFolio/users/home/offres/{nomOffre}','GET')]
+    public function showOffre(string $nomOffre)
+    {
+        $data = [
+            'title' => $nomOffre,  // Dynamiser le titre
+            'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
+            'nomOffre' => $nomOffre,
+        ];
+
+        parent::render("views/users/viewDetailsOffre.php", $data);
+
     }
 }
