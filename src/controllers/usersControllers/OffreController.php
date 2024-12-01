@@ -43,7 +43,7 @@ class OffreController extends Controller
     public function showOffre(string $nomOffre)
     {
 
-        /*si l'utilisateur est connecter ok, sinon il est rediriger vers la page login*/
+
         session_start();
         if (!isset($_SESSION['statut'], $_SESSION['email'], $_SESSION['password'])) {
 
@@ -69,7 +69,6 @@ class OffreController extends Controller
                 ];
             }
 
-            parent::render("views/users/viewDetailsOffre.php", $data);
 
         } else {
 
