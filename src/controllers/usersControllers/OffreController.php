@@ -4,6 +4,8 @@ namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
+use Maham\GameFolio\entities\Offre;
+use Maham\GameFolio\entities\VideoGame;
 use Maham\GameFolio\managers\ManagerImplements\ManagerOffreImplement;
 
 class OffreController extends Controller
@@ -45,16 +47,16 @@ class OffreController extends Controller
         session_start();
         if (!isset($_SESSION['statut'], $_SESSION['email'], $_SESSION['password'])) {
 
-            $tabOffre = (new ManagerOffreImplement())->getNOffresForHome(3);
-            for ($i = 0; $i < count($tabOffre); $i++) {
-                if ($tabOffre[$i] == (new ManagerOffreImplement())->getOffreByName($nomOffre)) {
-                    $taf = "trouvé";
+            $homeOffre = (new ManagerOffreImplement())->getNOffresForHome(3);
+            for ($i = 0; $i < count($homeOffre); $i++) {
+                if ($homeOffre[$i] == (new ManagerOffreImplement())->getOffreByName($nomOffre)) {
+                    $statut = "trouvé";
                     break;
                 }
-                $taf = "non trouvé";
+                $statut = "non trouvé";
             }
 
-            if ($taf == "non trouvé") {
+            if ($statut== "non trouvé") {
                 header('Location:/GameFolio/users/home/login');
             } else {
 
@@ -71,12 +73,23 @@ class OffreController extends Controller
 
         } else {
 
-            $data = [
-                'title' => $nomOffre,
-                'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
-                'nomOffre' => $nomOffre,
-                'datasOffre' => (new ManagerOffreImplement())->getOffreByName($nomOffre),
-            ];
+            if (!(new ManagerOffreImplement())->getOffreByName($nomOffre) || ((new ManagerOffreImplement())->getOffreByName($nomOffre)== new Offre(0,'offre inexistant','0.0',new VideoGame(0,'innéxistant','rien',0,'urlVide')))) {
+                $data = [
+                    'title' => $nomOffre,
+                    'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
+                    'scriptHide' => '/GameFolio/public/scriptsJs/users/scriptHide.js',
+                    'statut' => 'Elément demender est existe pas !!',
+                ];
+
+            } else {
+
+                $data = [
+                    'title' => $nomOffre,
+                    'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
+                    'nomOffre' => $nomOffre,
+                    'datasOffre' => (new ManagerOffreImplement())->getOffreByName($nomOffre),
+                ];
+            }
         }
 
         parent::render("views/users/viewDetailsOffre.php", $data);

@@ -1,6 +1,9 @@
 
+<div class="statut_inexistance_class">
+    <?php if(isset($statut)) echo $statut?>
+</div>
 
-<section class="section_detailsOffre_class">
+<section class="section_detailsOffre_class" id="section_detailsOffre_id">
 
     <h1>test viewDetailOffre</h1>
 
