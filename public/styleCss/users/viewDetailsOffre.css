@@ -1,0 +1,34 @@
+.game_offre_class{
+    border: 2px solid red;
+    margin-bottom: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.offre_details_class{
+    border: 2px solid red;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.center_offre_details_class{
+    display: flex;
+    justify-content: center;
+
+}
+
+p.info_details_class{
+    text-align: center;
+}
+
+.center_game_offre_class{
+    display: flex;
+    justify-content: center;
+}

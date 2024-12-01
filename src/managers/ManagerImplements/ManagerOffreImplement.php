@@ -3,6 +3,7 @@
 namespace Maham\GameFolio\managers\ManagerImplements;
 
 use Maham\GameFolio\DAOs\DaoImplements\DaoOffreImplement;
+use Maham\GameFolio\entities\Offre;
 use Maham\GameFolio\managers\ManagerInterfaces\ManagerOffreInterface;
 
 class ManagerOffreImplement implements ManagerOffreInterface
@@ -26,4 +27,8 @@ class ManagerOffreImplement implements ManagerOffreInterface
         return $listeOffreAssociative;
     }
 
+    public function getOffreByName(string $nomOffre): Offre
+    {
+        return (new DaoOffreImplement())->selectOffreByName($nomOffre);
+    }
 }

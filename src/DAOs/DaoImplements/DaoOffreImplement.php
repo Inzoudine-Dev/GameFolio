@@ -48,7 +48,7 @@ class DaoOffreImplement implements DaoOffreInterface
     }
 
 
-    public function selectOffreById(int $id): Offre
+    public function selectOffreByName(string $nomOffre): Offre
     {
 
         try {
@@ -57,19 +57,28 @@ class DaoOffreImplement implements DaoOffreInterface
             throw new Exception($e->getMessage());
         }
 
-        $sql = 'SELECT * FROM ' . $this->nomTable . ' WHERE id = :id';
+        $sql = 'SELECT * FROM ' . $this->nomTable . ' WHERE nomOffre = :nomOffre';
         $requete = $connection->prepare($sql);
-        $requete->bindValue(':id', $id, PDO::PARAM_INT);
+        $requete->bindValue(':nomOffre', $nomOffre, PDO::PARAM_STR);
         $requete->execute();
         $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
 
         if ($resultat) {
-            $offre = new Offre($resultat[0]['id'], $resultat[0]['nomOffre'], $resultat[0]['reduction'], $resultat[0]['jeuxVideos_id']);
+            $DaoGame=new DaoGameImplement();
+            $videoGame=$DaoGame->selectGameById($resultat[0]['jeuxVideos_id']);
+            $offre = new Offre($resultat[0]['id'], $resultat[0]['nomOffre'], $resultat[0]['reduction'],$videoGame);
             return $offre;
         }else{
             return new Offre(0,'offre inexistant','0.0',new VideoGame(0,'innéxistant','rien',0,'urlVide'));
         }
     }
+
+
+    public function selectOffreById(int $id): Offre
+    {
+
+    }
+
 
 
 
