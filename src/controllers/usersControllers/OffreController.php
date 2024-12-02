@@ -42,8 +42,6 @@ class OffreController extends Controller
     #[Route('/GameFolio/users/home/offres/{nomOffre}', 'GET')]
     public function showOffre(string $nomOffre)
     {
-
-
         session_start();
         if (!isset($_SESSION['statut'], $_SESSION['email'], $_SESSION['password'])) {
 

@@ -1,3 +1,6 @@
+h1{
+    text-align: center;
+}
 .game_offre_class{
     border: 2px solid red;
     margin-bottom: 20px;
@@ -31,4 +34,53 @@ p.info_details_class{
 .center_game_offre_class{
     display: flex;
     justify-content: center;
+}
+
+.btn_groupe_class{
+    margin-bottom: 50px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 326px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.btn_reserver_class,.btn_retour_class,.btn_allOffres_class{
+    padding: 0;
+    border-radius: 20px;
+}
+
+.btn_reserver_class{
+    width: 100%;
+    height: 50.06px;
+    cursor: pointer;
+}
+
+.btn_retour_class{
+    width: 100%;
+    height: 50.06px;
+    cursor: pointer;
+}
+
+.link_btn_reserver_class{
+    margin-bottom: 5px;
+
+}
+
+.link_btn_retour_class{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.btn_allOffres_class{
+    width: 100%;
+    height: 50.06px;
+    cursor: pointer;
+}
+
+.link_btn_allOffres_class{
+    margin-top: 5px;
 }
