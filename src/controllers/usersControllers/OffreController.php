@@ -62,6 +62,7 @@ class OffreController extends Controller
                 $data = [
                     'title' => $nomOffre,
                     'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
+                    'linkReserver' => '/GameFolio/users/home/login',
                     'nomOffre' => $nomOffre,
                     'datasOffre' => (new ManagerOffreImplement())->getOffreByName($nomOffre),
                 ];

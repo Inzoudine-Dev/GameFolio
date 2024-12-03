@@ -36,7 +36,7 @@
 
     <div class="btn_groupe_class">
 
-        <a href="" class="link_btn_reserver_class">
+        <a href="<?php if(isset($linkReserver)) echo $linkReserver?>" class="link_btn_reserver_class">
             <button type="button" class="btn_reserver_class">
                 RESERVER
             </button>

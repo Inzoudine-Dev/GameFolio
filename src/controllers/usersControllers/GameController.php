@@ -4,6 +4,7 @@ namespace Maham\GameFolio\controllers\usersControllers;
 
 use Config\routes\Route;
 use Maham\GameFolio\controllers\Controller;
+use Maham\GameFolio\managers\ManagerImplements\ManagerGameImplement;
 
 class GameController extends Controller
 {
@@ -32,4 +33,18 @@ class GameController extends Controller
         $this->index();
     }
 
+
+    #[Route('/GameFolio/users/home/games/{nomJeu}', 'GET')]
+    public function showGame(string $nomJeu)
+    {
+
+        $data = [
+            'title' => $nomJeu,
+            'scriptDeconecter' => '/GameFolio/public/scriptsJs/users/scriptDeconecter.js',
+            'datasGame' => (new ManagerGameImplement())->getGameByName($nomJeu),
+        ];
+
+        parent::render("views/users/viewDetailsGame.php", $data);
+
+    }
 }

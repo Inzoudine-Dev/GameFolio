@@ -17,8 +17,8 @@ class DaoGameImplement implements DaoGameInterface
 
     public function __construct()
     {
-        $this->nomTable= "videogames";
-        $this->MySql= new MySqlConnection('localhost', 'jvdb2', 'root', '');
+        $this->nomTable = "videogames";
+        $this->MySql = new MySqlConnection('localhost', 'jvdb2', 'root', '');
     }
 
 
@@ -30,7 +30,7 @@ class DaoGameImplement implements DaoGameInterface
             throw new Exception($e->getMessage());
         }
 
-        $sql = 'SELECT * FROM '.$this->nomTable.' LIMIT :limit';
+        $sql = 'SELECT * FROM ' . $this->nomTable . ' LIMIT :limit';
         $requete = $connection->prepare($sql);
         $requete->bindValue(':limit', (int)$n, PDO::PARAM_INT);
         $requete->execute();
@@ -39,7 +39,7 @@ class DaoGameImplement implements DaoGameInterface
         $tab = [];
         for ($i = 0; $i < count($resultat); $i++) {
 
-            $tab[$i]= new VideoGame($resultat[$i]['id'],$resultat[$i]['nomJeu'],$resultat[$i]['categorie'],$resultat[$i]['prix'],$resultat[$i]['urlImage']);
+            $tab[$i] = new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'], $resultat[$i]['urlImage']);
         }
 
         return $tab;
@@ -65,7 +65,7 @@ class DaoGameImplement implements DaoGameInterface
             $tab = [];
             for ($i = 0; $i < count($resultat); $i++) {
 
-                $jeuVideo = new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'],$resultat[$i]['urlImage']);
+                $jeuVideo = new VideoGame($resultat[$i]['id'], $resultat[$i]['nomJeu'], $resultat[$i]['categorie'], $resultat[$i]['prix'], $resultat[$i]['urlImage']);
                 $tab[$i] = $jeuVideo;
             }
 
@@ -92,12 +92,35 @@ class DaoGameImplement implements DaoGameInterface
         $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
 
         if ($resultat) {
-            $game = new VideoGame($resultat[0]['id'],htmlspecialchars($resultat[0]['nomJeu'],ENT_QUOTES,'UTF-8'),htmlspecialchars($resultat[0]['categorie'],ENT_QUOTES,'UTF-8'), $resultat[0]['prix'],htmlspecialchars($resultat[0]['urlImage'],ENT_QUOTES,'UTF-8'));
+            $game = new VideoGame($resultat[0]['id'], htmlspecialchars($resultat[0]['nomJeu'], ENT_QUOTES, 'UTF-8'), htmlspecialchars($resultat[0]['categorie'], ENT_QUOTES, 'UTF-8'), $resultat[0]['prix'], htmlspecialchars($resultat[0]['urlImage'], ENT_QUOTES, 'UTF-8'));
             return $game;
-        }else{
-            return new VideoGame(0,'jeu inexistant','inexistant',0,'vide');
+        } else {
+            return new VideoGame(0, 'jeu inexistant', 'inexistant', 0, 'vide');
         }
 
 
+    }
+
+    public function selectGameByName(string $nomJeu): VideoGame
+    {
+        try {
+            $connection = $this->MySql->getConnection();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
+
+        $sql = 'SELECT * FROM ' . $this->nomTable . ' WHERE nomJeu = :nomJeu';
+        $requete = $connection->prepare($sql);
+        $requete->bindValue(':nomJeu', $nomJeu, PDO::PARAM_STR);
+        $requete->execute();
+        $resultat = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($resultat) {
+
+            $game = new VideoGame($resultat[0]['id'], $resultat[0]['nomJeu'], $resultat[0]['categorie'], $resultat[0]['prix'], $resultat[0]['urlImage']);
+            return $game;
+        } else {
+            return new VideoGame(0, 'offre inexistant', '', 0, "urlvide");
+        }
     }
 }
