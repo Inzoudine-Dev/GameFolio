@@ -1,0 +1,10 @@
+
+.details_game_class{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+p.details_info_game_class{
+    text-align: center;
+}

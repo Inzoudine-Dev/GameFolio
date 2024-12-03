@@ -19,6 +19,7 @@
         <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/users/viewGame.css" media="all" />
         <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/users/viewLogout.css" media="all" />
         <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/users/viewDetailsOffre.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/GameFolio/public/styleCss/users/viewDetailsGame.css" media="all" />
 
     </head>
 
