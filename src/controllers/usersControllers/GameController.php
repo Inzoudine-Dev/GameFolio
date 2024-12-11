@@ -20,7 +20,8 @@ class GameController extends Controller
             $data = [
                 'title' => 'Games',
                 'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
-                'email' => $_SESSION["email"]
+                'email' => $_SESSION["email"],
+                'dataAllGames' => (new ManagerGameImplement())->getAllGames(),
                 ];
             parent::render("views/users/viewGame.php", $data);
         }

@@ -19,13 +19,7 @@ class ManagerGameImplement implements ManagerGameInterface
 
     public function getAllGames(): array
     {
-        $daoJeu=new DaoGameImplement();
-        $listeJeu=$daoJeu->SelectAll();
-        $listeJeuAssociative=[];
-        for($i=0;$i<count($listeJeu);$i++){
-            $listeJeuAssociative=$listeJeuAssociative+["jeu".$i+1=>$listeJeu[$i]];
-        }
-        return $listeJeuAssociative;
+        return (new DaoGameImplement())->SelectAllGames();
     }
 
     public function getGameByName(string $nomJeu): VideoGame

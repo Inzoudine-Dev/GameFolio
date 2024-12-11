@@ -46,7 +46,7 @@ class DaoGameImplement implements DaoGameInterface
     }
 
 
-    public function SelectAll(): array
+    public function SelectAllGames(): array
     {
         try {
 
@@ -75,6 +75,8 @@ class DaoGameImplement implements DaoGameInterface
             throw new Exception($e->getMessage());
         }
     }
+
+
 
     public function selectGameById(int $id): VideoGame
     {

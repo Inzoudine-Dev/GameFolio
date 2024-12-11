@@ -1,9 +1,8 @@
 
 <section>
-<h1 class="">Jeu de combat</h1>
+    <h1 class="">Jeu de <?php if(isset($datasGame)) echo $datasGame->getCategorie()?></h1>
 <div class="details_game_class">
     <?php if(isset($datasGame)): ?>
-
             <article class="">
 
                     <img src="<?php echo $datasGame->getUrlImage(); ?>" class="" alt="logo"/>

@@ -8,7 +8,7 @@ header("Pragma: no-cache");
 
 <form action="" method="" class="form_recherche_class">
     <div class="recherche_class">
-        <input type="text" name="recherche" placeholder="Recherche..." class="input_recherche_class" aria-label="Recherche">
+        <input type="text" name="recherche" placeholder="Recherche..." class="input_recherche_class" aria-label="Recherche" required>
         <button type="submit" class="btn_recherche">
             <img src="/GameFolio/public/images/loupeRecherche.png" class="img_loupe_class">
         </button>
@@ -79,8 +79,7 @@ header("Pragma: no-cache");
                 <a href="/GameFolio/users/home/games/<?php echo urlencode($game->getNomJeu()); ?>" class="lien_imageGame_class">
                     <img src="<?php echo $game->getUrlImage(); ?>" class="image_game_class" alt="logo"/>
                     <p class="info_jeu_class">Nom : <?php echo htmlspecialchars($game->getNomJeu(), ENT_QUOTES, 'UTF-8'); ?></p>
-                    <p class="info_jeu_class">Catégorie : <?php echo htmlspecialchars($game->getCategorie(), ENT_QUOTES, 'UTF-8'); ?></p>
-                    <p class="info_jeu_class">Prix : <?php echo $game->getPrix(); ?> euros</p>
+
                 </a>
             </article>
             <?php endif ;  ?>

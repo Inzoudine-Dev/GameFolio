@@ -32,6 +32,7 @@ class HomeController extends Controller
             }
 
             $data['title']='Home';
+            $data['$scriptSlide']='/GameFolio/public/scriptsJs/users/scriptSlide.js';
             $data['offres']=(new ManagerOffreImplement())->getNOffresForHome(3);
             $data['games']=(new ManagerGameImplement())->getNGamesForHome(8);
             parent::render('views/users/viewHome.php', $data);

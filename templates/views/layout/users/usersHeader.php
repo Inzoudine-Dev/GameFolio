@@ -26,13 +26,11 @@
         <div class="links">
 
             <span class="arrow-down">▼</span>
-            <div class=""><a href="">ACCUEIL</a></div>
-            <div class=""><a href="">ACCUEIL</a></div>
-            <div class=""><a href="">ACCUEIL</a></div>
+
             <div id="link_registration_id"><a href="/GameFolio/users/home/registration">Inscription</a></div>
             <div class="" id="link_conexion_id"><a href="/GameFolio/users/home/login">Conexion</a></div>
             <div class="" id="link_deconexion_id"><a href="/GameFolio/users/home/login/logout">Deconexion</a></div>
-            <div class="" id="link_deconexion_id"><a href="/GameFolio/users/home/logout"><?php if(isset($email)) echo $email?></a></div>
+            <div class="" id="link_deconexion_id"><a href=""><?php if(isset($email)) echo $email?></a></div>
 
         </div>
 
