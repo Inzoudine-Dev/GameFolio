@@ -25,7 +25,8 @@ class OffreController extends Controller
             $data = [
                 'title' => 'Offres',
                 'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',
-                'email' => $_SESSION["email"]
+                'email' => $_SESSION["email"],
+                'dataAllOffres' => (new ManagerOffreImplement())->getAllOffres(),
             ];
             parent::render("views/users/viewOffres.php", $data);
         }
@@ -71,7 +72,7 @@ class OffreController extends Controller
 
         } else {
 
-            if (!(new ManagerOffreImplement())->getOffreByName($nomOffre) || ((new ManagerOffreImplement())->getOffreByName($nomOffre)== new Offre(0,'offre inexistant','0.0',new VideoGame(0,'innéxistant','rien',0,'urlVide')))) {
+            if (!(new ManagerOffreImplement())->getOffreByName($nomOffre) || ((new ManagerOffreImplement())->getOffreByName($nomOffre) === new Offre(0,'offre inexistant','0.0',new VideoGame(0,'innéxistant','rien',0,'urlVide')))) {
                 $data = [
                     'title' => $nomOffre,
                     'scriptConecter' => '/GameFolio/public/scriptsJs/users/scriptConecter.js',

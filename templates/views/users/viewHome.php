@@ -72,7 +72,7 @@ header("Pragma: no-cache");
 
 <section>
     <h2 class="title_categorie_games">Jeux de combat</h2>
-    <div class="games_race_class">
+    <div class="games_figth_class">
         <?php if(isset($games)) foreach ($games as $game): ?>
         <?php if ($game->getCategorie()=="combat"): ?>
             <article class="game_class">

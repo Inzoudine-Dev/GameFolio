@@ -1,0 +1,19 @@
+.offres_class{
+    margin: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+a.lien_offre_class{
+    border:solid 1px;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.data_offre_class{
+    display: flex;
+    justify-content: center;
+}

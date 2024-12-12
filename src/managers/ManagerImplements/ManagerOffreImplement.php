@@ -16,15 +16,9 @@ class ManagerOffreImplement implements ManagerOffreInterface
     }
 
 
-    public function getAllOffre(): array
+    public function getAllOffres(): array
     {
-        $daoOffre=new DaoOffreImplement();
-        $listeOffre=$daoOffre->SelectAll();
-        $listeOffreAssociative=[];
-        for($i=0;$i<count($listeOffre);$i++){
-            $listeOffreAssociative=$listeOffreAssociative+["offre".$i+1=>$listeOffre[$i]];
-        }
-        return $listeOffreAssociative;
+        return (new DaoOffreImplement())->selectAllOffres();
     }
 
     public function getOffreByName(string $nomOffre): Offre

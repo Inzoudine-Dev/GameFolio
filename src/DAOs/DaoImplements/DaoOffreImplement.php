@@ -73,16 +73,7 @@ class DaoOffreImplement implements DaoOffreInterface
         }
     }
 
-
-    public function selectOffreById(int $id): Offre
-    {
-
-    }
-
-
-
-
-    public function SelectAll(): array
+    public function selectAllOffres(): array
     {
         try {
 
@@ -109,6 +100,11 @@ class DaoOffreImplement implements DaoOffreInterface
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
+    }
+
+    public function selectOffreById(int $id): Offre
+    {
+
     }
 
 }

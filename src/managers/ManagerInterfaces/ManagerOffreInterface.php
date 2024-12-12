@@ -8,7 +8,7 @@ interface ManagerOffreInterface
 {
 
     public function getNOffresForHome(int $n):array;
-    public function getAllOffre():array;
+    public function getAllOffres():array;
     public function getOffreByName(string $nomOffre): Offre;
 
 }
