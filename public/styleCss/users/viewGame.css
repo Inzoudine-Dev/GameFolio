@@ -6,11 +6,17 @@
 }
 
 .item {
-    width: 250px; /* Taille fixe pour chaque élément */
+    /*width: 250px; /* Taille fixe pour chaque élément */
     text-align: center;
 }
 
 .item img {
-    width: 100%; /* L'image prend toute la largeur de son conteneur */
-    height: auto; /* Maintient le ratio de l'image */
+    width:300px;
+    height: 168px;
+    border: 1px solid darkorange;
+}
+
+p.info_jeu_class{
+    margin:0;
+    color: darkorange;
 }

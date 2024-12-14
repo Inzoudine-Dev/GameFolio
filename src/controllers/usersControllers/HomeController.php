@@ -39,11 +39,14 @@ class HomeController extends Controller
 
     }
 
+
     #[Route('/GameFolio/users/home/','GET')]
     public function indexRedirect()
     {
         header('Location:/GameFolio/users/home');
     }
+
+
 
     #[Route('/GameFolio/users/','GET')]
     public function indexRedirectHome()

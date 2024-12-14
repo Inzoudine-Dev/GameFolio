@@ -5,7 +5,7 @@
     <?php if(isset($datasGame)): ?>
             <article class="">
 
-                    <img src="<?php echo $datasGame->getUrlImage(); ?>" class="" alt="logo"/>
+                    <img src="<?php echo $datasGame->getUrlImage(); ?>" class="imgDetailsGame_class" alt="logo"/>
                     <p class="details_info_game_class">Nom : <?php echo htmlspecialchars($datasGame->getNomJeu(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="details_info_game_class">Catégorie : <?php echo htmlspecialchars($datasGame->getCategorie(), ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="details_info_game_class">Prix : <?php echo $datasGame->getPrix(); ?> euros</p>

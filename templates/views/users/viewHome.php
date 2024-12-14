@@ -56,7 +56,7 @@ header("Pragma: no-cache");
     <h2 class="title_offer" id="title_offer_id">Les offres du jour</h2>
     <div class="offres_class">
         <?php if(isset($offres))foreach ($offres as $offre): ?>
-            <a href="/GameFolio/users/home/offres/<?php echo urlencode($offre->getNomOffre()); ?>" class="lien_offre_class">
+            <a href="/GameFolio/users/home/offres/<?php echo urlencode($offre->getNomOffre()); ?>" class="home_link_offre_class">
                 <article class="offre_class">
                     <p class="data_offre_class"><?php echo htmlspecialchars($offre->getNomOffre(),ENT_QUOTES,'UTF-8');?> disponible !</p>
                     <p class="data_offre_class">Réduction : <?php echo $offre->getReduction(); ?> euros</p>
@@ -79,7 +79,6 @@ header("Pragma: no-cache");
                 <a href="/GameFolio/users/home/games/<?php echo urlencode($game->getNomJeu()); ?>" class="lien_imageGame_class">
                     <img src="<?php echo $game->getUrlImage(); ?>" class="image_game_class" alt="logo"/>
                     <p class="info_jeu_class">Nom : <?php echo htmlspecialchars($game->getNomJeu(), ENT_QUOTES, 'UTF-8'); ?></p>
-
                 </a>
             </article>
             <?php endif ;  ?>

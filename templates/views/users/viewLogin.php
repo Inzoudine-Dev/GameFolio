@@ -8,6 +8,7 @@ header("Pragma: no-cache");
 
     <h1 class="titre_form_login">Connecter-vous !!</h1>
 
+    <div class="form_class">
     <form action="/GameFolio/users/home/login" method="post" class="form_login_class">
 
 
@@ -23,6 +24,7 @@ header("Pragma: no-cache");
 
 
     </form>
+    </div>
 
     <div class="error_class">
         <?php if (isset($errorMessage)): ?>

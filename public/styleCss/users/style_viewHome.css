@@ -9,8 +9,18 @@
     width: 60px;
     padding-left:0;
     padding-right:0;
-    border: lightgray solid 1px;
+    border: darkorange solid 1px;
     border-left: 0px;
+}
+
+p.info_jeu_class{
+    text-align: center;
+    color: darkorange;
+    margin: 0;
+}
+
+p.data_offre_class{
+    color: darkorange;
 }
 
 .input_recherche_class{
@@ -19,7 +29,7 @@
     padding-bottom: 15px;
     border-radius: 0px;
     padding-left: 10px;
-    border: lightgray solid 1px;
+    border: darkorange solid 1px;
 }
 
 div.recherche_class{
@@ -45,13 +55,13 @@ input{
 /* Effet focus personnalisé */
 input:focus{
     outline: none; /* Supprime la bordure par défaut */
-    border: 1px solid black; /* Couleur de bordure personnalisée */
+    border: 1px solid darkorange; /* Couleur de bordure personnalisée */
 }
 
 
 hr{
 
-    border-color: lightslategray;
+    border-color: darkorange;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -71,14 +81,10 @@ hr{
     flex-wrap: wrap;
 }
 
-p.info_jeu_class{
-    text-align: center;
-}
-
-a.lien_offre_class{
-    border:solid 1px;
+a.home_link_offre_class{
     padding: 5px;
     border-radius: 20px;
+    border:solid 1px darkorange;
 }
 
 .data_offre_class{
@@ -109,8 +115,9 @@ hr{
 }
 
 .image_game_class{
-    width:100%;
-    border: black solid 1px;
+    width:304px;
+    height: 171.11px;
+    border: darkorange solid 1px;
 }
 
 .game_class{

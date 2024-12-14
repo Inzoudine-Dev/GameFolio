@@ -3,8 +3,14 @@
     display: flex;
     justify-content: center;
     margin-bottom: 150px;
+
 }
 
 p.details_info_game_class{
     text-align: center;
+    margin: 0;
+}
+
+.imgDetailsGame_class{
+    border: darkorange 1px solid;
 }
