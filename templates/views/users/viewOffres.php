@@ -1,5 +1,5 @@
 
-<section>
+<section class="section_view_offres_class">
     <h2 class="title_offer" id="title_offer_id">Les offres disponibles</h2>
     <div class="offres_class">
         <?php if(isset($dataAllOffres))foreach ($dataAllOffres as $offres): ?>

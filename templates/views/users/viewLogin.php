@@ -32,6 +32,9 @@ header("Pragma: no-cache");
         <?php endif; ?>
     </div>
 
+
+    <a href="" class="link_password_lost_class"><p class="password_lost_class">Mot de passe oublier ?</p></a>
+
     <div class="text_inscription">
         <h1 class="titre_form_login">Vous n'avez pas encore de conpte ??</h1>
         <h1 class="titre_form_login">Inscrivez-vous !!</h1>

@@ -3,7 +3,7 @@
         'name' => 'maham/game-folio',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'eb8567c8ca86c26133fb023eb76779f3997b11ef',
+        'reference' => 'f30ce195d6dea6efc0af781ecb535ccd70942553',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'maham/game-folio' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'eb8567c8ca86c26133fb023eb76779f3997b11ef',
+            'reference' => 'f30ce195d6dea6efc0af781ecb535ccd70942553',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -99,6 +99,15 @@
             'install_path' => __DIR__ . '/../phpdocumentor/type-resolver',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'phpmailer/phpmailer' => array(
+            'pretty_version' => 'v6.9.3',
+            'version' => '6.9.3.0',
+            'reference' => '2f5c94fe7493efc213f643c23b1b1c249d40f47e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'phpspec/prophecy' => array(
             'pretty_version' => 'v1.20.0',

@@ -43,3 +43,14 @@
     flex-direction: column;
 }
 
+a.link_password_lost_class{
+    display: flex;
+    width: 162px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+p.password_lost_class{
+    text-align: center;
+    width: 100%;
+}

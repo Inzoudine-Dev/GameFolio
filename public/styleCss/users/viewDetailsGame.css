@@ -1,16 +1,43 @@
-
+section.section_game_details_class{
+    margin-bottom: 217px;
+}
 .details_game_class{
     display: flex;
     justify-content: center;
     margin-bottom: 150px;
+    margin:0;
+
+}
+
+div.test_img_details_game_class{
+    position: relative;
+}
+
+div.bande_promo_class{
+    padding: 2px;
+    width: 178px;
+    background-color:green;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top:144px;
+    left:50px;
 
 }
 
 p.details_info_game_class{
     text-align: center;
     margin: 0;
+    color: #551A8B;
+    background-color: darkorange;
 }
 
 .imgDetailsGame_class{
     border: darkorange 1px solid;
+    width:300px;
+    height: 168px;
+}
+
+div.info_jeu_details_class{
+    border: #551A8B 1px solid;
 }

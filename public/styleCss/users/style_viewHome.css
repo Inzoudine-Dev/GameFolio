@@ -15,12 +15,15 @@
 
 p.info_jeu_class{
     text-align: center;
-    color: darkorange;
+    color: #551A8B;
+    background-color: darkorange;
     margin: 0;
+    border: #551A8B 1px solid;
 }
 
 p.data_offre_class{
-    color: darkorange;
+    color: #551A8B;
+    background-color: darkorange;
 }
 
 .input_recherche_class{
@@ -79,12 +82,16 @@ hr{
     justify-content: space-evenly;
     margin-bottom: 50px;
     flex-wrap: wrap;
+    width: 95%;
+
 }
 
 a.home_link_offre_class{
     padding: 5px;
     border-radius: 20px;
-    border:solid 1px darkorange;
+    border:solid 1px blueviolet;
+    background-color: darkorange;
+    width: 254.22px;
 }
 
 .data_offre_class{
@@ -251,9 +258,20 @@ button.next:hover {
 
 
 /* Responsiveness */
-@media (max-width: 989px) {
-    nav.nav_class,form.form_recherche_class{
-        display: none;
+@media (max-width: 996px) {
+
+    div.games_figth_class,div.games_race_class{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 860px) {
+    div.offres_class{
+        justify-content: center;
+    }
+
+    a.home_link_offre_class{
+        margin: 5px;
     }
 }
 
@@ -283,6 +301,13 @@ button.next:hover {
     .indicators button {
         width: 8px;
         height: 8px;
+    }
+}
+
+@media (max-width: 322px) {
+    .image_game_class{
+        width:266.22px;
+        height: auto;
     }
 }
 

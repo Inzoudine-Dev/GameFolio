@@ -80,6 +80,7 @@ a{
 .link{
     margin-left: 20px;
     margin-right: 20px;
+    color: #551A8B;
 }
 
 .arrow-down{
@@ -89,8 +90,8 @@ a{
 }
 
 .links{
-    border:2px gray solid;
-    background-color: white;
+    border:2px blueviolet solid;
+    background-color: darkorange;
     border-radius: 20px;
     margin-left: 4px;
     margin-bottom: 4px;
@@ -118,4 +119,15 @@ a{
 
 .show {
     display: block;
+}
+
+
+@media (max-width: 989px) {
+    ul.nav_links,form.form_recherche_class{
+        display: none;
+    }
+
+    nav.nav_class{
+        justify-content: center;
+    }
 }

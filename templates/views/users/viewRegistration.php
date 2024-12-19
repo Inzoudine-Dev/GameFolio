@@ -35,7 +35,7 @@ header("Pragma: no-cache");
 
     <input type="password" name ="password" placeholder="Mot de passe" class="input_password_register_class" aria-label="password" required>
 
-    <input type="submit" value="connexion" class="bt_register_class" id="bt_register_id">
+    <input type="submit" value="VALIDER" class="bt_register_class" id="bt_register_id">
 
 
 </form>

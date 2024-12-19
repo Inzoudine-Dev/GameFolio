@@ -71,6 +71,9 @@ class RegisterController extends Controller
 
                 ((new ManagerClientImplement()))->InsertClient(new Client(0,$_POST['nom'],$_POST['prenom'],new DateTime($_POST['dateNaissance']),$_POST['email'],$_POST['telephone'],password_hash($_POST['password'], PASSWORD_BCRYPT)));
 
+                /*Envoi de mail de confirmation*/
+
+
                 $data = [
                     'title' =>'Registration',
                     'registerMessage'=>"Félicitation , votre compte est creer!!, connecter vous!!",

@@ -1,3 +1,7 @@
+section.section_view_games_class{
+    margin-bottom: 20px;
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap; /* Permet de passer à la ligne automatiquement */
@@ -16,7 +20,12 @@
     border: 1px solid darkorange;
 }
 
-p.info_jeu_class{
+p.info_game_jeu_class{
     margin:0;
-    color: darkorange;
+    color: #551A8B;
+    background-color: darkorange;
+}
+
+div.info_jeu_class{
+    border: #551A8B 1px solid;
 }
